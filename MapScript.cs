@@ -235,10 +235,7 @@ public class CustomMap : IWasmModule
             ShowNextWaveCountdown(pState);
         }
 
-        if (activeHumanCount <= 1)
-        {
-            _api.PanCameraTo(Coordinates.QuadrantCenters[0], 0.0f);
-        }
+        _api.PanCameraTo(Coordinates.GetQuadrantCenter(0), 0.0f);
 
         _api.OnUnitDied += OnUnitDied;
         _api.OnUnitDamaged += OnUnitDamaged;
@@ -331,10 +328,15 @@ public class CustomMap : IWasmModule
         if (existingHero != null)
         {
             pState.Hero = existingHero;
+            _api.SetUnitOwner(pState.Hero, pState.PlayerIndex);
         }
         else
         {
             pState.Hero = _api.SpawnUnit("survivor_hero", pState.QuadrantCenter, false, bypassPopulation: true);
+            if (pState.Hero != null)
+            {
+                _api.SetUnitOwner(pState.Hero, pState.PlayerIndex);
+            }
         }
 
         if (pState.Hero == null) return;
@@ -357,7 +359,11 @@ public class CustomMap : IWasmModule
         string defeatMsg = _players.Count <= 1
             ? _api.Translate("HERO_DEFEATED", pState.PlayerIndex)
             : $"P{pState.PlayerIndex + 1}: {_api.Translate("HERO_DEFEATED", pState.PlayerIndex)}";
-        _api.ShowFeedbackText(defeatMsg, new Vector3(1f, 0.2f, 0.2f));
+        if (pState.PlayerIndex == 0)
+        {
+            _api.ShowFeedbackText(defeatMsg, new Vector3(1f, 0.2f, 0.2f));
+        }
+        _api.BroadcastMessage(defeatMsg);
     }
 
     private void UpdateHeroTickEffects(PlayerState pState, float delta)
@@ -441,10 +447,10 @@ public class CustomMap : IWasmModule
             if (pState.PlayerIndex == 0)
             {
                 _api.ShowFeedbackText(_api.Translate("SHOP_ROTATING_SOON", pState.PlayerIndex), new Vector3(1f, 0.75f, 0.2f));
-                if (pState.Hero != null)
-                {
-                    _api.CreateFloatingText(_api.Translate("SHOP_ROTATING_SOON", pState.PlayerIndex), pState.Hero.Position + new Vector3(0, 2.5f, 0), new Vector3(1f, 0.75f, 0.2f), 1.2f);
-                }
+            }
+            if (pState.Hero != null)
+            {
+                _api.CreateFloatingText(_api.Translate("SHOP_ROTATING_SOON", pState.PlayerIndex), pState.Hero.Position + new Vector3(0, 2.5f, 0), new Vector3(1f, 0.75f, 0.2f), 1.2f);
             }
         }
 
@@ -520,11 +526,15 @@ public class CustomMap : IWasmModule
 
             _api.PlayClickSound();
             _api.ShowFeedbackText(_api.Translate("SHOP_READY", pState.PlayerIndex), new Vector3(1f, 0.9f, 0.2f));
+        }
+        else
+        {
+            _api.BroadcastMessage($"P{pState.PlayerIndex + 1}: Ofertas de tienda renovadas.");
+        }
 
-            if (pState.Hero != null)
-            {
-                _api.CreateFloatingText(_api.Translate("SHOP_FLOATING", pState.PlayerIndex), pState.Hero.Position + new Vector3(0, 2.8f, 0), new Vector3(1f, 0.9f, 0.2f), 1.5f);
-            }
+        if (pState.Hero != null)
+        {
+            _api.CreateFloatingText(_api.Translate("SHOP_FLOATING", pState.PlayerIndex), pState.Hero.Position + new Vector3(0, 2.8f, 0), new Vector3(1f, 0.9f, 0.2f), 1.5f);
         }
 
         UpdateLeaderboardDisplay();
@@ -571,7 +581,14 @@ public class CustomMap : IWasmModule
         if (slotIndex < 0 || slotIndex >= 3) return;
         if (pState.SlotSold[slotIndex])
         {
-            _api.ShowFeedbackText(_api.Translate("PERK_SLOT_EMPTY", pState.PlayerIndex), new Vector3(1f, 0.5f, 0.2f));
+            if (pState.PlayerIndex == 0)
+            {
+                _api.ShowFeedbackText(_api.Translate("PERK_SLOT_EMPTY", pState.PlayerIndex), new Vector3(1f, 0.5f, 0.2f));
+            }
+            if (pState.Hero != null)
+            {
+                _api.CreateFloatingText("! [SOLD]", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.5f, 0.2f), 0.9f);
+            }
             return;
         }
 
@@ -580,7 +597,14 @@ public class CustomMap : IWasmModule
 
         if (!CanPickPerk(pState, perk))
         {
-            _api.ShowFeedbackText(_api.Translate("PERK_MAX_STACKS", pState.PlayerIndex), new Vector3(1f, 0.4f, 0.2f));
+            if (pState.PlayerIndex == 0)
+            {
+                _api.ShowFeedbackText(_api.Translate("PERK_MAX_STACKS", pState.PlayerIndex), new Vector3(1f, 0.4f, 0.2f));
+            }
+            if (pState.Hero != null)
+            {
+                _api.CreateFloatingText("! [MAX]", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.4f, 0.2f), 0.9f);
+            }
             return;
         }
 
@@ -589,7 +613,10 @@ public class CustomMap : IWasmModule
         if (currentGold < cost)
         {
             string notEnough = string.Format(_api.Translate("PERK_NOT_ENOUGH_GOLD", pState.PlayerIndex), cost, currentGold);
-            _api.ShowFeedbackText(notEnough, new Vector3(1f, 0.2f, 0.2f));
+            if (pState.PlayerIndex == 0)
+            {
+                _api.ShowFeedbackText(notEnough, new Vector3(1f, 0.2f, 0.2f));
+            }
             if (pState.Hero != null)
             {
                 _api.CreateFloatingText($"! -{(cost - currentGold):F0}g", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.2f, 0.2f), 0.9f);
@@ -617,8 +644,15 @@ public class CustomMap : IWasmModule
 
         string localizedPerkName = _api.Translate(perk.NameKey, pState.PlayerIndex);
         string purchaseMsg = string.Format(_api.Translate("PERK_PURCHASED", pState.PlayerIndex), localizedPerkName, pState.PerkStacks[perk.Id]);
-        _api.ShowFeedbackText(purchaseMsg, perk.Color);
-        _api.PlayClickSound();
+        if (pState.PlayerIndex == 0)
+        {
+            _api.ShowFeedbackText(purchaseMsg, perk.Color);
+            _api.PlayClickSound();
+        }
+        else
+        {
+            _api.BroadcastMessage($"P{pState.PlayerIndex + 1}: Compró {localizedPerkName} (x{pState.PerkStacks[perk.Id]}).");
+        }
 
         if (pState.Hero != null)
         {
@@ -693,7 +727,14 @@ public class CustomMap : IWasmModule
         if (cost > 0f && _api.GetPlayerGold(pState.PlayerIndex) < cost)
         {
             string notEnough = string.Format(_api.Translate("PERK_NOT_ENOUGH_GOLD", pState.PlayerIndex), cost, _api.GetPlayerGold(pState.PlayerIndex));
-            _api.ShowFeedbackText(notEnough, new Vector3(1f, 0.3f, 0.3f));
+            if (pState.PlayerIndex == 0)
+            {
+                _api.ShowFeedbackText(notEnough, new Vector3(1f, 0.3f, 0.3f));
+            }
+            if (pState.Hero != null)
+            {
+                _api.CreateFloatingText($"! -{(cost - _api.GetPlayerGold(pState.PlayerIndex)):F0}g", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.2f, 0.2f), 0.9f);
+            }
             return;
         }
 
@@ -703,9 +744,16 @@ public class CustomMap : IWasmModule
         }
 
         pState.RerollCount++;
-        _api.PlayClickSound();
-        string rerollMsg = string.Format(_api.Translate("REROLL_SUCCESS", pState.PlayerIndex), ShopRerollCost);
-        _api.ShowFeedbackText(rerollMsg, new Vector3(1f, 0.85f, 0.2f));
+        if (pState.PlayerIndex == 0)
+        {
+            _api.PlayClickSound();
+            string rerollMsg = string.Format(_api.Translate("REROLL_SUCCESS", pState.PlayerIndex), ShopRerollCost);
+            _api.ShowFeedbackText(rerollMsg, new Vector3(1f, 0.85f, 0.2f));
+        }
+        else
+        {
+            _api.BroadcastMessage($"P{pState.PlayerIndex + 1}: Reroll de tienda completado.");
+        }
 
         TriggerNewShopRotation(pState, resetTimer: false, isAutomatic: false);
     }
@@ -789,7 +837,16 @@ public class CustomMap : IWasmModule
 
         if (pState.CurrentWave >= TotalWaves)
         {
-            EndGameWithVictory();
+            pState.BossDefeated = true;
+            bool allWonOrDead = _players.Values.All(p => p.IsDefeated || (p.CurrentWave >= TotalWaves && p.BossDefeated));
+            if (allWonOrDead)
+            {
+                EndGameWithVictory();
+            }
+            else
+            {
+                _api.BroadcastMessage($"¡P{pState.PlayerIndex + 1} completó todas las oleadas! Apoyando a los aliados restantes...");
+            }
         }
         else
         {
@@ -1301,10 +1358,44 @@ public class CustomMap : IWasmModule
         }
     }
 
+    private PlayerState? ResolvePlayer(IUnit? caster, IUnit? selected = null, string? abilityId = null, Vector3? targetPosition = null)
+    {
+        if (caster != null)
+        {
+            var byHero = _players.Values.FirstOrDefault(p => p.Hero != null && p.Hero.UniqueId == caster.UniqueId);
+            if (byHero != null) return byHero;
+            if (_players.TryGetValue(caster.Player, out var pByUnit)) return pByUnit;
+        }
+
+        if (selected != null)
+        {
+            var byHero = _players.Values.FirstOrDefault(p => p.Hero != null && p.Hero.UniqueId == selected.UniqueId);
+            if (byHero != null) return byHero;
+            if (_players.TryGetValue(selected.Player, out var pBySel)) return pBySel;
+        }
+
+        if (abilityId == "hero_meteor_spell" && targetPosition.HasValue && targetPosition.Value != Vector3.Zero)
+        {
+            return _players.Values
+                .OrderBy(p => Vector3.DistanceSquared(new Vector3(targetPosition.Value.X, 0, targetPosition.Value.Z), new Vector3(p.QuadrantCenter.X, 0, p.QuadrantCenter.Z)))
+                .FirstOrDefault();
+        }
+
+        return null;
+    }
+
     private void OnPlayerChatMessage(string message, IUnit? selected)
     {
         if (_gameOver) return;
-        if (!_players.TryGetValue(0, out var pState)) return;
+
+        var pState = ResolvePlayer(caster: null, selected: selected);
+        if (pState == null)
+        {
+            _api.BroadcastMessage("Aviso: Selecciona a tu héroe para usar comandos de tienda (-1, -2, -3, -reroll).");
+            return;
+        }
+
+        if (pState.IsDefeated) return;
 
         string clean = message.Trim().ToLowerInvariant();
         switch (clean)
@@ -1327,7 +1418,9 @@ public class CustomMap : IWasmModule
     private void OnSpellCast(IUnit? caster, string abilityId, Vector3 targetPosition)
     {
         if (_gameOver) return;
-        if (!_players.TryGetValue(0, out var pState)) return;
+
+        var pState = ResolvePlayer(caster, selected: null, abilityId: abilityId, targetPosition: targetPosition);
+        if (pState == null || pState.IsDefeated) return;
 
         switch (abilityId)
         {
@@ -1364,12 +1457,25 @@ public class CustomMap : IWasmModule
 
     private void UpdateLeaderboardDisplay()
     {
-        if (!_players.TryGetValue(0, out var p0)) return;
+        if (_players.Count <= 1)
+        {
+            if (!_players.TryGetValue(0, out var p0)) return;
 
-        _api.SetLeaderboardValue(_api.Translate("LB_WAVE", 0), $"{p0.CurrentWave} / {TotalWaves}");
-        _api.SetLeaderboardValue(_api.Translate("LB_GOLD", 0), $"{(int)_api.GetPlayerGold(0)} (+{(int)p0.CurrentIncomePerSecond}/s)");
-        _api.SetLeaderboardValue(_api.Translate("LB_SHOP", 0), $"{p0.ShopRotationTimer:F0}s / 40s | Perks: {p0.PerksPicked}");
-        _api.SetLeaderboardValue(_api.Translate("LB_KILLS", 0), $"{p0.TotalKills}");
-        _api.SetLeaderboardValue(_api.Translate("LB_ENEMIES", 0), $"{Math.Max(0, p0.AliveInWave)}");
+            _api.SetLeaderboardValue(_api.Translate("LB_WAVE", 0), $"{p0.CurrentWave} / {TotalWaves}");
+            _api.SetLeaderboardValue(_api.Translate("LB_GOLD", 0), $"{(int)_api.GetPlayerGold(0)} (+{(int)p0.CurrentIncomePerSecond}/s)");
+            _api.SetLeaderboardValue(_api.Translate("LB_SHOP", 0), $"{p0.ShopRotationTimer:F0}s / 40s | Perks: {p0.PerksPicked}");
+            _api.SetLeaderboardValue(_api.Translate("LB_KILLS", 0), $"{p0.TotalKills}");
+            _api.SetLeaderboardValue(_api.Translate("LB_ENEMIES", 0), $"{Math.Max(0, p0.AliveInWave)}");
+        }
+        else
+        {
+            foreach (var p in _players.Values.OrderBy(x => x.PlayerIndex))
+            {
+                string prefix = $"P{p.PlayerIndex + 1}";
+                string status = p.IsDefeated ? "(CAÍDO)" : (p.CurrentWave >= TotalWaves ? "(VICTORIA)" : $"W{p.CurrentWave}/{TotalWaves}");
+                _api.SetLeaderboardValue($"{prefix} ORO", $"{(int)_api.GetPlayerGold(p.PlayerIndex)} (+{(int)p.CurrentIncomePerSecond}/s)");
+                _api.SetLeaderboardValue($"{prefix} ESTADO", $"{status} | Kills: {p.TotalKills}");
+            }
+        }
     }
 }

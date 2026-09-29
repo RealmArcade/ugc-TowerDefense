@@ -98,7 +98,9 @@
 	],
 	"CustomAttachments": [],
 	"CustomBuildings": [],
+	"CustomEnvironmentPresets": [],
 	"CustomItems": [],
+	"CustomProceduralAnimations": [],
 	"CustomProps": [
 		{
 			"Brightness": 0.5,
@@ -106,14 +108,13 @@
 			"DeathShader": null,
 			"Description": "Tree obstacle",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "coniferous_tree_2.glb",
+			"ModelPath": "coniferous_tree_2.rmesh",
 			"Name": "Tree",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 2.75,
 			"SpawnShader": null,
 			"Tint": "#ffffff",
@@ -126,14 +127,13 @@
 			"DeathShader": null,
 			"Description": "Crystal peak obstacle",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "crystal_peak.glb",
+			"ModelPath": "crystal_peak.rmesh",
 			"Name": "Crystal Peak",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": "#ffffff",
@@ -146,14 +146,13 @@
 			"DeathShader": null,
 			"Description": "Pine tree variant",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "coniferous_tree_1.glb",
+			"ModelPath": "coniferous_tree_1.rmesh",
 			"Name": "Pine Tree",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 2.5,
 			"SpawnShader": null,
 			"Tint": "#ffffff",
@@ -166,14 +165,13 @@
 			"DeathShader": null,
 			"Description": "Mossy rock formation",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "rock_formation_7.glb",
+			"ModelPath": "rock_formation_7.rmesh",
 			"Name": "Rock Formation",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 2,
 			"SpawnShader": null,
 			"Tint": "#ffffff",
@@ -186,14 +184,13 @@
 			"DeathShader": null,
 			"Description": "Ancient jade fantasy tree",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "fantasy_tree_10.glb",
+			"ModelPath": "fantasy_tree_10.rmesh",
 			"Name": "Fantasy Tree",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1,
 			"SpawnShader": null,
 			"Tint": "#ffffff",
@@ -206,14 +203,13 @@
 			"DeathShader": null,
 			"Description": "Coastal palm tree",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "palm_tree.glb",
+			"ModelPath": "palm_tree.rmesh",
 			"Name": "Palm Tree",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1,
 			"SpawnShader": null,
 			"Tint": "#ffffff",
@@ -226,14 +222,13 @@
 			"DeathShader": null,
 			"Description": "Arcane crystal cluster",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "crystal_cluster_29.glb",
+			"ModelPath": "crystal_cluster_29.rmesh",
 			"Name": "Crystal Cluster",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1,
 			"SpawnShader": null,
 			"Tint": "#ffffff",
@@ -246,14 +241,13 @@
 			"DeathShader": null,
 			"Description": "Ruined invocation altar landmark",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "ancient_altar.glb",
+			"ModelPath": "ancient_altar.rmesh",
 			"Name": "Ancient Altar",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1,
 			"SpawnShader": null,
 			"Tint": "#ffffff",
@@ -266,14 +260,13 @@
 			"DeathShader": null,
 			"Description": "Sacred jade grove altar",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "mystic_tree_altar.glb",
+			"ModelPath": "mystic_tree_altar.rmesh",
 			"Name": "Mystic Tree Altar",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1,
 			"SpawnShader": null,
 			"Tint": "#ffffff",
@@ -286,14 +279,13 @@
 			"DeathShader": null,
 			"Description": "Dawn bastion crystal pedestal",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "magic_crystal_pedestal.glb",
+			"ModelPath": "magic_crystal_pedestal.rmesh",
 			"Name": "Crystal Pedestal",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1,
 			"SpawnShader": null,
 			"Tint": "#ffffff",
@@ -306,14 +298,13 @@
 			"DeathShader": null,
 			"Description": "Old fortress ruins landmark",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "castle.glb",
+			"ModelPath": "castle.rmesh",
 			"Name": "Ancient Fortress",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1,
 			"SpawnShader": null,
 			"Tint": "#ffffff",
@@ -326,14 +317,13 @@
 			"DeathShader": null,
 			"Description": "Primordial stone spire",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "rock_spire.glb",
+			"ModelPath": "rock_spire.rmesh",
 			"Name": "Rock Spire",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1,
 			"SpawnShader": null,
 			"Tint": "#ffffff",
@@ -346,14 +336,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "crystal_cluster_13.glb",
+			"ModelPath": "crystal_cluster_13.rmesh",
 			"Name": "crystal_cluster_13",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -366,14 +355,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "crystal_cluster_12.glb",
+			"ModelPath": "crystal_cluster_12.rmesh",
 			"Name": "crystal_cluster_12",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -386,14 +374,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "crystal_cluster_10.glb",
+			"ModelPath": "crystal_cluster_10.rmesh",
 			"Name": "crystal_cluster_10",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -406,14 +393,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "crystal_shard_1.glb",
+			"ModelPath": "crystal_shard_1.rmesh",
 			"Name": "crystal_shard_1",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -426,14 +412,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "snow_pine_tree.glb",
+			"ModelPath": "snow_pine_tree.rmesh",
 			"Name": "snow_pine_tree",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -446,14 +431,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "willow_tree_3.glb",
+			"ModelPath": "willow_tree_3.rmesh",
 			"Name": "willow_tree_3",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -466,14 +450,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "grass_tuft_1.glb",
+			"ModelPath": "grass_tuft_1.rmesh",
 			"Name": "grass_tuft_1",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -486,14 +469,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "willow_tree_2.glb",
+			"ModelPath": "willow_tree_2.rmesh",
 			"Name": "willow_tree_2",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -506,14 +488,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "stone_pile.glb",
+			"ModelPath": "stone_pile.rmesh",
 			"Name": "stone_pile",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -526,14 +507,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "cattail_reeds.glb",
+			"ModelPath": "cattail_reeds.rmesh",
 			"Name": "cattail_reeds",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -546,14 +526,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "fantasy_bush.glb",
+			"ModelPath": "fantasy_bush.rmesh",
 			"Name": "fantasy_bush",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -566,14 +545,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "fantasy_tree_13.glb",
+			"ModelPath": "fantasy_tree_13.rmesh",
 			"Name": "fantasy_tree_13",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -586,14 +564,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "lava_rock_pinnacle.glb",
+			"ModelPath": "lava_rock_pinnacle.rmesh",
 			"Name": "lava_rock_pinnacle",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -606,14 +583,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "red_mushroom_group.glb",
+			"ModelPath": "red_mushroom_group.rmesh",
 			"Name": "red_mushroom_group",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -626,14 +602,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "toadstool.glb",
+			"ModelPath": "toadstool.rmesh",
 			"Name": "toadstool",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -646,14 +621,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "mushroom_cluster.glb",
+			"ModelPath": "mushroom_cluster.rmesh",
 			"Name": "mushroom_cluster",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -666,14 +640,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "grass_tuft.glb",
+			"ModelPath": "grass_tuft.rmesh",
 			"Name": "grass_tuft",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -686,14 +659,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "fantasy_mushroom.glb",
+			"ModelPath": "fantasy_mushroom.rmesh",
 			"Name": "fantasy_mushroom",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -706,14 +678,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "crystal_ore_2.glb",
+			"ModelPath": "crystal_ore_2.rmesh",
 			"Name": "crystal_ore_2",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -726,14 +697,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "cactus_plant_1.glb",
+			"ModelPath": "cactus_plant_1.rmesh",
 			"Name": "cactus_plant_1",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -746,14 +716,13 @@
 			"DeathShader": null,
 			"Description": "",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"IgnorePlayerColor": true,
-			"ModelPath": "cactus_plant.glb",
+			"ModelPath": "cactus_plant.rmesh",
 			"Name": "cactus_plant",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"PathingType": 255,
 			"PortraitModelPath": null,
-			"RecalculateNormals": false,
 			"Scale": 1.25,
 			"SpawnShader": null,
 			"Tint": null,
@@ -793,13 +762,13 @@
 			"DeathShader": null,
 			"Description": "Dragón cibernético volador. Vuela en línea recta directo al castillo.",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"GoldBounty": 20,
-			"IgnorePlayerColor": true,
+			"IgnorePlayerColor": false,
 			"IsHero": false,
 			"MaxHp": 450,
-			"ModelPath": "blue_dragon.glb",
+			"ModelPath": "blue_dragon.rmesh",
 			"Name": "Cyber Dragon",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"ObjectAttachments": {
 				"center": null,
@@ -839,7 +808,6 @@
 			"ProductionTime": 0,
 			"ProjectileModelPath": null,
 			"Range": 9,
-			"RecalculateNormals": false,
 			"Scale": 1.5,
 			"ScanRadius": 10,
 			"SoundEvents": null,
@@ -886,13 +854,13 @@
 			"DeathShader": null,
 			"Description": "Ogro titánico de hierro oscuro. Absorbe grandes cantidades de daño.",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"GoldBounty": 20,
-			"IgnorePlayerColor": true,
+			"IgnorePlayerColor": false,
 			"IsHero": false,
 			"MaxHp": 750,
-			"ModelPath": "warrior_giant.glb",
+			"ModelPath": "warrior_giant.rmesh",
 			"Name": "Dark Iron Ogre",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"ObjectAttachments": {
 				"center": null,
@@ -932,7 +900,6 @@
 			"ProductionTime": 0,
 			"ProjectileModelPath": null,
 			"Range": 2.2,
-			"RecalculateNormals": false,
 			"Scale": 1.5,
 			"ScanRadius": 10,
 			"SoundEvents": null,
@@ -979,13 +946,13 @@
 			"DeathShader": null,
 			"Description": "Gran Raid Boss Oleada 15. Colosal dragón titán. Entra en Enrage al 50% de vida.",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"GoldBounty": 1000,
 			"IgnorePlayerColor": true,
 			"IsHero": false,
 			"MaxHp": 12000,
-			"ModelPath": "dragon_war_mount.glb",
+			"ModelPath": "dragon_war_mount.rmesh",
 			"Name": "Dragon Titan Boss",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"ObjectAttachments": {
 				"center": null,
@@ -1025,7 +992,6 @@
 			"ProductionTime": 0,
 			"ProjectileModelPath": null,
 			"Range": 4,
-			"RecalculateNormals": false,
 			"Scale": 1.5,
 			"ScanRadius": 10,
 			"SoundEvents": null,
@@ -1072,13 +1038,13 @@
 			"DeathShader": null,
 			"Description": "Draco igneo volador. Asalta las defensas sobrevolando obstáculos.",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"GoldBounty": 20,
-			"IgnorePlayerColor": true,
+			"IgnorePlayerColor": false,
 			"IsHero": false,
 			"MaxHp": 380,
-			"ModelPath": "ice_dragon_beast.glb",
+			"ModelPath": "ice_dragon_beast.rmesh",
 			"Name": "Flame Drake",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"ObjectAttachments": {
 				"center": null,
@@ -1118,7 +1084,6 @@
 			"ProductionTime": 0,
 			"ProjectileModelPath": null,
 			"Range": 8,
-			"RecalculateNormals": false,
 			"Scale": 1.5,
 			"ScanRadius": 10,
 			"SoundEvents": null,
@@ -1165,13 +1130,13 @@
 			"DeathShader": null,
 			"Description": "Goblin del bosque sumamente rápido y evasivo.",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"GoldBounty": 10,
-			"IgnorePlayerColor": true,
+			"IgnorePlayerColor": false,
 			"IsHero": false,
 			"MaxHp": 70,
-			"ModelPath": "troll_warrior.glb",
+			"ModelPath": "troll_warrior.rmesh",
 			"Name": "Forest Goblin",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"ObjectAttachments": {
 				"center": null,
@@ -1211,7 +1176,6 @@
 			"ProductionTime": 0,
 			"ProjectileModelPath": null,
 			"Range": 1.8,
-			"RecalculateNormals": false,
 			"Scale": 1.5,
 			"ScanRadius": 10,
 			"SoundEvents": null,
@@ -1258,13 +1222,13 @@
 			"DeathShader": null,
 			"Description": "Mini-Boss Oleada 5. Coloso de roca inmune a efectos de ralentización.",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"GoldBounty": 150,
-			"IgnorePlayerColor": true,
+			"IgnorePlayerColor": false,
 			"IsHero": false,
 			"MaxHp": 3200,
-			"ModelPath": "stone_golem_warrior.glb",
+			"ModelPath": "stone_golem_warrior.rmesh",
 			"Name": "Giant Rock Golem",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"ObjectAttachments": {
 				"center": null,
@@ -1304,7 +1268,6 @@
 			"ProductionTime": 0,
 			"ProjectileModelPath": null,
 			"Range": 2.5,
-			"RecalculateNormals": false,
 			"Scale": 1.5,
 			"ScanRadius": 10,
 			"SoundEvents": null,
@@ -1351,13 +1314,13 @@
 			"DeathShader": null,
 			"Description": "Mini-Boss Oleada 10. Arácnido mecánico demoledor con daño masivo a estructuras.",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"GoldBounty": 250,
-			"IgnorePlayerColor": true,
+			"IgnorePlayerColor": false,
 			"IsHero": false,
 			"MaxHp": 5000,
-			"ModelPath": "heavy_mech_warrior.glb",
+			"ModelPath": "heavy_mech_warrior.rmesh",
 			"Name": "Mech Spider Monster",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"ObjectAttachments": {
 				"center": null,
@@ -1397,7 +1360,6 @@
 			"ProductionTime": 0,
 			"ProjectileModelPath": null,
 			"Range": 3,
-			"RecalculateNormals": false,
 			"Scale": 1.5,
 			"ScanRadius": 10,
 			"SoundEvents": null,
@@ -1450,13 +1412,13 @@
 			"DeathShader": null,
 			"Description": "Héroe Caballero central del Survivor. Defiende la posición sagrada aniquilando a las oleadas enemigas con tajos y proyectiles mágicos. Mejóralo en la tienda de habilidades o con comandos (-help).",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"GoldBounty": 0,
 			"IgnorePlayerColor": true,
 			"IsHero": true,
 			"MaxHp": 1200,
-			"ModelPath": "warrior_knight_hero.glb",
+			"ModelPath": "warrior_knight_hero.rmesh",
 			"Name": "Héroe del Survivor",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"ObjectAttachments": {
 				"center": null,
@@ -1496,7 +1458,6 @@
 			"ProductionTime": 0,
 			"ProjectileModelPath": null,
 			"Range": 38,
-			"RecalculateNormals": false,
 			"Scale": 1.5,
 			"ScanRadius": 45,
 			"SoundEvents": null,
@@ -1543,13 +1504,13 @@
 			"DeathShader": null,
 			"Description": "Infantería no-muerta enjambre básica. Débil pero numerosa.",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"GoldBounty": 10,
-			"IgnorePlayerColor": true,
+			"IgnorePlayerColor": false,
 			"IsHero": false,
 			"MaxHp": 110,
-			"ModelPath": "skeleton_warrior.glb",
+			"ModelPath": "skeleton_warrior.rmesh",
 			"Name": "Zombie Soldier",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"ObjectAttachments": {
 				"center": null,
@@ -1589,7 +1550,6 @@
 			"ProductionTime": 0,
 			"ProjectileModelPath": null,
 			"Range": 1.8,
-			"RecalculateNormals": false,
 			"Scale": 1.5,
 			"ScanRadius": 10,
 			"SoundEvents": null,
@@ -1636,13 +1596,13 @@
 			"DeathShader": null,
 			"Description": "Guerrero no-muerto acorazado con armadura pesada.",
 			"DespawnShader": null,
+			"DespillPlayerColor": false,
 			"GoldBounty": 15,
-			"IgnorePlayerColor": true,
+			"IgnorePlayerColor": false,
 			"IsHero": false,
 			"MaxHp": 320,
-			"ModelPath": "undead_knight_scavenger.glb",
+			"ModelPath": "undead_knight_scavenger.rmesh",
 			"Name": "Zombie Warrior",
-			"NormalMode": "Flat",
 			"NormalizeLuminance": true,
 			"ObjectAttachments": {
 				"center": null,
@@ -1682,7 +1642,6 @@
 			"ProductionTime": 0,
 			"ProjectileModelPath": null,
 			"Range": 2,
-			"RecalculateNormals": false,
 			"Scale": 1.5,
 			"ScanRadius": 10,
 			"SoundEvents": null,
@@ -1702,6 +1661,7 @@
 	],
 	"CustomUpgrades": [],
 	"CustomVfx": [],
+	"CustomWaterProfiles": [],
 	"CustomWeapons": [
 		{
 			"Acceleration": 0,
@@ -2052,15 +2012,9 @@
 			"ZigzagFrequency": 0
 		}
 	],
+	"DefaultEnvironmentPreset": null,
 	"Dependencies": [],
-	"Greenlight": {
-		"ApprovedUtc": null,
-		"BypassToken": null,
-		"CurrentVotes": 0,
-		"IsGreenlit": false,
-		"Status": "Pending",
-		"VotesRequired": 0
-	},
+	"GameBuildNumber": "v0.0.3",
 	"MapProperties": {
 		"Author": null,
 		"CameraBoundsBottom": 200,
@@ -2068,7 +2022,6 @@
 		"CameraBoundsRight": 200,
 		"CameraBoundsTop": -200,
 		"Changelog": null,
-		"Description": null,
 		"HowToPlayInstructions": [
 			"Protege a tu Héroe Central en el medio de la isla: si muere, la partida termina.",
 			"Cada 20 segundos obtendrás un Draft de 3 Habilidades aleatorias (Normal, Rara, Épica o Maldita). Elige con -1, -2, -3 o los botones de habilidad.",
@@ -2089,7 +2042,6 @@
 		"MapType": null,
 		"MapWidth": null,
 		"MinimapImage": null,
-		"Name": "TOWER SURVIVORS",
 		"PlayableHeight": null,
 		"PlayableWidth": null,
 		"PlayerSlots": null,
@@ -2099,1876 +2051,3620 @@
 		"Tags": null,
 		"Teams": null,
 		"TerrainBaseHeight": null,
-		"Title": "TOWER SURVIVORS",
 		"Version": null,
 		"WeatherType": null
 	},
-	"ModelBrightness": {
-		"ancient_altar.glb": 0.5,
-		"cactus_plant.glb": 0.5,
-		"cactus_plant_1.glb": 0.5,
-		"castle.glb": 0.5,
-		"cattail_reeds.glb": 0.5,
-		"coniferous_tree_1.glb": 0.5,
-		"coniferous_tree_2.glb": 0.5,
-		"crystal_cluster_10.glb": 0.5,
-		"crystal_cluster_12.glb": 0.5,
-		"crystal_cluster_13.glb": 0.5,
-		"crystal_cluster_29.glb": 0.5,
-		"crystal_ore_2.glb": 0.5,
-		"crystal_peak.glb": 0.5,
-		"crystal_shard_1.glb": 0.5,
-		"cyber_dragon.glb": 0.5,
-		"dark_iron_ogre.glb": 0.5,
-		"dragon_titan_boss.glb": 0.5,
-		"fantasy_bush.glb": 0.5,
-		"fantasy_mushroom.glb": 0.5,
-		"fantasy_tree_10.glb": 0.5,
-		"fantasy_tree_13.glb": 0.5,
-		"flame_drake.glb": 0.5,
-		"forest_goblin.glb": 0.5,
-		"giant_rock_golem.glb": 0.5,
-		"grass_tuft.glb": 0.5,
-		"grass_tuft_1.glb": 0.5,
-		"lava_rock_pinnacle.glb": 0.5,
-		"magic_crystal_pedestal.glb": 0.5,
-		"mech_spider_monster.glb": 0.5,
-		"mushroom_cluster.glb": 0.5,
-		"mystic_tree_altar.glb": 0.5,
-		"palm_tree.glb": 0.5,
-		"red_mushroom_group.glb": 0.5,
-		"rock_formation_7.glb": 0.5,
-		"rock_spire.glb": 0.5,
-		"snow_pine_tree.glb": 0.5,
-		"stone_pile.glb": 0.5,
-		"survivor_hero.glb": 0.5,
-		"toadstool.glb": 0.5,
-		"willow_tree_2.glb": 0.5,
-		"willow_tree_3.glb": 0.5,
-		"zombie_soldier.glb": 0.5,
-		"zombie_warrior.glb": 0.5
+	"Models": {
+		"adventurer.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ancient_altar.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 1,
+			"ColorTint": "#ffffff",
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1
+		},
+		"android_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"angelic_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"antlered_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"architectural_components.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armor_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armor_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_beast_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_beast_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_dragon.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_hooded_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_knight_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_knight_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_knight_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_knight_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_knight_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_soldier_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_11.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_12.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_13.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_14.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_15.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_16.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_17.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_18.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_19.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_20.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_21.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_22.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_23.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_24.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_25.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_26.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_27.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_28.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_29.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_30.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_31.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_32.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_33.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_6.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_7.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_8.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_9.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_hero.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_hero_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_humanoid.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_knight_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_unit_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_unit_10.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_unit_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_unit_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_unit_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_unit_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_unit_6.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_unit_7.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_unit_8.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"armored_warrior_unit_9.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"beast_mech_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"beast_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"beast_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"beast_warrior_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"beast_warrior_armor_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"beast_warrior_scout.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"bee_warrior_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"behemoth_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"bejeweled_scepter.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"black_armored_robot.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_archer.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_armored_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_armored_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_armored_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_beast_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_beast_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_dragon.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"Scales": 1.5
+		},
+		"blue_dragon_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_dragon_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_dragon_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_mage_sorceress.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_mage_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_mech_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_robot_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_robot_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_troll_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_troll_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"blue_troll_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"boss_meteor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"bow_and_arrow.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cactus_plant.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.2522,
+			"Scales": 1.25
+		},
+		"cactus_plant_1.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.2503,
+			"Scales": 1.25
+		},
+		"castle.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 1,
+			"ColorTint": "#ffffff",
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1
+		},
+		"cattail_reeds.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.2528,
+			"Scales": 1.25
+		},
+		"chinese_woman_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cloaked_monk_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cloaked_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"clone_trooper.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"clone_trooper_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"coniferous_tree_1.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 1,
+			"ColorTint": "#ffffff",
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.25,
+			"Scales": 2.5
+		},
+		"coniferous_tree_2.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 1,
+			"ColorTint": "#ffffff",
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.25,
+			"Scales": 2.75
+		},
+		"construction_worker_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crab_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_blade.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_cluster_10.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.2502,
+			"Scales": 1.25
+		},
+		"crystal_cluster_12.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.2504,
+			"Scales": 1.25
+		},
+		"crystal_cluster_13.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.25,
+			"Scales": 1.25
+		},
+		"crystal_cluster_29.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 1,
+			"ColorTint": "#ffffff",
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1
+		},
+		"crystal_dagger.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_enchanted_sword.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_lance_spear.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_mace.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_mace_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_mace_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_mace_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_mace_weapon.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_mace_weapon_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_ore_2.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.008,
+			"Scales": 1.25
+		},
+		"crystal_peak.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 1,
+			"ColorTint": "#ffffff",
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.25,
+			"Scales": 1.25
+		},
+		"crystal_scepter_blade.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_scepter_sword.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_scepter_weapon.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_shard_1.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.0762,
+			"Scales": 1.25
+		},
+		"crystal_spear_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_staff_weapon.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_sword.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_tree_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"crystal_war_axe.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_war_hammer.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"crystal_war_pickaxe.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"curved_dagger.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyber_armor_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyber_beast_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyber_dino_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyber_dragon.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"NormalizeLuminance": true,
+			"Offsets": 14,
+			"Scales": 1.5
+		},
+		"cyber_feline_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyber_knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyber_knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyber_knight_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyber_knight_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyber_knight_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyber_mech_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyber_mech_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cybernetic_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cybernetic_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cybernetic_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyborg_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyborg_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"cyborg_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dagger_blade.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dagger_blade_hand_held.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dark_iron_ogre.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1.5
+		},
+		"dark_knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dark_knight_armor_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dark_knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dark_knight_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"death_knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"demon_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"demon_knight_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"demon_knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"demon_knight_armor_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"demon_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"demon_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"demon_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"demonic_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_humanoid_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_knight_armor_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_knight_armor_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_knight_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_knight_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_knight_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_knight_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_mount.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_titan.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_titan_boss.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 9,
+			"Scales": 1.5
+		},
+		"dragon_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_war_mount.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"Scales": 1.5
+		},
+		"dragon_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dragon_warrior_mech.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"druid_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dryad_spirit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dryad_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"dwarf_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"eastern_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"elf_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"emerald_scimitar.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"enchanted_dagger.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"enchanted_spear_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"enchanted_staff.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"enchanted_sword_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"energy_blade.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ethereal_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ethereal_priestess.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ethereal_woman_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"eye_guardian_golem.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_armor_set.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_armor_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_armor_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_armored_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_armored_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_armored_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_armored_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_armored_warrior_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_armored_warrior_6.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_armored_warrior_7.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_armored_warrior_8.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_armored_warrior_9.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_battle_axe.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_battle_axes.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_beast_creature.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_bush.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.1104,
+			"Scales": 1.25
+		},
+		"fantasy_curved_sword.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_female_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_hero_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_knight_armor_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_knight_armor_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_knight_armor_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_knight_armor_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_knight_armor_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_knight_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_knight_hero.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_knight_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_knight_soldier_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_mage_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_mage_character_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_monk_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_mushroom.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.2518,
+			"Scales": 1.25
+		},
+		"fantasy_nun_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_poleaxe.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_priestess.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_queen_unit_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_short_sword_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_short_sword_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_spirit_mage.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_sword.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_sword_blade.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_tree_10.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 1,
+			"ColorTint": "#ffffff",
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1
+		},
+		"fantasy_tree_13.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.1853,
+			"Scales": 1.25
+		},
+		"fantasy_unicorn_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_war_hammer.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_armor_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_armor_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_armor_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_armor_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_character_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_female.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_female_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_female_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_female_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_female_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_female_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_girl.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_hero.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_hero_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_hero_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_hero_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_hero_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_humanoid.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_knight_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_knight_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_scout.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_10.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_11.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_12.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_13.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_14.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_6.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_7.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_8.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fantasy_warrior_unit_9.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"feline_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"female_monk_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"female_monk_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"female_warrior_humanoid.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fire_knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fire_shard.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"flame_drake.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"NormalizeLuminance": true,
+			"Offsets": 14,
+			"Scales": 1.5
+		},
+		"flame_spear.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"forest_goblin.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1.5
+		},
+		"forest_nymph_creature.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"forest_spirit_entity_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"forest_spirit_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"forest_troll_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fox_girl_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fox_spirit_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"fox_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frog_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_armor_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_giant_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_giant_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_giant_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_giant_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_giant_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_giant_warrior_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_giant_warrior_6.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_knight_armor_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_knight_armor_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_knight_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_knight_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_knight_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_knight_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_mage_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_mech_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_shard.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_spirit_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_troll_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_warrior_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_warrior_unit_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frost_wolf_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frozen_knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"frozen_warrior_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"futuristic_mecha_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"futuristic_robot_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"futuristic_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"futuristic_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"giant_rock_golem.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1.5
+		},
+		"gold_armored_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"gold_green_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"golden_ceremonial_sword.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"golden_knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"golden_shortsword.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"golden_temple.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"grass_tuft.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.089,
+			"Scales": 1.25
+		},
+		"grass_tuft_1.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.0466,
+			"Scales": 1.25
+		},
+		"grass_warrior_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"green_knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"green_knight_armor_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"green_magic_sword.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"hammer_weapon.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"heavy_armor_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"heavy_armored_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"heavy_armored_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"heavy_mech_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"heavy_mech_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"heavy_mech_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"Scales": 1.5
+		},
+		"heavy_mech_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"heavy_mech_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"heavy_mech_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"hero_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"hero_warrior_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"high_tech_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"hooded_knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"hooded_mage_robe.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"hooded_mage_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"hooded_monk_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"hooded_monk_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"hooded_monk_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"hooded_monk_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"hooded_monk_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"horn_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"horned_warrior_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"horned_warrior_armor_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"horned_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"human_skeleton.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"human_warrior_hero.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"humanoid_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"humanoid_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_armor_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_armor_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_beast_creature.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_castle_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"ice_crystal_shard_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_crystal_spear.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_crystal_staff.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_dragon_beast.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"Scales": 1.5
+		},
+		"ice_dragon_beast_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_dragon_beast_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_dragon_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_element_sword.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_elemental_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_elemental_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_giant_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_giant_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_giant_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_giant_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_giant_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_golem_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_golem_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_golem_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_guardian_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_armor_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_armor_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_armor_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_armor_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_armor_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_armor_6.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_armor_7.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_armor_8.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_warrior_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_warrior_6.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_knight_warrior_7.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_mage_hero.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_mage_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_mage_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_mage_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_mage_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_spirit_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_spirit_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_spirit_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_spirit_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_spirit_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_tower_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"ice_troll_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_troll_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_warrior_hero.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_warrior_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_warrior_scout.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_warrior_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ice_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"insectoid_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"iron_man_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"iron_man_armor_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"iron_man_suit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"iron_soldier_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"iron_titan_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_armor_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_armor_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_armor_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_armor_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_armor_set.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_armor_set_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_armor_suit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_armor_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_armored_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_warrior_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"knight_warrior_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"lava_elemental_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"lava_golem.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"lava_knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"lava_rock_pinnacle.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.2525,
+			"Scales": 1.25
+		},
+		"lava_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"lion_crest_shield.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"lion_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"lizard_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mace_war_hammer.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mace_war_hammer_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mace_weapon.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mage_robe_tunic.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magic_crystal_pedestal.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 1,
+			"ColorTint": "#ffffff",
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1
+		},
+		"magic_projectile.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"magic_staff_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magic_staff_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magic_staff_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magic_staff_or_spear.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magic_staff_prop.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magic_tower_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"magic_wand.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magic_wand_staff.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magic_warhammer.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magical_mace_weapon.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magical_scepter.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magical_staff.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magical_war_hammer.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magma_colossus_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"magma_crystal_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_armor_suit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_robot_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_robot_unit_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_robot_unit_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_robot_unit_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_robot_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_soldier_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_soldier_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_soldier_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_soldier_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_spider_monster.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1.5
+		},
+		"mech_suit_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_unit_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_10.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_11.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_13.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_14.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_15.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_17.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_18.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_19.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_6.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_7.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_8.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_9.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_10.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_11.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_12.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_13.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_14.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_15.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_16.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_17.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_6.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_7.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_8.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mech_warrior_unit_9.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mecha_girl_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mecha_scout_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mecha_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mecha_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mecha_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mecha_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mecha_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mecha_warrior_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mecha_warrior_6.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mecha_warrior_7.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mecha_warrior_8.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mecha_warrior_9.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mecha_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mechanical_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mechanical_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mechanical_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mechanical_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mechanical_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mechanical_warrior_unit_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mermaid_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"minotaur_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"minotaur_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"minotaur_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"minotaur_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"minotaur_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"monk_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"monk_mage_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"monk_mage_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"monk_priest_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"monk_robe_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"monk_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"monk_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"monk_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"moose_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mountain_terrain.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mouse_hero.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"muscular_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mushroom_cluster.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.2353,
+			"Scales": 1.25
+		},
+		"mushroom_girl_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mystic_mage_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mystic_monk.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mystic_monk_hero.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mystic_monk_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mystic_nun_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mystic_priestess.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mystic_tree_altar.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 1,
+			"ColorTint": "#ffffff",
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1
+		},
+		"mystic_war_hammer.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mystic_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mystic_warrior_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"mystic_warrior_spirit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"naval_officer_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_archer.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_10.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_12.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_13.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_14.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_16.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_17.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_18.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_19.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_20.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_21.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_22.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_23.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_24.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_6.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_7.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_8.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_9.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"orc_warrior_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ornate_battle_axe.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ornate_blade.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ornate_dagger.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ornate_magic_sword.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ornate_pickaxe_tool.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ornate_short_sword.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ornate_short_sword_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ornate_spear_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"ornate_spear_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ornate_spear_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"ornate_sword_gold.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"palm_tree.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 1,
+			"ColorTint": "#ffffff",
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1
+		},
+		"panda_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"panda_monk_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"polar_bear_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"purple_crystal_shard_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"red_armored_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"red_armored_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"red_mushroom_group.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.2484,
+			"Scales": 1.25
+		},
+		"red_robot_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"rifle_assault_01.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_mech_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_mech_unit_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_olive_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_soldier_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_soldier_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_soldier_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_soldier_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_soldier_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_soldier_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_soldier_unit_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_unit_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_unit_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_unit_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_unit_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_unit_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_10.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_11.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_6.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_7.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_8.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_9.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_unit_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_unit_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robot_warrior_unit_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"robotic_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"rock_formation_7.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 1,
+			"ColorTint": "#ffffff",
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 0.5,
+			"Scales": 2
+		},
+		"rock_golem.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"rock_mace_weapon.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"rock_spire.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 1,
+			"ColorTint": "#ffffff",
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1
+		},
+		"roman_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"royal_mage.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"royal_spear.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scavenger_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_armor_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_armor_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_mech_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_mech_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_mech_unit_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_mech_unit_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_mech_unit_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_mech_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_mech_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_robot_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_robot_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_robot_unit_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_soldier_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_soldier_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_soldier_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_soldier_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_soldier_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sci_fi_soldier_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scorpion_knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_armor_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_drone_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_robot.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_robot_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_robot_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_robot_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_robot_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_robot_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_robot_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_robot_unit_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_robot_unit_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_robot_unit_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_robot_unit_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"scout_robot_unit_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sea_monster_creature.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sea_titan_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"security_bot.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"sentinel_droid_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"serpent_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"shadow_knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"short_blade_axe.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"short_sword.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"skeleton_angel_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"skeleton_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"Scales": 1.5
+		},
+		"skeleton_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"skeleton_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"skeleton_warrior_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"skeleton_warrior_4.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"skeleton_warrior_5.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"skeleton_warrior_6.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"skull_tower.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"snow_pine_tree.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.2471,
+			"Scales": 1.25
+		},
+		"space_marine_scout.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"spear_of_light.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"spear_projectile_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"spear_weapon.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"spiked_beast_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"spiked_crab.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"spiked_frost_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"spiked_mace_weapon.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"spiked_wooden_stake.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"spirit_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"stone_golem_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"Scales": 1.5
+		},
+		"stone_hammer.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"stone_pile.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 0.5788,
+			"Scales": 1.25
+		},
+		"stone_tower_14.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"stone_war_hammer.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"survivor_arrow.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"survivor_hero.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1.5
+		},
+		"sword_short_blade.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"timber_framed_house.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"toadstool.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.2423,
+			"Scales": 1.25
+		},
+		"tower.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"tower_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"troll_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"Scales": 1.5
+		},
+		"troll_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"troll_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"undead_knight_scavenger.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"Scales": 1.5
+		},
+		"undead_scavenger.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"undead_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"volcano_entrance.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"war_beast_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warhammer_mace.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_armor_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_armor_set.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_armor_set_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_armor_set_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_armor_set_3.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_giant.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"Scales": 1.5
+		},
+		"warrior_hero.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_humanoid.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_knight_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_knight_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_knight_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_knight_armor_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_knight_armor_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_knight_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_knight_hero.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"Scales": 1.5
+		},
+		"warrior_male_troll.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_minotaur.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_orc_character.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_soldier.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_soldier_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"warrior_unit_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"water_spirit_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"white_haired_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"willow_tree_2.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.2384,
+			"Scales": 1.25
+		},
+		"willow_tree_3.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true,
+			"NormalizeLuminance": true,
+			"Offsets": 1.2452,
+			"Scales": 1.25
+		},
+		"winged_armor_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"winged_demon_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"winged_demon_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"winged_guardian_mech.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"winged_ice_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"winged_knight.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"winged_knight_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"winged_knight_warrior_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"winged_seraph_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"winged_skeleton_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"winged_warrior.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"winged_warrior_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"winged_warrior_armor.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"winged_warrior_unit.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"wizard_mage.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"wooden_box.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"wooden_button_seal.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"wooden_spear.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"wooden_spear_1.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"wooden_spear_2.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"wooden_torch_stick.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": true
+		},
+		"wooden_tower.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"wooden_workshop.rmesh": {
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false
+		},
+		"zombie_soldier.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1.5
+		},
+		"zombie_warrior.rmesh": {
+			"Brightness": 0.5,
+			"CollisionCircleRatios": 0,
+			"DespillPlayerColor": false,
+			"IgnorePlayerColor": false,
+			"NormalizeLuminance": true,
+			"Offsets": 0,
+			"Scales": 1.5
+		}
 	},
-	"ModelCollisionCircleRatios": {
-		"ancient_altar.glb": 1,
-		"cactus_plant.glb": 0,
-		"cactus_plant_1.glb": 0,
-		"castle.glb": 1,
-		"cattail_reeds.glb": 0,
-		"coniferous_tree_1.glb": 1,
-		"coniferous_tree_2.glb": 1,
-		"crystal_cluster_10.glb": 0,
-		"crystal_cluster_12.glb": 0,
-		"crystal_cluster_13.glb": 0,
-		"crystal_cluster_29.glb": 1,
-		"crystal_ore_2.glb": 0,
-		"crystal_peak.glb": 1,
-		"crystal_shard_1.glb": 0,
-		"cyber_dragon.glb": 0,
-		"dark_iron_ogre.glb": 0,
-		"dragon_titan_boss.glb": 0,
-		"fantasy_bush.glb": 0,
-		"fantasy_mushroom.glb": 0,
-		"fantasy_tree_10.glb": 1,
-		"fantasy_tree_13.glb": 0,
-		"flame_drake.glb": 0,
-		"forest_goblin.glb": 0,
-		"giant_rock_golem.glb": 0,
-		"grass_tuft.glb": 0,
-		"grass_tuft_1.glb": 0,
-		"lava_rock_pinnacle.glb": 0,
-		"magic_crystal_pedestal.glb": 1,
-		"mech_spider_monster.glb": 0,
-		"mushroom_cluster.glb": 0,
-		"mystic_tree_altar.glb": 1,
-		"palm_tree.glb": 1,
-		"red_mushroom_group.glb": 0,
-		"rock_formation_7.glb": 1,
-		"rock_spire.glb": 1,
-		"snow_pine_tree.glb": 0,
-		"stone_pile.glb": 0,
-		"survivor_hero.glb": 0,
-		"toadstool.glb": 0,
-		"willow_tree_2.glb": 0,
-		"willow_tree_3.glb": 0,
-		"zombie_soldier.glb": 0,
-		"zombie_warrior.glb": 0
-	},
-	"ModelColorTint": {},
-	"ModelDeathShaders": {},
-	"ModelIgnorePlayerColor": {
-		"adventurer.glb": true,
-		"ancient_altar.glb": true,
-		"android_warrior.glb": true,
-		"angelic_warrior_unit.glb": true,
-		"antlered_warrior.glb": true,
-		"architectural_components.glb": true,
-		"armor_knight.glb": true,
-		"armor_warrior.glb": true,
-		"armored_beast_warrior.glb": true,
-		"armored_beast_warrior_1.glb": true,
-		"armored_dragon.glb": true,
-		"armored_hooded_warrior.glb": true,
-		"armored_knight.glb": true,
-		"armored_knight_1.glb": true,
-		"armored_knight_unit.glb": true,
-		"armored_knight_warrior.glb": true,
-		"armored_knight_warrior_1.glb": true,
-		"armored_knight_warrior_2.glb": true,
-		"armored_knight_warrior_3.glb": true,
-		"armored_soldier.glb": true,
-		"armored_soldier_2.glb": true,
-		"armored_warrior.glb": true,
-		"armored_warrior_1.glb": true,
-		"armored_warrior_11.glb": true,
-		"armored_warrior_12.glb": true,
-		"armored_warrior_13.glb": true,
-		"armored_warrior_14.glb": true,
-		"armored_warrior_15.glb": true,
-		"armored_warrior_16.glb": true,
-		"armored_warrior_17.glb": true,
-		"armored_warrior_18.glb": true,
-		"armored_warrior_19.glb": true,
-		"armored_warrior_2.glb": true,
-		"armored_warrior_20.glb": true,
-		"armored_warrior_21.glb": true,
-		"armored_warrior_22.glb": true,
-		"armored_warrior_23.glb": true,
-		"armored_warrior_24.glb": true,
-		"armored_warrior_25.glb": true,
-		"armored_warrior_26.glb": true,
-		"armored_warrior_27.glb": true,
-		"armored_warrior_28.glb": true,
-		"armored_warrior_29.glb": true,
-		"armored_warrior_3.glb": true,
-		"armored_warrior_30.glb": true,
-		"armored_warrior_31.glb": true,
-		"armored_warrior_32.glb": true,
-		"armored_warrior_33.glb": true,
-		"armored_warrior_4.glb": true,
-		"armored_warrior_5.glb": true,
-		"armored_warrior_6.glb": true,
-		"armored_warrior_7.glb": true,
-		"armored_warrior_8.glb": true,
-		"armored_warrior_9.glb": true,
-		"armored_warrior_hero.glb": true,
-		"armored_warrior_hero_1.glb": true,
-		"armored_warrior_humanoid.glb": true,
-		"armored_warrior_knight.glb": true,
-		"armored_warrior_knight_1.glb": true,
-		"armored_warrior_unit.glb": true,
-		"armored_warrior_unit_1.glb": true,
-		"armored_warrior_unit_10.glb": true,
-		"armored_warrior_unit_2.glb": true,
-		"armored_warrior_unit_3.glb": true,
-		"armored_warrior_unit_4.glb": true,
-		"armored_warrior_unit_5.glb": true,
-		"armored_warrior_unit_6.glb": true,
-		"armored_warrior_unit_7.glb": true,
-		"armored_warrior_unit_8.glb": true,
-		"armored_warrior_unit_9.glb": true,
-		"beast_mech_unit.glb": true,
-		"beast_warrior.glb": true,
-		"beast_warrior_2.glb": true,
-		"beast_warrior_armor.glb": true,
-		"beast_warrior_armor_1.glb": true,
-		"beast_warrior_scout.glb": true,
-		"bee_warrior_character.glb": true,
-		"behemoth_warrior.glb": true,
-		"black_armored_robot.glb": true,
-		"blue_archer.glb": true,
-		"blue_armored_warrior.glb": true,
-		"blue_armored_warrior_1.glb": true,
-		"blue_armored_warrior_2.glb": true,
-		"blue_beast_warrior.glb": true,
-		"blue_beast_warrior_1.glb": true,
-		"blue_dragon_knight.glb": true,
-		"blue_dragon_warrior.glb": true,
-		"blue_dragon_warrior_2.glb": true,
-		"blue_knight_armor.glb": true,
-		"blue_mage_sorceress.glb": true,
-		"blue_mage_warrior.glb": true,
-		"blue_mech_warrior.glb": true,
-		"blue_robot_soldier.glb": true,
-		"blue_robot_unit.glb": true,
-		"blue_troll_warrior.glb": true,
-		"blue_troll_warrior_1.glb": true,
-		"blue_troll_warrior_2.glb": true,
-		"bow_and_arrow.glb": true,
-		"cactus_plant.glb": true,
-		"cactus_plant_1.glb": true,
-		"castle.glb": true,
-		"cattail_reeds.glb": true,
-		"chinese_woman_warrior.glb": true,
-		"cloaked_monk_unit.glb": true,
-		"cloaked_warrior_unit.glb": true,
-		"clone_trooper.glb": true,
-		"clone_trooper_2.glb": true,
-		"coniferous_tree_1.glb": true,
-		"coniferous_tree_2.glb": true,
-		"construction_worker_unit.glb": true,
-		"crab_warrior.glb": true,
-		"crystal_blade.glb": true,
-		"crystal_cluster_10.glb": true,
-		"crystal_cluster_12.glb": true,
-		"crystal_cluster_13.glb": true,
-		"crystal_cluster_29.glb": true,
-		"crystal_lance_spear.glb": true,
-		"crystal_mace.glb": true,
-		"crystal_mace_weapon.glb": true,
-		"crystal_ore_2.glb": true,
-		"crystal_peak.glb": true,
-		"crystal_shard_1.glb": true,
-		"crystal_tree_1.glb": true,
-		"cyber_armor_warrior.glb": true,
-		"cyber_beast_warrior.glb": true,
-		"cyber_dino_warrior.glb": true,
-		"cyber_dragon.glb": true,
-		"cyber_feline_warrior.glb": true,
-		"cyber_knight_armor.glb": true,
-		"cyber_knight_warrior.glb": true,
-		"cyber_knight_warrior_1.glb": true,
-		"cyber_knight_warrior_2.glb": true,
-		"cyber_knight_warrior_3.glb": true,
-		"cyber_mech_soldier.glb": true,
-		"cyber_mech_warrior.glb": true,
-		"cybernetic_soldier.glb": true,
-		"cybernetic_warrior.glb": true,
-		"cybernetic_warrior_1.glb": true,
-		"cyborg_warrior.glb": true,
-		"cyborg_warrior_1.glb": true,
-		"cyborg_warrior_unit.glb": true,
-		"dark_iron_ogre.glb": true,
-		"dark_knight_armor.glb": true,
-		"dark_knight_armor_2.glb": true,
-		"dark_knight_warrior.glb": true,
-		"dark_knight_warrior_2.glb": true,
-		"death_knight_armor.glb": true,
-		"demon_knight.glb": true,
-		"demon_knight_2.glb": true,
-		"demon_knight_armor.glb": true,
-		"demon_knight_armor_2.glb": true,
-		"demon_warrior.glb": true,
-		"demon_warrior_1.glb": true,
-		"demon_warrior_unit.glb": true,
-		"demonic_warrior.glb": true,
-		"dragon_humanoid_warrior.glb": true,
-		"dragon_knight_armor.glb": true,
-		"dragon_knight_armor_1.glb": true,
-		"dragon_knight_armor_2.glb": true,
-		"dragon_knight_unit.glb": true,
-		"dragon_knight_warrior.glb": true,
-		"dragon_knight_warrior_1.glb": true,
-		"dragon_knight_warrior_2.glb": true,
-		"dragon_knight_warrior_4.glb": true,
-		"dragon_mount.glb": true,
-		"dragon_titan.glb": true,
-		"dragon_titan_boss.glb": true,
-		"dragon_unit.glb": true,
-		"dragon_warrior.glb": true,
-		"dragon_warrior_1.glb": true,
-		"dragon_warrior_mech.glb": true,
-		"druid_warrior.glb": true,
-		"dryad_spirit.glb": true,
-		"dryad_warrior.glb": true,
-		"dwarf_warrior.glb": true,
-		"eastern_warrior_unit.glb": true,
-		"elf_warrior.glb": true,
-		"ethereal_knight.glb": true,
-		"ethereal_priestess.glb": true,
-		"ethereal_woman_warrior.glb": true,
-		"eye_guardian_golem.glb": true,
-		"fantasy_armor_set.glb": true,
-		"fantasy_armor_warrior.glb": true,
-		"fantasy_armor_warrior_2.glb": true,
-		"fantasy_armored_warrior.glb": true,
-		"fantasy_armored_warrior_1.glb": true,
-		"fantasy_armored_warrior_2.glb": true,
-		"fantasy_armored_warrior_4.glb": true,
-		"fantasy_armored_warrior_5.glb": true,
-		"fantasy_armored_warrior_6.glb": true,
-		"fantasy_armored_warrior_7.glb": true,
-		"fantasy_armored_warrior_8.glb": true,
-		"fantasy_armored_warrior_9.glb": true,
-		"fantasy_beast_creature.glb": true,
-		"fantasy_bush.glb": true,
-		"fantasy_female_warrior.glb": true,
-		"fantasy_hero_character.glb": true,
-		"fantasy_knight.glb": true,
-		"fantasy_knight_armor.glb": true,
-		"fantasy_knight_armor_1.glb": true,
-		"fantasy_knight_armor_2.glb": true,
-		"fantasy_knight_armor_3.glb": true,
-		"fantasy_knight_armor_4.glb": true,
-		"fantasy_knight_armor_5.glb": true,
-		"fantasy_knight_character.glb": true,
-		"fantasy_knight_hero.glb": true,
-		"fantasy_knight_soldier.glb": true,
-		"fantasy_knight_soldier_1.glb": true,
-		"fantasy_knight_warrior.glb": true,
-		"fantasy_mage_character.glb": true,
-		"fantasy_mage_character_1.glb": true,
-		"fantasy_monk_unit.glb": true,
-		"fantasy_mushroom.glb": true,
-		"fantasy_nun_warrior.glb": true,
-		"fantasy_priestess.glb": true,
-		"fantasy_queen_unit_1.glb": true,
-		"fantasy_short_sword_2.glb": true,
-		"fantasy_spirit_mage.glb": true,
-		"fantasy_tree_10.glb": true,
-		"fantasy_tree_13.glb": true,
-		"fantasy_unicorn_warrior.glb": true,
-		"fantasy_warrior_armor.glb": true,
-		"fantasy_warrior_armor_1.glb": true,
-		"fantasy_warrior_armor_2.glb": true,
-		"fantasy_warrior_armor_3.glb": true,
-		"fantasy_warrior_armor_4.glb": true,
-		"fantasy_warrior_character.glb": true,
-		"fantasy_warrior_character_1.glb": true,
-		"fantasy_warrior_female.glb": true,
-		"fantasy_warrior_female_1.glb": true,
-		"fantasy_warrior_female_2.glb": true,
-		"fantasy_warrior_female_3.glb": true,
-		"fantasy_warrior_female_4.glb": true,
-		"fantasy_warrior_female_5.glb": true,
-		"fantasy_warrior_girl.glb": true,
-		"fantasy_warrior_hero.glb": true,
-		"fantasy_warrior_hero_1.glb": true,
-		"fantasy_warrior_hero_2.glb": true,
-		"fantasy_warrior_hero_3.glb": true,
-		"fantasy_warrior_hero_5.glb": true,
-		"fantasy_warrior_humanoid.glb": true,
-		"fantasy_warrior_knight.glb": true,
-		"fantasy_warrior_knight_1.glb": true,
-		"fantasy_warrior_knight_2.glb": true,
-		"fantasy_warrior_scout.glb": true,
-		"fantasy_warrior_soldier.glb": true,
-		"fantasy_warrior_unit.glb": true,
-		"fantasy_warrior_unit_1.glb": true,
-		"fantasy_warrior_unit_10.glb": true,
-		"fantasy_warrior_unit_11.glb": true,
-		"fantasy_warrior_unit_12.glb": true,
-		"fantasy_warrior_unit_13.glb": true,
-		"fantasy_warrior_unit_14.glb": true,
-		"fantasy_warrior_unit_2.glb": true,
-		"fantasy_warrior_unit_3.glb": true,
-		"fantasy_warrior_unit_4.glb": true,
-		"fantasy_warrior_unit_5.glb": true,
-		"fantasy_warrior_unit_6.glb": true,
-		"fantasy_warrior_unit_7.glb": true,
-		"fantasy_warrior_unit_8.glb": true,
-		"fantasy_warrior_unit_9.glb": true,
-		"feline_warrior.glb": true,
-		"female_monk_character.glb": true,
-		"female_monk_warrior.glb": true,
-		"female_warrior_humanoid.glb": true,
-		"fire_knight_armor.glb": true,
-		"flame_drake.glb": true,
-		"forest_goblin.glb": true,
-		"forest_nymph_creature.glb": true,
-		"forest_spirit_entity_1.glb": true,
-		"forest_spirit_warrior.glb": true,
-		"forest_troll_warrior.glb": true,
-		"fox_girl_warrior.glb": true,
-		"fox_spirit_warrior.glb": true,
-		"fox_warrior.glb": true,
-		"frog_warrior.glb": true,
-		"frost_armor_warrior.glb": true,
-		"frost_giant_warrior.glb": true,
-		"frost_giant_warrior_1.glb": true,
-		"frost_giant_warrior_2.glb": true,
-		"frost_giant_warrior_3.glb": true,
-		"frost_giant_warrior_4.glb": true,
-		"frost_giant_warrior_5.glb": true,
-		"frost_giant_warrior_6.glb": true,
-		"frost_knight_armor.glb": true,
-		"frost_knight_armor_1.glb": true,
-		"frost_knight_armor_2.glb": true,
-		"frost_knight_warrior.glb": true,
-		"frost_knight_warrior_1.glb": true,
-		"frost_knight_warrior_2.glb": true,
-		"frost_knight_warrior_3.glb": true,
-		"frost_knight_warrior_4.glb": true,
-		"frost_mage_warrior.glb": true,
-		"frost_mech_warrior.glb": true,
-		"frost_spirit_warrior.glb": true,
-		"frost_troll_warrior.glb": true,
-		"frost_warrior_armor.glb": true,
-		"frost_warrior_unit.glb": true,
-		"frost_warrior_unit_2.glb": true,
-		"frost_wolf_warrior.glb": true,
-		"frozen_knight_warrior.glb": true,
-		"frozen_warrior_knight.glb": true,
-		"futuristic_mecha_unit.glb": true,
-		"futuristic_robot_soldier.glb": true,
-		"futuristic_soldier.glb": true,
-		"futuristic_warrior.glb": true,
-		"giant_rock_golem.glb": true,
-		"gold_armored_warrior.glb": true,
-		"gold_green_knight.glb": true,
-		"golden_knight_warrior.glb": true,
-		"golden_temple.glb": true,
-		"grass_tuft.glb": true,
-		"grass_tuft_1.glb": true,
-		"grass_warrior_character.glb": true,
-		"green_knight_armor.glb": true,
-		"green_knight_armor_2.glb": true,
-		"heavy_armor_warrior.glb": true,
-		"heavy_armored_warrior.glb": true,
-		"heavy_armored_warrior_1.glb": true,
-		"heavy_mech_soldier.glb": true,
-		"heavy_mech_unit.glb": true,
-		"heavy_mech_warrior_1.glb": true,
-		"heavy_mech_warrior_2.glb": true,
-		"heavy_mech_warrior_3.glb": true,
-		"hero_warrior.glb": true,
-		"hero_warrior_character.glb": true,
-		"high_tech_warrior.glb": true,
-		"hooded_knight_armor.glb": true,
-		"hooded_mage_robe.glb": true,
-		"hooded_mage_warrior.glb": true,
-		"hooded_monk_warrior.glb": true,
-		"hooded_monk_warrior_1.glb": true,
-		"hooded_monk_warrior_2.glb": true,
-		"hooded_monk_warrior_3.glb": true,
-		"hooded_monk_warrior_4.glb": true,
-		"horn_warrior_unit.glb": true,
-		"horned_warrior_armor.glb": true,
-		"horned_warrior_armor_2.glb": true,
-		"horned_warrior_unit.glb": true,
-		"human_skeleton.glb": true,
-		"human_warrior_hero.glb": true,
-		"humanoid_warrior.glb": true,
-		"humanoid_warrior_1.glb": true,
-		"ice_armor_warrior.glb": true,
-		"ice_armor_warrior_2.glb": true,
-		"ice_beast_creature.glb": true,
-		"ice_crystal_shard_5.glb": true,
-		"ice_dragon_beast_1.glb": true,
-		"ice_dragon_beast_2.glb": true,
-		"ice_dragon_warrior.glb": true,
-		"ice_elemental_warrior.glb": true,
-		"ice_elemental_warrior_2.glb": true,
-		"ice_giant_warrior.glb": true,
-		"ice_giant_warrior_1.glb": true,
-		"ice_giant_warrior_2.glb": true,
-		"ice_giant_warrior_3.glb": true,
-		"ice_giant_warrior_4.glb": true,
-		"ice_golem_warrior.glb": true,
-		"ice_golem_warrior_1.glb": true,
-		"ice_golem_warrior_2.glb": true,
-		"ice_guardian_warrior.glb": true,
-		"ice_knight_armor.glb": true,
-		"ice_knight_armor_1.glb": true,
-		"ice_knight_armor_2.glb": true,
-		"ice_knight_armor_3.glb": true,
-		"ice_knight_armor_4.glb": true,
-		"ice_knight_armor_5.glb": true,
-		"ice_knight_armor_6.glb": true,
-		"ice_knight_armor_7.glb": true,
-		"ice_knight_armor_8.glb": true,
-		"ice_knight_warrior.glb": true,
-		"ice_knight_warrior_1.glb": true,
-		"ice_knight_warrior_2.glb": true,
-		"ice_knight_warrior_3.glb": true,
-		"ice_knight_warrior_4.glb": true,
-		"ice_knight_warrior_5.glb": true,
-		"ice_knight_warrior_6.glb": true,
-		"ice_knight_warrior_7.glb": true,
-		"ice_mage_hero.glb": true,
-		"ice_mage_warrior.glb": true,
-		"ice_mage_warrior_1.glb": true,
-		"ice_mage_warrior_2.glb": true,
-		"ice_mage_warrior_3.glb": true,
-		"ice_spirit_warrior.glb": true,
-		"ice_spirit_warrior_1.glb": true,
-		"ice_spirit_warrior_2.glb": true,
-		"ice_spirit_warrior_3.glb": true,
-		"ice_spirit_warrior_4.glb": true,
-		"ice_tower_1.glb": true,
-		"ice_troll_warrior.glb": true,
-		"ice_troll_warrior_1.glb": true,
-		"ice_warrior.glb": true,
-		"ice_warrior_2.glb": true,
-		"ice_warrior_hero.glb": true,
-		"ice_warrior_knight.glb": true,
-		"ice_warrior_scout.glb": true,
-		"ice_warrior_soldier.glb": true,
-		"ice_warrior_unit.glb": true,
-		"insectoid_warrior.glb": true,
-		"iron_man_armor.glb": true,
-		"iron_man_armor_2.glb": true,
-		"iron_man_suit.glb": true,
-		"iron_soldier_armor.glb": true,
-		"iron_titan_warrior.glb": true,
-		"knight_armor.glb": true,
-		"knight_armor_1.glb": true,
-		"knight_armor_2.glb": true,
-		"knight_armor_3.glb": true,
-		"knight_armor_4.glb": true,
-		"knight_armor_set.glb": true,
-		"knight_armor_set_2.glb": true,
-		"knight_armor_suit.glb": true,
-		"knight_armor_unit.glb": true,
-		"knight_armored_warrior.glb": true,
-		"knight_warrior.glb": true,
-		"knight_warrior_1.glb": true,
-		"knight_warrior_armor.glb": true,
-		"knight_warrior_character.glb": true,
-		"lava_elemental_warrior.glb": true,
-		"lava_golem.glb": true,
-		"lava_knight_warrior.glb": true,
-		"lava_rock_pinnacle.glb": true,
-		"lava_warrior.glb": true,
-		"lion_crest_shield.glb": true,
-		"lion_warrior.glb": true,
-		"lizard_warrior.glb": true,
-		"mace_war_hammer_1.glb": true,
-		"mage_robe_tunic.glb": true,
-		"magic_crystal_pedestal.glb": true,
-		"magic_projectile.glb": true,
-		"magic_staff_3.glb": true,
-		"magic_staff_or_spear.glb": true,
-		"magic_staff_prop.glb": true,
-		"magic_tower_4.glb": true,
-		"magic_warhammer.glb": true,
-		"magical_mace_weapon.glb": true,
-		"magical_war_hammer.glb": true,
-		"magma_colossus_warrior.glb": true,
-		"magma_crystal_4.glb": true,
-		"mech_armor_suit.glb": true,
-		"mech_robot_unit.glb": true,
-		"mech_robot_unit_1.glb": true,
-		"mech_robot_unit_2.glb": true,
-		"mech_robot_unit_3.glb": true,
-		"mech_robot_warrior.glb": true,
-		"mech_soldier.glb": true,
-		"mech_soldier_1.glb": true,
-		"mech_soldier_2.glb": true,
-		"mech_soldier_3.glb": true,
-		"mech_soldier_unit.glb": true,
-		"mech_spider_monster.glb": true,
-		"mech_suit_warrior.glb": true,
-		"mech_unit.glb": true,
-		"mech_unit_2.glb": true,
-		"mech_warrior.glb": true,
-		"mech_warrior_1.glb": true,
-		"mech_warrior_10.glb": true,
-		"mech_warrior_11.glb": true,
-		"mech_warrior_13.glb": true,
-		"mech_warrior_14.glb": true,
-		"mech_warrior_15.glb": true,
-		"mech_warrior_17.glb": true,
-		"mech_warrior_18.glb": true,
-		"mech_warrior_19.glb": true,
-		"mech_warrior_2.glb": true,
-		"mech_warrior_3.glb": true,
-		"mech_warrior_4.glb": true,
-		"mech_warrior_5.glb": true,
-		"mech_warrior_6.glb": true,
-		"mech_warrior_7.glb": true,
-		"mech_warrior_8.glb": true,
-		"mech_warrior_9.glb": true,
-		"mech_warrior_unit.glb": true,
-		"mech_warrior_unit_1.glb": true,
-		"mech_warrior_unit_10.glb": true,
-		"mech_warrior_unit_11.glb": true,
-		"mech_warrior_unit_12.glb": true,
-		"mech_warrior_unit_13.glb": true,
-		"mech_warrior_unit_14.glb": true,
-		"mech_warrior_unit_15.glb": true,
-		"mech_warrior_unit_16.glb": true,
-		"mech_warrior_unit_17.glb": true,
-		"mech_warrior_unit_2.glb": true,
-		"mech_warrior_unit_3.glb": true,
-		"mech_warrior_unit_4.glb": true,
-		"mech_warrior_unit_5.glb": true,
-		"mech_warrior_unit_6.glb": true,
-		"mech_warrior_unit_7.glb": true,
-		"mech_warrior_unit_8.glb": true,
-		"mech_warrior_unit_9.glb": true,
-		"mecha_girl_unit.glb": true,
-		"mecha_scout_unit.glb": true,
-		"mecha_soldier.glb": true,
-		"mecha_warrior.glb": true,
-		"mecha_warrior_1.glb": true,
-		"mecha_warrior_3.glb": true,
-		"mecha_warrior_4.glb": true,
-		"mecha_warrior_5.glb": true,
-		"mecha_warrior_6.glb": true,
-		"mecha_warrior_7.glb": true,
-		"mecha_warrior_8.glb": true,
-		"mecha_warrior_9.glb": true,
-		"mecha_warrior_unit.glb": true,
-		"mechanical_knight.glb": true,
-		"mechanical_soldier.glb": true,
-		"mechanical_warrior.glb": true,
-		"mechanical_warrior_1.glb": true,
-		"mechanical_warrior_unit.glb": true,
-		"mechanical_warrior_unit_1.glb": true,
-		"mermaid_warrior.glb": true,
-		"minotaur_warrior.glb": true,
-		"minotaur_warrior_1.glb": true,
-		"minotaur_warrior_2.glb": true,
-		"minotaur_warrior_3.glb": true,
-		"minotaur_warrior_4.glb": true,
-		"monk_character.glb": true,
-		"monk_mage_character.glb": true,
-		"monk_mage_unit.glb": true,
-		"monk_priest_character.glb": true,
-		"monk_robe_character.glb": true,
-		"monk_warrior.glb": true,
-		"monk_warrior_1.glb": true,
-		"monk_warrior_2.glb": true,
-		"moose_warrior.glb": true,
-		"mountain_terrain.glb": true,
-		"mouse_hero.glb": true,
-		"muscular_warrior.glb": true,
-		"mushroom_cluster.glb": true,
-		"mushroom_girl_character.glb": true,
-		"mystic_mage_character.glb": true,
-		"mystic_monk.glb": true,
-		"mystic_monk_hero.glb": true,
-		"mystic_monk_warrior.glb": true,
-		"mystic_nun_character.glb": true,
-		"mystic_priestess.glb": true,
-		"mystic_tree_altar.glb": true,
-		"mystic_war_hammer.glb": true,
-		"mystic_warrior.glb": true,
-		"mystic_warrior_armor.glb": true,
-		"mystic_warrior_spirit.glb": true,
-		"naval_officer_unit.glb": true,
-		"orc_archer.glb": true,
-		"orc_warrior.glb": true,
-		"orc_warrior_1.glb": true,
-		"orc_warrior_10.glb": true,
-		"orc_warrior_12.glb": true,
-		"orc_warrior_13.glb": true,
-		"orc_warrior_14.glb": true,
-		"orc_warrior_16.glb": true,
-		"orc_warrior_17.glb": true,
-		"orc_warrior_18.glb": true,
-		"orc_warrior_19.glb": true,
-		"orc_warrior_2.glb": true,
-		"orc_warrior_20.glb": true,
-		"orc_warrior_21.glb": true,
-		"orc_warrior_22.glb": true,
-		"orc_warrior_23.glb": true,
-		"orc_warrior_24.glb": true,
-		"orc_warrior_3.glb": true,
-		"orc_warrior_4.glb": true,
-		"orc_warrior_5.glb": true,
-		"orc_warrior_6.glb": true,
-		"orc_warrior_7.glb": true,
-		"orc_warrior_8.glb": true,
-		"orc_warrior_9.glb": true,
-		"orc_warrior_armor.glb": true,
-		"ornate_dagger.glb": true,
-		"palm_tree.glb": true,
-		"panda_knight.glb": true,
-		"panda_monk_unit.glb": true,
-		"polar_bear_warrior.glb": true,
-		"purple_crystal_shard_1.glb": true,
-		"red_armored_warrior.glb": true,
-		"red_armored_warrior_2.glb": true,
-		"red_mushroom_group.glb": true,
-		"red_robot_warrior.glb": true,
-		"robot_mech_unit.glb": true,
-		"robot_mech_unit_1.glb": true,
-		"robot_olive_unit.glb": true,
-		"robot_soldier.glb": true,
-		"robot_soldier_1.glb": true,
-		"robot_soldier_2.glb": true,
-		"robot_soldier_3.glb": true,
-		"robot_soldier_4.glb": true,
-		"robot_soldier_5.glb": true,
-		"robot_soldier_unit.glb": true,
-		"robot_soldier_unit_2.glb": true,
-		"robot_unit.glb": true,
-		"robot_unit_1.glb": true,
-		"robot_unit_2.glb": true,
-		"robot_unit_3.glb": true,
-		"robot_unit_4.glb": true,
-		"robot_unit_5.glb": true,
-		"robot_warrior.glb": true,
-		"robot_warrior_10.glb": true,
-		"robot_warrior_11.glb": true,
-		"robot_warrior_2.glb": true,
-		"robot_warrior_3.glb": true,
-		"robot_warrior_4.glb": true,
-		"robot_warrior_5.glb": true,
-		"robot_warrior_6.glb": true,
-		"robot_warrior_7.glb": true,
-		"robot_warrior_8.glb": true,
-		"robot_warrior_9.glb": true,
-		"robot_warrior_unit.glb": true,
-		"robot_warrior_unit_1.glb": true,
-		"robot_warrior_unit_2.glb": true,
-		"robot_warrior_unit_3.glb": true,
-		"robotic_soldier.glb": true,
-		"rock_formation_7.glb": true,
-		"rock_golem.glb": true,
-		"rock_spire.glb": true,
-		"roman_soldier.glb": true,
-		"royal_mage.glb": true,
-		"scavenger_warrior.glb": true,
-		"sci_fi_armor_warrior.glb": true,
-		"sci_fi_armor_warrior_2.glb": true,
-		"sci_fi_mech_soldier.glb": true,
-		"sci_fi_mech_unit.glb": true,
-		"sci_fi_mech_unit_1.glb": true,
-		"sci_fi_mech_unit_2.glb": true,
-		"sci_fi_mech_unit_3.glb": true,
-		"sci_fi_mech_warrior.glb": true,
-		"sci_fi_mech_warrior_1.glb": true,
-		"sci_fi_robot_soldier.glb": true,
-		"sci_fi_robot_unit.glb": true,
-		"sci_fi_robot_unit_2.glb": true,
-		"sci_fi_soldier.glb": true,
-		"sci_fi_soldier_1.glb": true,
-		"sci_fi_soldier_2.glb": true,
-		"sci_fi_soldier_3.glb": true,
-		"sci_fi_soldier_4.glb": true,
-		"sci_fi_soldier_armor.glb": true,
-		"sci_fi_soldier_unit.glb": true,
-		"scorpion_knight_warrior.glb": true,
-		"scout_armor_soldier.glb": true,
-		"scout_drone_unit.glb": true,
-		"scout_robot.glb": true,
-		"scout_robot_1.glb": true,
-		"scout_robot_2.glb": true,
-		"scout_robot_3.glb": true,
-		"scout_robot_4.glb": true,
-		"scout_robot_5.glb": true,
-		"scout_robot_unit.glb": true,
-		"scout_robot_unit_1.glb": true,
-		"scout_robot_unit_2.glb": true,
-		"scout_robot_unit_3.glb": true,
-		"scout_robot_unit_4.glb": true,
-		"scout_robot_unit_5.glb": true,
-		"sea_monster_creature.glb": true,
-		"sea_titan_warrior.glb": true,
-		"security_bot.glb": true,
-		"sentinel_droid_unit.glb": true,
-		"serpent_warrior.glb": true,
-		"shadow_knight_warrior.glb": true,
-		"skeleton_angel_warrior.glb": true,
-		"skeleton_warrior.glb": true,
-		"skeleton_warrior_1.glb": true,
-		"skeleton_warrior_2.glb": true,
-		"skeleton_warrior_3.glb": true,
-		"skeleton_warrior_4.glb": true,
-		"skeleton_warrior_5.glb": true,
-		"skeleton_warrior_6.glb": true,
-		"skull_tower.glb": true,
-		"snow_pine_tree.glb": true,
-		"space_marine_scout.glb": true,
-		"spear_projectile_2.glb": true,
-		"spiked_beast_warrior.glb": true,
-		"spiked_crab.glb": true,
-		"spiked_frost_warrior.glb": true,
-		"spiked_wooden_stake.glb": true,
-		"spirit_warrior.glb": true,
-		"stone_hammer.glb": true,
-		"stone_pile.glb": true,
-		"stone_tower_14.glb": true,
-		"survivor_hero.glb": true,
-		"sword_short_blade.glb": true,
-		"toadstool.glb": true,
-		"tower.glb": true,
-		"tower_1.glb": true,
-		"troll_warrior_1.glb": true,
-		"troll_warrior_2.glb": true,
-		"undead_knight_scavenger.glb": true,
-		"undead_scavenger.glb": true,
-		"undead_warrior.glb": true,
-		"volcano_entrance.glb": true,
-		"war_beast_warrior.glb": true,
-		"warrior.glb": true,
-		"warrior_armor.glb": true,
-		"warrior_armor_2.glb": true,
-		"warrior_armor_set.glb": true,
-		"warrior_armor_set_1.glb": true,
-		"warrior_armor_set_2.glb": true,
-		"warrior_armor_set_3.glb": true,
-		"warrior_hero.glb": true,
-		"warrior_humanoid.glb": true,
-		"warrior_knight.glb": true,
-		"warrior_knight_1.glb": true,
-		"warrior_knight_2.glb": true,
-		"warrior_knight_armor.glb": true,
-		"warrior_knight_armor_1.glb": true,
-		"warrior_knight_armor_2.glb": true,
-		"warrior_knight_character.glb": true,
-		"warrior_male_troll.glb": true,
-		"warrior_minotaur.glb": true,
-		"warrior_orc_character.glb": true,
-		"warrior_soldier.glb": true,
-		"warrior_soldier_1.glb": true,
-		"warrior_unit.glb": true,
-		"warrior_unit_1.glb": true,
-		"water_spirit_warrior.glb": true,
-		"white_haired_warrior.glb": true,
-		"willow_tree_2.glb": true,
-		"willow_tree_3.glb": true,
-		"winged_armor_warrior.glb": true,
-		"winged_demon_warrior.glb": true,
-		"winged_demon_warrior_2.glb": true,
-		"winged_guardian_mech.glb": true,
-		"winged_ice_warrior.glb": true,
-		"winged_knight.glb": true,
-		"winged_knight_warrior.glb": true,
-		"winged_knight_warrior_2.glb": true,
-		"winged_seraph_warrior.glb": true,
-		"winged_skeleton_warrior.glb": true,
-		"winged_warrior.glb": true,
-		"winged_warrior_1.glb": true,
-		"winged_warrior_armor.glb": true,
-		"winged_warrior_unit.glb": true,
-		"wizard_mage.glb": true,
-		"wooden_box.glb": true,
-		"wooden_spear_1.glb": true,
-		"wooden_spear_2.glb": true,
-		"wooden_torch_stick.glb": true,
-		"wooden_tower.glb": true,
-		"wooden_workshop.glb": true,
-		"zombie_soldier.glb": true,
-		"zombie_warrior.glb": true
-	},
-	"ModelNormalModes": {
-		"adventurer.glb": "Flat",
-		"ancient_altar.glb": "Flat",
-		"android_warrior.glb": "Flat",
-		"angelic_warrior_unit.glb": "Flat",
-		"antlered_warrior.glb": "Flat",
-		"architectural_components.glb": "Flat",
-		"armor_knight.glb": "Flat",
-		"armor_warrior.glb": "Flat",
-		"armored_beast_warrior.glb": "Flat",
-		"armored_beast_warrior_1.glb": "Flat",
-		"armored_dragon.glb": "Flat",
-		"armored_hooded_warrior.glb": "Flat",
-		"armored_knight.glb": "Flat",
-		"armored_knight_1.glb": "Flat",
-		"armored_knight_unit.glb": "Flat",
-		"armored_knight_warrior.glb": "Flat",
-		"armored_knight_warrior_1.glb": "Flat",
-		"armored_knight_warrior_2.glb": "Flat",
-		"armored_knight_warrior_3.glb": "Flat",
-		"armored_soldier.glb": "Flat",
-		"armored_soldier_2.glb": "Flat",
-		"armored_warrior.glb": "Flat",
-		"armored_warrior_1.glb": "Flat",
-		"armored_warrior_11.glb": "Flat",
-		"armored_warrior_12.glb": "Flat",
-		"armored_warrior_13.glb": "Flat",
-		"armored_warrior_14.glb": "Flat",
-		"armored_warrior_15.glb": "Flat",
-		"armored_warrior_16.glb": "Flat",
-		"armored_warrior_17.glb": "Flat",
-		"armored_warrior_18.glb": "Flat",
-		"armored_warrior_19.glb": "Flat",
-		"armored_warrior_2.glb": "Flat",
-		"armored_warrior_20.glb": "Flat",
-		"armored_warrior_21.glb": "Flat",
-		"armored_warrior_22.glb": "Flat",
-		"armored_warrior_23.glb": "Flat",
-		"armored_warrior_24.glb": "Flat",
-		"armored_warrior_25.glb": "Flat",
-		"armored_warrior_26.glb": "Flat",
-		"armored_warrior_27.glb": "Flat",
-		"armored_warrior_28.glb": "Flat",
-		"armored_warrior_29.glb": "Flat",
-		"armored_warrior_3.glb": "Flat",
-		"armored_warrior_30.glb": "Flat",
-		"armored_warrior_31.glb": "Flat",
-		"armored_warrior_32.glb": "Flat",
-		"armored_warrior_33.glb": "Flat",
-		"armored_warrior_4.glb": "Flat",
-		"armored_warrior_5.glb": "Flat",
-		"armored_warrior_6.glb": "Flat",
-		"armored_warrior_7.glb": "Flat",
-		"armored_warrior_8.glb": "Flat",
-		"armored_warrior_9.glb": "Flat",
-		"armored_warrior_hero.glb": "Flat",
-		"armored_warrior_hero_1.glb": "Flat",
-		"armored_warrior_humanoid.glb": "Flat",
-		"armored_warrior_knight.glb": "Flat",
-		"armored_warrior_knight_1.glb": "Flat",
-		"armored_warrior_unit.glb": "Flat",
-		"armored_warrior_unit_1.glb": "Flat",
-		"armored_warrior_unit_10.glb": "Flat",
-		"armored_warrior_unit_2.glb": "Flat",
-		"armored_warrior_unit_3.glb": "Flat",
-		"armored_warrior_unit_4.glb": "Flat",
-		"armored_warrior_unit_5.glb": "Flat",
-		"armored_warrior_unit_6.glb": "Flat",
-		"armored_warrior_unit_7.glb": "Flat",
-		"armored_warrior_unit_8.glb": "Flat",
-		"armored_warrior_unit_9.glb": "Flat",
-		"beast_mech_unit.glb": "Flat",
-		"beast_warrior.glb": "Flat",
-		"beast_warrior_2.glb": "Flat",
-		"beast_warrior_armor.glb": "Flat",
-		"beast_warrior_armor_1.glb": "Flat",
-		"beast_warrior_scout.glb": "Flat",
-		"bee_warrior_character.glb": "Flat",
-		"behemoth_warrior.glb": "Flat",
-		"bejeweled_scepter.glb": "Flat",
-		"black_armored_robot.glb": "Flat",
-		"blue_archer.glb": "Flat",
-		"blue_armored_warrior.glb": "Flat",
-		"blue_armored_warrior_1.glb": "Flat",
-		"blue_armored_warrior_2.glb": "Flat",
-		"blue_beast_warrior.glb": "Flat",
-		"blue_beast_warrior_1.glb": "Flat",
-		"blue_dragon.glb": "Flat",
-		"blue_dragon_knight.glb": "Flat",
-		"blue_dragon_warrior.glb": "Flat",
-		"blue_dragon_warrior_2.glb": "Flat",
-		"blue_knight_armor.glb": "Flat",
-		"blue_mage_sorceress.glb": "Flat",
-		"blue_mage_warrior.glb": "Flat",
-		"blue_mech_warrior.glb": "Flat",
-		"blue_robot_soldier.glb": "Flat",
-		"blue_robot_unit.glb": "Flat",
-		"blue_troll_warrior.glb": "Flat",
-		"blue_troll_warrior_1.glb": "Flat",
-		"blue_troll_warrior_2.glb": "Flat",
-		"boss_meteor.glb": "Flat",
-		"bow_and_arrow.glb": "Flat",
-		"cactus_plant.glb": "Flat",
-		"cactus_plant_1.glb": "Flat",
-		"castle.glb": "Flat",
-		"cattail_reeds.glb": "Flat",
-		"chinese_woman_warrior.glb": "Flat",
-		"cloaked_monk_unit.glb": "Flat",
-		"cloaked_warrior_unit.glb": "Flat",
-		"clone_trooper.glb": "Flat",
-		"clone_trooper_2.glb": "Flat",
-		"coniferous_tree_1.glb": "Flat",
-		"coniferous_tree_2.glb": "Flat",
-		"construction_worker_unit.glb": "Flat",
-		"crab_warrior.glb": "Flat",
-		"crystal_blade.glb": "Flat",
-		"crystal_cluster_10.glb": "Flat",
-		"crystal_cluster_12.glb": "Flat",
-		"crystal_cluster_13.glb": "Flat",
-		"crystal_cluster_29.glb": "Flat",
-		"crystal_dagger.glb": "Flat",
-		"crystal_enchanted_sword.glb": "Flat",
-		"crystal_lance_spear.glb": "Flat",
-		"crystal_mace.glb": "Flat",
-		"crystal_mace_1.glb": "Flat",
-		"crystal_mace_2.glb": "Flat",
-		"crystal_mace_3.glb": "Flat",
-		"crystal_mace_weapon.glb": "Flat",
-		"crystal_mace_weapon_1.glb": "Flat",
-		"crystal_ore_2.glb": "Flat",
-		"crystal_peak.glb": "Flat",
-		"crystal_scepter_blade.glb": "Flat",
-		"crystal_scepter_sword.glb": "Flat",
-		"crystal_scepter_weapon.glb": "Flat",
-		"crystal_shard_1.glb": "Flat",
-		"crystal_spear_1.glb": "Flat",
-		"crystal_staff_weapon.glb": "Flat",
-		"crystal_sword.glb": "Flat",
-		"crystal_tree_1.glb": "Flat",
-		"crystal_war_axe.glb": "Flat",
-		"crystal_war_hammer.glb": "Flat",
-		"crystal_war_pickaxe.glb": "Flat",
-		"curved_dagger.glb": "Flat",
-		"cyber_armor_warrior.glb": "Flat",
-		"cyber_beast_warrior.glb": "Flat",
-		"cyber_dino_warrior.glb": "Flat",
-		"cyber_dragon.glb": "Flat",
-		"cyber_feline_warrior.glb": "Flat",
-		"cyber_knight_armor.glb": "Flat",
-		"cyber_knight_warrior.glb": "Flat",
-		"cyber_knight_warrior_1.glb": "Flat",
-		"cyber_knight_warrior_2.glb": "Flat",
-		"cyber_knight_warrior_3.glb": "Flat",
-		"cyber_mech_soldier.glb": "Flat",
-		"cyber_mech_warrior.glb": "Flat",
-		"cybernetic_soldier.glb": "Flat",
-		"cybernetic_warrior.glb": "Flat",
-		"cybernetic_warrior_1.glb": "Flat",
-		"cyborg_warrior.glb": "Flat",
-		"cyborg_warrior_1.glb": "Flat",
-		"cyborg_warrior_unit.glb": "Flat",
-		"dagger_blade.glb": "Flat",
-		"dagger_blade_hand_held.glb": "Flat",
-		"dark_iron_ogre.glb": "Flat",
-		"dark_knight_armor.glb": "Flat",
-		"dark_knight_armor_2.glb": "Flat",
-		"dark_knight_warrior.glb": "Flat",
-		"dark_knight_warrior_2.glb": "Flat",
-		"death_knight_armor.glb": "Flat",
-		"demon_knight.glb": "Flat",
-		"demon_knight_2.glb": "Flat",
-		"demon_knight_armor.glb": "Flat",
-		"demon_knight_armor_2.glb": "Flat",
-		"demon_warrior.glb": "Flat",
-		"demon_warrior_1.glb": "Flat",
-		"demon_warrior_unit.glb": "Flat",
-		"demonic_warrior.glb": "Flat",
-		"dragon_humanoid_warrior.glb": "Flat",
-		"dragon_knight_armor.glb": "Flat",
-		"dragon_knight_armor_1.glb": "Flat",
-		"dragon_knight_armor_2.glb": "Flat",
-		"dragon_knight_unit.glb": "Flat",
-		"dragon_knight_warrior.glb": "Flat",
-		"dragon_knight_warrior_1.glb": "Flat",
-		"dragon_knight_warrior_2.glb": "Flat",
-		"dragon_knight_warrior_4.glb": "Flat",
-		"dragon_mount.glb": "Flat",
-		"dragon_titan.glb": "Flat",
-		"dragon_titan_boss.glb": "Flat",
-		"dragon_unit.glb": "Flat",
-		"dragon_war_mount.glb": "Flat",
-		"dragon_warrior.glb": "Flat",
-		"dragon_warrior_1.glb": "Flat",
-		"dragon_warrior_mech.glb": "Flat",
-		"druid_warrior.glb": "Flat",
-		"dryad_spirit.glb": "Flat",
-		"dryad_warrior.glb": "Flat",
-		"dwarf_warrior.glb": "Flat",
-		"eastern_warrior_unit.glb": "Flat",
-		"elf_warrior.glb": "Flat",
-		"emerald_scimitar.glb": "Flat",
-		"enchanted_dagger.glb": "Flat",
-		"enchanted_spear_2.glb": "Flat",
-		"enchanted_staff.glb": "Flat",
-		"enchanted_sword_2.glb": "Flat",
-		"energy_blade.glb": "Flat",
-		"ethereal_knight.glb": "Flat",
-		"ethereal_priestess.glb": "Flat",
-		"ethereal_woman_warrior.glb": "Flat",
-		"eye_guardian_golem.glb": "Flat",
-		"fantasy_armor_set.glb": "Flat",
-		"fantasy_armor_warrior.glb": "Flat",
-		"fantasy_armor_warrior_2.glb": "Flat",
-		"fantasy_armored_warrior.glb": "Flat",
-		"fantasy_armored_warrior_1.glb": "Flat",
-		"fantasy_armored_warrior_2.glb": "Flat",
-		"fantasy_armored_warrior_4.glb": "Flat",
-		"fantasy_armored_warrior_5.glb": "Flat",
-		"fantasy_armored_warrior_6.glb": "Flat",
-		"fantasy_armored_warrior_7.glb": "Flat",
-		"fantasy_armored_warrior_8.glb": "Flat",
-		"fantasy_armored_warrior_9.glb": "Flat",
-		"fantasy_battle_axe.glb": "Flat",
-		"fantasy_battle_axes.glb": "Flat",
-		"fantasy_beast_creature.glb": "Flat",
-		"fantasy_bush.glb": "Flat",
-		"fantasy_curved_sword.glb": "Flat",
-		"fantasy_female_warrior.glb": "Flat",
-		"fantasy_hero_character.glb": "Flat",
-		"fantasy_knight.glb": "Flat",
-		"fantasy_knight_armor.glb": "Flat",
-		"fantasy_knight_armor_1.glb": "Flat",
-		"fantasy_knight_armor_2.glb": "Flat",
-		"fantasy_knight_armor_3.glb": "Flat",
-		"fantasy_knight_armor_4.glb": "Flat",
-		"fantasy_knight_armor_5.glb": "Flat",
-		"fantasy_knight_character.glb": "Flat",
-		"fantasy_knight_hero.glb": "Flat",
-		"fantasy_knight_soldier.glb": "Flat",
-		"fantasy_knight_soldier_1.glb": "Flat",
-		"fantasy_knight_warrior.glb": "Flat",
-		"fantasy_mage_character.glb": "Flat",
-		"fantasy_mage_character_1.glb": "Flat",
-		"fantasy_monk_unit.glb": "Flat",
-		"fantasy_mushroom.glb": "Flat",
-		"fantasy_nun_warrior.glb": "Flat",
-		"fantasy_poleaxe.glb": "Flat",
-		"fantasy_priestess.glb": "Flat",
-		"fantasy_queen_unit_1.glb": "Flat",
-		"fantasy_short_sword_1.glb": "Flat",
-		"fantasy_short_sword_2.glb": "Flat",
-		"fantasy_spirit_mage.glb": "Flat",
-		"fantasy_sword.glb": "Flat",
-		"fantasy_sword_blade.glb": "Flat",
-		"fantasy_tree_10.glb": "Flat",
-		"fantasy_tree_13.glb": "Flat",
-		"fantasy_unicorn_warrior.glb": "Flat",
-		"fantasy_war_hammer.glb": "Flat",
-		"fantasy_warrior_armor.glb": "Flat",
-		"fantasy_warrior_armor_1.glb": "Flat",
-		"fantasy_warrior_armor_2.glb": "Flat",
-		"fantasy_warrior_armor_3.glb": "Flat",
-		"fantasy_warrior_armor_4.glb": "Flat",
-		"fantasy_warrior_character.glb": "Flat",
-		"fantasy_warrior_character_1.glb": "Flat",
-		"fantasy_warrior_female.glb": "Flat",
-		"fantasy_warrior_female_1.glb": "Flat",
-		"fantasy_warrior_female_2.glb": "Flat",
-		"fantasy_warrior_female_3.glb": "Flat",
-		"fantasy_warrior_female_4.glb": "Flat",
-		"fantasy_warrior_female_5.glb": "Flat",
-		"fantasy_warrior_girl.glb": "Flat",
-		"fantasy_warrior_hero.glb": "Flat",
-		"fantasy_warrior_hero_1.glb": "Flat",
-		"fantasy_warrior_hero_2.glb": "Flat",
-		"fantasy_warrior_hero_3.glb": "Flat",
-		"fantasy_warrior_hero_5.glb": "Flat",
-		"fantasy_warrior_humanoid.glb": "Flat",
-		"fantasy_warrior_knight.glb": "Flat",
-		"fantasy_warrior_knight_1.glb": "Flat",
-		"fantasy_warrior_knight_2.glb": "Flat",
-		"fantasy_warrior_scout.glb": "Flat",
-		"fantasy_warrior_soldier.glb": "Flat",
-		"fantasy_warrior_unit.glb": "Flat",
-		"fantasy_warrior_unit_1.glb": "Flat",
-		"fantasy_warrior_unit_10.glb": "Flat",
-		"fantasy_warrior_unit_11.glb": "Flat",
-		"fantasy_warrior_unit_12.glb": "Flat",
-		"fantasy_warrior_unit_13.glb": "Flat",
-		"fantasy_warrior_unit_14.glb": "Flat",
-		"fantasy_warrior_unit_2.glb": "Flat",
-		"fantasy_warrior_unit_3.glb": "Flat",
-		"fantasy_warrior_unit_4.glb": "Flat",
-		"fantasy_warrior_unit_5.glb": "Flat",
-		"fantasy_warrior_unit_6.glb": "Flat",
-		"fantasy_warrior_unit_7.glb": "Flat",
-		"fantasy_warrior_unit_8.glb": "Flat",
-		"fantasy_warrior_unit_9.glb": "Flat",
-		"feline_warrior.glb": "Flat",
-		"female_monk_character.glb": "Flat",
-		"female_monk_warrior.glb": "Flat",
-		"female_warrior_humanoid.glb": "Flat",
-		"fire_knight_armor.glb": "Flat",
-		"fire_shard.glb": "Flat",
-		"flame_drake.glb": "Flat",
-		"flame_spear.glb": "Flat",
-		"forest_goblin.glb": "Flat",
-		"forest_nymph_creature.glb": "Flat",
-		"forest_spirit_entity_1.glb": "Flat",
-		"forest_spirit_warrior.glb": "Flat",
-		"forest_troll_warrior.glb": "Flat",
-		"fox_girl_warrior.glb": "Flat",
-		"fox_spirit_warrior.glb": "Flat",
-		"fox_warrior.glb": "Flat",
-		"frog_warrior.glb": "Flat",
-		"frost_armor_warrior.glb": "Flat",
-		"frost_giant_warrior.glb": "Flat",
-		"frost_giant_warrior_1.glb": "Flat",
-		"frost_giant_warrior_2.glb": "Flat",
-		"frost_giant_warrior_3.glb": "Flat",
-		"frost_giant_warrior_4.glb": "Flat",
-		"frost_giant_warrior_5.glb": "Flat",
-		"frost_giant_warrior_6.glb": "Flat",
-		"frost_knight_armor.glb": "Flat",
-		"frost_knight_armor_1.glb": "Flat",
-		"frost_knight_armor_2.glb": "Flat",
-		"frost_knight_warrior.glb": "Flat",
-		"frost_knight_warrior_1.glb": "Flat",
-		"frost_knight_warrior_2.glb": "Flat",
-		"frost_knight_warrior_3.glb": "Flat",
-		"frost_knight_warrior_4.glb": "Flat",
-		"frost_mage_warrior.glb": "Flat",
-		"frost_mech_warrior.glb": "Flat",
-		"frost_shard.glb": "Flat",
-		"frost_spirit_warrior.glb": "Flat",
-		"frost_troll_warrior.glb": "Flat",
-		"frost_warrior_armor.glb": "Flat",
-		"frost_warrior_unit.glb": "Flat",
-		"frost_warrior_unit_2.glb": "Flat",
-		"frost_wolf_warrior.glb": "Flat",
-		"frozen_knight_warrior.glb": "Flat",
-		"frozen_warrior_knight.glb": "Flat",
-		"futuristic_mecha_unit.glb": "Flat",
-		"futuristic_robot_soldier.glb": "Flat",
-		"futuristic_soldier.glb": "Flat",
-		"futuristic_warrior.glb": "Flat",
-		"giant_rock_golem.glb": "Flat",
-		"gold_armored_warrior.glb": "Flat",
-		"gold_green_knight.glb": "Flat",
-		"golden_ceremonial_sword.glb": "Flat",
-		"golden_knight_warrior.glb": "Flat",
-		"golden_shortsword.glb": "Flat",
-		"golden_temple.glb": "Flat",
-		"grass_tuft.glb": "Flat",
-		"grass_tuft_1.glb": "Flat",
-		"grass_warrior_character.glb": "Flat",
-		"green_knight_armor.glb": "Flat",
-		"green_knight_armor_2.glb": "Flat",
-		"green_magic_sword.glb": "Flat",
-		"hammer_weapon.glb": "Flat",
-		"heavy_armor_warrior.glb": "Flat",
-		"heavy_armored_warrior.glb": "Flat",
-		"heavy_armored_warrior_1.glb": "Flat",
-		"heavy_mech_soldier.glb": "Flat",
-		"heavy_mech_unit.glb": "Flat",
-		"heavy_mech_warrior.glb": "Flat",
-		"heavy_mech_warrior_1.glb": "Flat",
-		"heavy_mech_warrior_2.glb": "Flat",
-		"heavy_mech_warrior_3.glb": "Flat",
-		"hero_warrior.glb": "Flat",
-		"hero_warrior_character.glb": "Flat",
-		"high_tech_warrior.glb": "Flat",
-		"hooded_knight_armor.glb": "Flat",
-		"hooded_mage_robe.glb": "Flat",
-		"hooded_mage_warrior.glb": "Flat",
-		"hooded_monk_warrior.glb": "Flat",
-		"hooded_monk_warrior_1.glb": "Flat",
-		"hooded_monk_warrior_2.glb": "Flat",
-		"hooded_monk_warrior_3.glb": "Flat",
-		"hooded_monk_warrior_4.glb": "Flat",
-		"horn_warrior_unit.glb": "Flat",
-		"horned_warrior_armor.glb": "Flat",
-		"horned_warrior_armor_2.glb": "Flat",
-		"horned_warrior_unit.glb": "Flat",
-		"human_skeleton.glb": "Flat",
-		"human_warrior_hero.glb": "Flat",
-		"humanoid_warrior.glb": "Flat",
-		"humanoid_warrior_1.glb": "Flat",
-		"ice_armor_warrior.glb": "Flat",
-		"ice_armor_warrior_2.glb": "Flat",
-		"ice_beast_creature.glb": "Flat",
-		"ice_castle_1.glb": "Flat",
-		"ice_crystal_shard_5.glb": "Flat",
-		"ice_crystal_spear.glb": "Flat",
-		"ice_crystal_staff.glb": "Flat",
-		"ice_dragon_beast.glb": "Flat",
-		"ice_dragon_beast_1.glb": "Flat",
-		"ice_dragon_beast_2.glb": "Flat",
-		"ice_dragon_warrior.glb": "Flat",
-		"ice_element_sword.glb": "Flat",
-		"ice_elemental_warrior.glb": "Flat",
-		"ice_elemental_warrior_2.glb": "Flat",
-		"ice_giant_warrior.glb": "Flat",
-		"ice_giant_warrior_1.glb": "Flat",
-		"ice_giant_warrior_2.glb": "Flat",
-		"ice_giant_warrior_3.glb": "Flat",
-		"ice_giant_warrior_4.glb": "Flat",
-		"ice_golem_warrior.glb": "Flat",
-		"ice_golem_warrior_1.glb": "Flat",
-		"ice_golem_warrior_2.glb": "Flat",
-		"ice_guardian_warrior.glb": "Flat",
-		"ice_knight_armor.glb": "Flat",
-		"ice_knight_armor_1.glb": "Flat",
-		"ice_knight_armor_2.glb": "Flat",
-		"ice_knight_armor_3.glb": "Flat",
-		"ice_knight_armor_4.glb": "Flat",
-		"ice_knight_armor_5.glb": "Flat",
-		"ice_knight_armor_6.glb": "Flat",
-		"ice_knight_armor_7.glb": "Flat",
-		"ice_knight_armor_8.glb": "Flat",
-		"ice_knight_warrior.glb": "Flat",
-		"ice_knight_warrior_1.glb": "Flat",
-		"ice_knight_warrior_2.glb": "Flat",
-		"ice_knight_warrior_3.glb": "Flat",
-		"ice_knight_warrior_4.glb": "Flat",
-		"ice_knight_warrior_5.glb": "Flat",
-		"ice_knight_warrior_6.glb": "Flat",
-		"ice_knight_warrior_7.glb": "Flat",
-		"ice_mage_hero.glb": "Flat",
-		"ice_mage_warrior.glb": "Flat",
-		"ice_mage_warrior_1.glb": "Flat",
-		"ice_mage_warrior_2.glb": "Flat",
-		"ice_mage_warrior_3.glb": "Flat",
-		"ice_spirit_warrior.glb": "Flat",
-		"ice_spirit_warrior_1.glb": "Flat",
-		"ice_spirit_warrior_2.glb": "Flat",
-		"ice_spirit_warrior_3.glb": "Flat",
-		"ice_spirit_warrior_4.glb": "Flat",
-		"ice_tower_1.glb": "Flat",
-		"ice_troll_warrior.glb": "Flat",
-		"ice_troll_warrior_1.glb": "Flat",
-		"ice_warrior.glb": "Flat",
-		"ice_warrior_2.glb": "Flat",
-		"ice_warrior_hero.glb": "Flat",
-		"ice_warrior_knight.glb": "Flat",
-		"ice_warrior_scout.glb": "Flat",
-		"ice_warrior_soldier.glb": "Flat",
-		"ice_warrior_unit.glb": "Flat",
-		"insectoid_warrior.glb": "Flat",
-		"iron_man_armor.glb": "Flat",
-		"iron_man_armor_2.glb": "Flat",
-		"iron_man_suit.glb": "Flat",
-		"iron_soldier_armor.glb": "Flat",
-		"iron_titan_warrior.glb": "Flat",
-		"knight_armor.glb": "Flat",
-		"knight_armor_1.glb": "Flat",
-		"knight_armor_2.glb": "Flat",
-		"knight_armor_3.glb": "Flat",
-		"knight_armor_4.glb": "Flat",
-		"knight_armor_set.glb": "Flat",
-		"knight_armor_set_2.glb": "Flat",
-		"knight_armor_suit.glb": "Flat",
-		"knight_armor_unit.glb": "Flat",
-		"knight_armored_warrior.glb": "Flat",
-		"knight_warrior.glb": "Flat",
-		"knight_warrior_1.glb": "Flat",
-		"knight_warrior_armor.glb": "Flat",
-		"knight_warrior_character.glb": "Flat",
-		"lava_elemental_warrior.glb": "Flat",
-		"lava_golem.glb": "Flat",
-		"lava_knight_warrior.glb": "Flat",
-		"lava_rock_pinnacle.glb": "Flat",
-		"lava_warrior.glb": "Flat",
-		"lion_crest_shield.glb": "Flat",
-		"lion_warrior.glb": "Flat",
-		"lizard_warrior.glb": "Flat",
-		"mace_war_hammer.glb": "Flat",
-		"mace_war_hammer_1.glb": "Flat",
-		"mace_weapon.glb": "Flat",
-		"mage_robe_tunic.glb": "Flat",
-		"magic_crystal_pedestal.glb": "Flat",
-		"magic_projectile.glb": "Flat",
-		"magic_staff_1.glb": "Flat",
-		"magic_staff_2.glb": "Flat",
-		"magic_staff_3.glb": "Flat",
-		"magic_staff_or_spear.glb": "Flat",
-		"magic_staff_prop.glb": "Flat",
-		"magic_tower_4.glb": "Flat",
-		"magic_wand.glb": "Flat",
-		"magic_wand_staff.glb": "Flat",
-		"magic_warhammer.glb": "Flat",
-		"magical_mace_weapon.glb": "Flat",
-		"magical_scepter.glb": "Flat",
-		"magical_staff.glb": "Flat",
-		"magical_war_hammer.glb": "Flat",
-		"magma_colossus_warrior.glb": "Flat",
-		"magma_crystal_4.glb": "Flat",
-		"mech_armor_suit.glb": "Flat",
-		"mech_robot_unit.glb": "Flat",
-		"mech_robot_unit_1.glb": "Flat",
-		"mech_robot_unit_2.glb": "Flat",
-		"mech_robot_unit_3.glb": "Flat",
-		"mech_robot_warrior.glb": "Flat",
-		"mech_soldier.glb": "Flat",
-		"mech_soldier_1.glb": "Flat",
-		"mech_soldier_2.glb": "Flat",
-		"mech_soldier_3.glb": "Flat",
-		"mech_soldier_unit.glb": "Flat",
-		"mech_spider_monster.glb": "Flat",
-		"mech_suit_warrior.glb": "Flat",
-		"mech_unit.glb": "Flat",
-		"mech_unit_2.glb": "Flat",
-		"mech_warrior.glb": "Flat",
-		"mech_warrior_1.glb": "Flat",
-		"mech_warrior_10.glb": "Flat",
-		"mech_warrior_11.glb": "Flat",
-		"mech_warrior_13.glb": "Flat",
-		"mech_warrior_14.glb": "Flat",
-		"mech_warrior_15.glb": "Flat",
-		"mech_warrior_17.glb": "Flat",
-		"mech_warrior_18.glb": "Flat",
-		"mech_warrior_19.glb": "Flat",
-		"mech_warrior_2.glb": "Flat",
-		"mech_warrior_3.glb": "Flat",
-		"mech_warrior_4.glb": "Flat",
-		"mech_warrior_5.glb": "Flat",
-		"mech_warrior_6.glb": "Flat",
-		"mech_warrior_7.glb": "Flat",
-		"mech_warrior_8.glb": "Flat",
-		"mech_warrior_9.glb": "Flat",
-		"mech_warrior_unit.glb": "Flat",
-		"mech_warrior_unit_1.glb": "Flat",
-		"mech_warrior_unit_10.glb": "Flat",
-		"mech_warrior_unit_11.glb": "Flat",
-		"mech_warrior_unit_12.glb": "Flat",
-		"mech_warrior_unit_13.glb": "Flat",
-		"mech_warrior_unit_14.glb": "Flat",
-		"mech_warrior_unit_15.glb": "Flat",
-		"mech_warrior_unit_16.glb": "Flat",
-		"mech_warrior_unit_17.glb": "Flat",
-		"mech_warrior_unit_2.glb": "Flat",
-		"mech_warrior_unit_3.glb": "Flat",
-		"mech_warrior_unit_4.glb": "Flat",
-		"mech_warrior_unit_5.glb": "Flat",
-		"mech_warrior_unit_6.glb": "Flat",
-		"mech_warrior_unit_7.glb": "Flat",
-		"mech_warrior_unit_8.glb": "Flat",
-		"mech_warrior_unit_9.glb": "Flat",
-		"mecha_girl_unit.glb": "Flat",
-		"mecha_scout_unit.glb": "Flat",
-		"mecha_soldier.glb": "Flat",
-		"mecha_warrior.glb": "Flat",
-		"mecha_warrior_1.glb": "Flat",
-		"mecha_warrior_3.glb": "Flat",
-		"mecha_warrior_4.glb": "Flat",
-		"mecha_warrior_5.glb": "Flat",
-		"mecha_warrior_6.glb": "Flat",
-		"mecha_warrior_7.glb": "Flat",
-		"mecha_warrior_8.glb": "Flat",
-		"mecha_warrior_9.glb": "Flat",
-		"mecha_warrior_unit.glb": "Flat",
-		"mechanical_knight.glb": "Flat",
-		"mechanical_soldier.glb": "Flat",
-		"mechanical_warrior.glb": "Flat",
-		"mechanical_warrior_1.glb": "Flat",
-		"mechanical_warrior_unit.glb": "Flat",
-		"mechanical_warrior_unit_1.glb": "Flat",
-		"mermaid_warrior.glb": "Flat",
-		"minotaur_warrior.glb": "Flat",
-		"minotaur_warrior_1.glb": "Flat",
-		"minotaur_warrior_2.glb": "Flat",
-		"minotaur_warrior_3.glb": "Flat",
-		"minotaur_warrior_4.glb": "Flat",
-		"monk_character.glb": "Flat",
-		"monk_mage_character.glb": "Flat",
-		"monk_mage_unit.glb": "Flat",
-		"monk_priest_character.glb": "Flat",
-		"monk_robe_character.glb": "Flat",
-		"monk_warrior.glb": "Flat",
-		"monk_warrior_1.glb": "Flat",
-		"monk_warrior_2.glb": "Flat",
-		"moose_warrior.glb": "Flat",
-		"mountain_terrain.glb": "Flat",
-		"mouse_hero.glb": "Flat",
-		"muscular_warrior.glb": "Flat",
-		"mushroom_cluster.glb": "Flat",
-		"mushroom_girl_character.glb": "Flat",
-		"mystic_mage_character.glb": "Flat",
-		"mystic_monk.glb": "Flat",
-		"mystic_monk_hero.glb": "Flat",
-		"mystic_monk_warrior.glb": "Flat",
-		"mystic_nun_character.glb": "Flat",
-		"mystic_priestess.glb": "Flat",
-		"mystic_tree_altar.glb": "Flat",
-		"mystic_war_hammer.glb": "Flat",
-		"mystic_warrior.glb": "Flat",
-		"mystic_warrior_armor.glb": "Flat",
-		"mystic_warrior_spirit.glb": "Flat",
-		"naval_officer_unit.glb": "Flat",
-		"orc_archer.glb": "Flat",
-		"orc_warrior.glb": "Flat",
-		"orc_warrior_1.glb": "Flat",
-		"orc_warrior_10.glb": "Flat",
-		"orc_warrior_12.glb": "Flat",
-		"orc_warrior_13.glb": "Flat",
-		"orc_warrior_14.glb": "Flat",
-		"orc_warrior_16.glb": "Flat",
-		"orc_warrior_17.glb": "Flat",
-		"orc_warrior_18.glb": "Flat",
-		"orc_warrior_19.glb": "Flat",
-		"orc_warrior_2.glb": "Flat",
-		"orc_warrior_20.glb": "Flat",
-		"orc_warrior_21.glb": "Flat",
-		"orc_warrior_22.glb": "Flat",
-		"orc_warrior_23.glb": "Flat",
-		"orc_warrior_24.glb": "Flat",
-		"orc_warrior_3.glb": "Flat",
-		"orc_warrior_4.glb": "Flat",
-		"orc_warrior_5.glb": "Flat",
-		"orc_warrior_6.glb": "Flat",
-		"orc_warrior_7.glb": "Flat",
-		"orc_warrior_8.glb": "Flat",
-		"orc_warrior_9.glb": "Flat",
-		"orc_warrior_armor.glb": "Flat",
-		"ornate_battle_axe.glb": "Flat",
-		"ornate_blade.glb": "Flat",
-		"ornate_dagger.glb": "Flat",
-		"ornate_magic_sword.glb": "Flat",
-		"ornate_pickaxe_tool.glb": "Flat",
-		"ornate_short_sword.glb": "Flat",
-		"ornate_short_sword_1.glb": "Flat",
-		"ornate_spear_2.glb": "Flat",
-		"ornate_spear_3.glb": "Flat",
-		"ornate_sword_gold.glb": "Flat",
-		"palm_tree.glb": "Flat",
-		"panda_knight.glb": "Flat",
-		"panda_monk_unit.glb": "Flat",
-		"polar_bear_warrior.glb": "Flat",
-		"purple_crystal_shard_1.glb": "Flat",
-		"red_armored_warrior.glb": "Flat",
-		"red_armored_warrior_2.glb": "Flat",
-		"red_mushroom_group.glb": "Flat",
-		"red_robot_warrior.glb": "Flat",
-		"rifle_assault_01.glb": "Flat",
-		"robot_mech_unit.glb": "Flat",
-		"robot_mech_unit_1.glb": "Flat",
-		"robot_olive_unit.glb": "Flat",
-		"robot_soldier.glb": "Flat",
-		"robot_soldier_1.glb": "Flat",
-		"robot_soldier_2.glb": "Flat",
-		"robot_soldier_3.glb": "Flat",
-		"robot_soldier_4.glb": "Flat",
-		"robot_soldier_5.glb": "Flat",
-		"robot_soldier_unit.glb": "Flat",
-		"robot_soldier_unit_2.glb": "Flat",
-		"robot_unit.glb": "Flat",
-		"robot_unit_1.glb": "Flat",
-		"robot_unit_2.glb": "Flat",
-		"robot_unit_3.glb": "Flat",
-		"robot_unit_4.glb": "Flat",
-		"robot_unit_5.glb": "Flat",
-		"robot_warrior.glb": "Flat",
-		"robot_warrior_10.glb": "Flat",
-		"robot_warrior_11.glb": "Flat",
-		"robot_warrior_2.glb": "Flat",
-		"robot_warrior_3.glb": "Flat",
-		"robot_warrior_4.glb": "Flat",
-		"robot_warrior_5.glb": "Flat",
-		"robot_warrior_6.glb": "Flat",
-		"robot_warrior_7.glb": "Flat",
-		"robot_warrior_8.glb": "Flat",
-		"robot_warrior_9.glb": "Flat",
-		"robot_warrior_unit.glb": "Flat",
-		"robot_warrior_unit_1.glb": "Flat",
-		"robot_warrior_unit_2.glb": "Flat",
-		"robot_warrior_unit_3.glb": "Flat",
-		"robotic_soldier.glb": "Flat",
-		"rock_formation_7.glb": "Flat",
-		"rock_golem.glb": "Flat",
-		"rock_mace_weapon.glb": "Flat",
-		"rock_spire.glb": "Flat",
-		"roman_soldier.glb": "Flat",
-		"royal_mage.glb": "Flat",
-		"royal_spear.glb": "Flat",
-		"scavenger_warrior.glb": "Flat",
-		"sci_fi_armor_warrior.glb": "Flat",
-		"sci_fi_armor_warrior_2.glb": "Flat",
-		"sci_fi_mech_soldier.glb": "Flat",
-		"sci_fi_mech_unit.glb": "Flat",
-		"sci_fi_mech_unit_1.glb": "Flat",
-		"sci_fi_mech_unit_2.glb": "Flat",
-		"sci_fi_mech_unit_3.glb": "Flat",
-		"sci_fi_mech_warrior.glb": "Flat",
-		"sci_fi_mech_warrior_1.glb": "Flat",
-		"sci_fi_robot_soldier.glb": "Flat",
-		"sci_fi_robot_unit.glb": "Flat",
-		"sci_fi_robot_unit_2.glb": "Flat",
-		"sci_fi_soldier.glb": "Flat",
-		"sci_fi_soldier_1.glb": "Flat",
-		"sci_fi_soldier_2.glb": "Flat",
-		"sci_fi_soldier_3.glb": "Flat",
-		"sci_fi_soldier_4.glb": "Flat",
-		"sci_fi_soldier_armor.glb": "Flat",
-		"sci_fi_soldier_unit.glb": "Flat",
-		"scorpion_knight_warrior.glb": "Flat",
-		"scout_armor_soldier.glb": "Flat",
-		"scout_drone_unit.glb": "Flat",
-		"scout_robot.glb": "Flat",
-		"scout_robot_1.glb": "Flat",
-		"scout_robot_2.glb": "Flat",
-		"scout_robot_3.glb": "Flat",
-		"scout_robot_4.glb": "Flat",
-		"scout_robot_5.glb": "Flat",
-		"scout_robot_unit.glb": "Flat",
-		"scout_robot_unit_1.glb": "Flat",
-		"scout_robot_unit_2.glb": "Flat",
-		"scout_robot_unit_3.glb": "Flat",
-		"scout_robot_unit_4.glb": "Flat",
-		"scout_robot_unit_5.glb": "Flat",
-		"sea_monster_creature.glb": "Flat",
-		"sea_titan_warrior.glb": "Flat",
-		"security_bot.glb": "Flat",
-		"sentinel_droid_unit.glb": "Flat",
-		"serpent_warrior.glb": "Flat",
-		"shadow_knight_warrior.glb": "Flat",
-		"short_blade_axe.glb": "Flat",
-		"short_sword.glb": "Flat",
-		"skeleton_angel_warrior.glb": "Flat",
-		"skeleton_warrior.glb": "Flat",
-		"skeleton_warrior_1.glb": "Flat",
-		"skeleton_warrior_2.glb": "Flat",
-		"skeleton_warrior_3.glb": "Flat",
-		"skeleton_warrior_4.glb": "Flat",
-		"skeleton_warrior_5.glb": "Flat",
-		"skeleton_warrior_6.glb": "Flat",
-		"skull_tower.glb": "Flat",
-		"snow_pine_tree.glb": "Flat",
-		"space_marine_scout.glb": "Flat",
-		"spear_of_light.glb": "Flat",
-		"spear_projectile_2.glb": "Flat",
-		"spear_weapon.glb": "Flat",
-		"spiked_beast_warrior.glb": "Flat",
-		"spiked_crab.glb": "Flat",
-		"spiked_frost_warrior.glb": "Flat",
-		"spiked_mace_weapon.glb": "Flat",
-		"spiked_wooden_stake.glb": "Flat",
-		"spirit_warrior.glb": "Flat",
-		"stone_golem_warrior.glb": "Flat",
-		"stone_hammer.glb": "Flat",
-		"stone_pile.glb": "Flat",
-		"stone_tower_14.glb": "Flat",
-		"stone_war_hammer.glb": "Flat",
-		"survivor_arrow.glb": "Flat",
-		"survivor_hero.glb": "Flat",
-		"sword_short_blade.glb": "Flat",
-		"timber_framed_house.glb": "Flat",
-		"toadstool.glb": "Flat",
-		"tower.glb": "Flat",
-		"tower_1.glb": "Flat",
-		"troll_warrior.glb": "Flat",
-		"troll_warrior_1.glb": "Flat",
-		"troll_warrior_2.glb": "Flat",
-		"undead_knight_scavenger.glb": "Flat",
-		"undead_scavenger.glb": "Flat",
-		"undead_warrior.glb": "Flat",
-		"volcano_entrance.glb": "Flat",
-		"war_beast_warrior.glb": "Flat",
-		"warhammer_mace.glb": "Flat",
-		"warrior.glb": "Flat",
-		"warrior_armor.glb": "Flat",
-		"warrior_armor_2.glb": "Flat",
-		"warrior_armor_set.glb": "Flat",
-		"warrior_armor_set_1.glb": "Flat",
-		"warrior_armor_set_2.glb": "Flat",
-		"warrior_armor_set_3.glb": "Flat",
-		"warrior_giant.glb": "Flat",
-		"warrior_hero.glb": "Flat",
-		"warrior_humanoid.glb": "Flat",
-		"warrior_knight.glb": "Flat",
-		"warrior_knight_1.glb": "Flat",
-		"warrior_knight_2.glb": "Flat",
-		"warrior_knight_armor.glb": "Flat",
-		"warrior_knight_armor_1.glb": "Flat",
-		"warrior_knight_armor_2.glb": "Flat",
-		"warrior_knight_character.glb": "Flat",
-		"warrior_knight_hero.glb": "Flat",
-		"warrior_male_troll.glb": "Flat",
-		"warrior_minotaur.glb": "Flat",
-		"warrior_orc_character.glb": "Flat",
-		"warrior_soldier.glb": "Flat",
-		"warrior_soldier_1.glb": "Flat",
-		"warrior_unit.glb": "Flat",
-		"warrior_unit_1.glb": "Flat",
-		"water_spirit_warrior.glb": "Flat",
-		"white_haired_warrior.glb": "Flat",
-		"willow_tree_2.glb": "Flat",
-		"willow_tree_3.glb": "Flat",
-		"winged_armor_warrior.glb": "Flat",
-		"winged_demon_warrior.glb": "Flat",
-		"winged_demon_warrior_2.glb": "Flat",
-		"winged_guardian_mech.glb": "Flat",
-		"winged_ice_warrior.glb": "Flat",
-		"winged_knight.glb": "Flat",
-		"winged_knight_warrior.glb": "Flat",
-		"winged_knight_warrior_2.glb": "Flat",
-		"winged_seraph_warrior.glb": "Flat",
-		"winged_skeleton_warrior.glb": "Flat",
-		"winged_warrior.glb": "Flat",
-		"winged_warrior_1.glb": "Flat",
-		"winged_warrior_armor.glb": "Flat",
-		"winged_warrior_unit.glb": "Flat",
-		"wizard_mage.glb": "Flat",
-		"wooden_box.glb": "Flat",
-		"wooden_button_seal.glb": "Flat",
-		"wooden_spear.glb": "Flat",
-		"wooden_spear_1.glb": "Flat",
-		"wooden_spear_2.glb": "Flat",
-		"wooden_torch_stick.glb": "Flat",
-		"wooden_tower.glb": "Flat",
-		"wooden_workshop.glb": "Flat",
-		"zombie_soldier.glb": "Flat",
-		"zombie_warrior.glb": "Flat"
-	},
-	"ModelNormalizeLuminance": {
-		"ancient_altar.glb": true,
-		"cactus_plant.glb": true,
-		"cactus_plant_1.glb": true,
-		"castle.glb": true,
-		"cattail_reeds.glb": true,
-		"coniferous_tree_1.glb": true,
-		"coniferous_tree_2.glb": true,
-		"crystal_cluster_10.glb": true,
-		"crystal_cluster_12.glb": true,
-		"crystal_cluster_13.glb": true,
-		"crystal_cluster_29.glb": true,
-		"crystal_ore_2.glb": true,
-		"crystal_peak.glb": true,
-		"crystal_shard_1.glb": true,
-		"cyber_dragon.glb": true,
-		"dark_iron_ogre.glb": true,
-		"dragon_titan_boss.glb": true,
-		"fantasy_bush.glb": true,
-		"fantasy_mushroom.glb": true,
-		"fantasy_tree_10.glb": true,
-		"fantasy_tree_13.glb": true,
-		"flame_drake.glb": true,
-		"forest_goblin.glb": true,
-		"giant_rock_golem.glb": true,
-		"grass_tuft.glb": true,
-		"grass_tuft_1.glb": true,
-		"lava_rock_pinnacle.glb": true,
-		"magic_crystal_pedestal.glb": true,
-		"mech_spider_monster.glb": true,
-		"mushroom_cluster.glb": true,
-		"mystic_tree_altar.glb": true,
-		"palm_tree.glb": true,
-		"red_mushroom_group.glb": true,
-		"rock_formation_7.glb": true,
-		"rock_spire.glb": true,
-		"snow_pine_tree.glb": true,
-		"stone_pile.glb": true,
-		"survivor_hero.glb": true,
-		"toadstool.glb": true,
-		"willow_tree_2.glb": true,
-		"willow_tree_3.glb": true,
-		"zombie_soldier.glb": true,
-		"zombie_warrior.glb": true
-	},
-	"ModelObstacleRadii": {},
-	"ModelOffsets": {
-		"ancient_altar.glb": 0,
-		"cactus_plant.glb": 1.2522,
-		"cactus_plant_1.glb": 1.2503,
-		"castle.glb": 0.90000015,
-		"cattail_reeds.glb": 1.2528,
-		"coniferous_tree_1.glb": 1.25,
-		"coniferous_tree_2.glb": 1.25,
-		"crystal_cluster_10.glb": 1.2502,
-		"crystal_cluster_12.glb": 1.2504,
-		"crystal_cluster_13.glb": 1.25,
-		"crystal_cluster_29.glb": 1.0500002,
-		"crystal_ore_2.glb": 1.008,
-		"crystal_peak.glb": 1.25,
-		"crystal_shard_1.glb": 1.0762,
-		"cyber_dragon.glb": 14,
-		"dark_iron_ogre.glb": 0,
-		"dragon_titan_boss.glb": 9,
-		"fantasy_bush.glb": 1.1104,
-		"fantasy_mushroom.glb": 1.2518,
-		"fantasy_tree_10.glb": 0,
-		"fantasy_tree_13.glb": 1.1853,
-		"flame_drake.glb": 14,
-		"forest_goblin.glb": 0,
-		"giant_rock_golem.glb": 0,
-		"grass_tuft.glb": 1.089,
-		"grass_tuft_1.glb": 1.0466,
-		"lava_rock_pinnacle.glb": 1.2525,
-		"magic_crystal_pedestal.glb": 0,
-		"mech_spider_monster.glb": 0,
-		"mushroom_cluster.glb": 1.2353,
-		"mystic_tree_altar.glb": 0,
-		"palm_tree.glb": 1.2000002,
-		"red_mushroom_group.glb": 1.2484,
-		"rock_formation_7.glb": 0.5,
-		"rock_spire.glb": 0,
-		"snow_pine_tree.glb": 1.2471,
-		"stone_pile.glb": 0.5788,
-		"survivor_hero.glb": 0,
-		"toadstool.glb": 1.2423,
-		"willow_tree_2.glb": 1.2384,
-		"willow_tree_3.glb": 1.2452,
-		"zombie_soldier.glb": 0,
-		"zombie_warrior.glb": 0
-	},
-	"ModelScales": {
-		"ancient_altar.glb": 1,
-		"blue_dragon.glb": 1.5,
-		"cactus_plant.glb": 1.25,
-		"cactus_plant_1.glb": 1.25,
-		"castle.glb": 1,
-		"cattail_reeds.glb": 1.25,
-		"coniferous_tree_1.glb": 2.5,
-		"coniferous_tree_2.glb": 2.75,
-		"crystal_cluster_10.glb": 1.25,
-		"crystal_cluster_12.glb": 1.25,
-		"crystal_cluster_13.glb": 1.25,
-		"crystal_cluster_29.glb": 1,
-		"crystal_ore_2.glb": 1.25,
-		"crystal_peak.glb": 1.25,
-		"crystal_shard_1.glb": 1.25,
-		"cyber_dragon.glb": 1.5,
-		"dark_iron_ogre.glb": 1.5,
-		"dragon_titan_boss.glb": 1.5,
-		"dragon_war_mount.glb": 1.5,
-		"fantasy_bush.glb": 1.25,
-		"fantasy_mushroom.glb": 1.25,
-		"fantasy_tree_10.glb": 1,
-		"fantasy_tree_13.glb": 1.25,
-		"flame_drake.glb": 1.5,
-		"forest_goblin.glb": 1.5,
-		"giant_rock_golem.glb": 1.5,
-		"grass_tuft.glb": 1.25,
-		"grass_tuft_1.glb": 1.25,
-		"heavy_mech_warrior.glb": 1.5,
-		"ice_dragon_beast.glb": 1.5,
-		"lava_rock_pinnacle.glb": 1.25,
-		"magic_crystal_pedestal.glb": 1,
-		"mech_spider_monster.glb": 1.5,
-		"mushroom_cluster.glb": 1.25,
-		"mystic_tree_altar.glb": 1,
-		"palm_tree.glb": 1.25,
-		"red_mushroom_group.glb": 1.25,
-		"rock_formation_7.glb": 2,
-		"rock_spire.glb": 1,
-		"skeleton_warrior.glb": 1.5,
-		"snow_pine_tree.glb": 1.25,
-		"stone_golem_warrior.glb": 1.5,
-		"stone_pile.glb": 1.25,
-		"survivor_hero.glb": 1.5,
-		"toadstool.glb": 1.25,
-		"troll_warrior.glb": 1.5,
-		"undead_knight_scavenger.glb": 1.5,
-		"warrior_giant.glb": 1.5,
-		"warrior_knight_hero.glb": 1.5,
-		"willow_tree_2.glb": 1.25,
-		"willow_tree_3.glb": 1.25,
-		"zombie_soldier.glb": 1.5,
-		"zombie_warrior.glb": 1.5
-	},
-	"ModelSpawnShaders": {},
-	"Ratings": {
-		"AverageRating": 0,
-		"CommunityReviews": [],
-		"Downvotes": 0,
-		"RatingCount": 0,
-		"Upvotes": 0
-	},
+	"TerrainProfiles": [],
 	"decals": {},
 	"icons": {},
+	"license": "https://www.realm-game.com/RealmPlatform_UGC_License_v1.txt",
 	"noise_textures": {},
 	"ribbons": {},
+	"shaders": {},
 	"skyboxes": {},
 	"textures": {
 		"abyssal_trench_bottom_sediment.rtex": {
+			"Scale_Factor": 4,
 			"swatchIndex": 0
 		},
+		"abyssal_trench_crush_sand.rtex": {
+			"Scale_Factor": 4,
+			"swatchIndex": 32
+		},
 		"abyssal_trench_marine_silt.rtex": {
+			"Scale_Factor": 4,
 			"swatchIndex": 13
 		},
 		"abyssal_trench_salt_scab.rtex": {
+			"Scale_Factor": 0.4163014,
 			"swatchIndex": 22
 		},
 		"ancient_jungle_misty_stone.rtex": {
+			"Scale_Factor": 4,
 			"swatchIndex": 1
 		},
 		"ancient_jungle_mossy_stone.rtex": {
 			"Brightness": 1.6,
+			"Scale_Factor": 4,
 			"brightness": 1.6,
 			"swatchIndex": 2
 		},
 		"ancient_jungle_overgrown_path.rtex": {
 			"Brightness": 1.6,
+			"Scale_Factor": 4,
 			"brightness": 1.6,
 			"swatchIndex": 3
 		},
+		"bioluminescent_jungle_aura_petal.rtex": {
+			"Scale_Factor": 1.4120841,
+			"swatchIndex": 33
+		},
 		"deep_trench_cavern_grit.rtex": {
+			"Scale_Factor": 4,
 			"swatchIndex": 6
 		},
 		"deep_trench_dense_mud.rtex": {
 			"Brightness": 2.5,
+			"Scale_Factor": 4,
 			"brightness": 2.5,
 			"swatchIndex": 7,
 			"uv_scale": 0.2
 		},
 		"dusty_canyon_barren_slope.rtex": {
+			"Scale_Factor": 0.70523673,
 			"swatchIndex": 28
 		},
 		"dusty_canyon_burnt_mesa.rtex": {
+			"Scale_Factor": 4,
 			"swatchIndex": 27
 		},
 		"dusty_canyon_desert_floor.rtex": {
+			"Scale_Factor": 0.7269137,
 			"swatchIndex": 30
 		},
 		"dusty_canyon_granite_basin.rtex": {
 			"Brightness": 1.1,
+			"Scale_Factor": 3.0931616,
 			"brightness": 1.1,
 			"swatchIndex": 10
 		},
 		"dusty_canyon_granite_hill.rtex": {
+			"Scale_Factor": 1.8120342,
 			"swatchIndex": 29
 		},
 		"dusty_canyon_scarce_soil.rtex": {
+			"Scale_Factor": 0.4576266,
 			"swatchIndex": 9
 		},
 		"floating_isles_float_moss.rtex": {
+			"Scale_Factor": 4,
 			"swatchIndex": 31
 		},
 		"floating_isles_void_crack_stone.rtex": {
@@ -4000,40 +5696,50 @@
 		},
 		"frozen_tundra_arctic_dirt.rtex": {
 			"Brightness": 1.5,
+			"Scale_Factor": 1.3807359,
 			"brightness": 1.5,
 			"swatchIndex": 11
 		},
 		"frozen_tundra_mud.rtex": {
 			"Brightness": 1.15,
+			"Scale_Factor": 0.86515486,
 			"brightness": 1.15,
 			"swatchIndex": 12
 		},
 		"mangrove_swamp_bog_grass.rtex": {
 			"Brightness": 2.5,
+			"Scale_Factor": 4,
 			"brightness": 2.5,
 			"swatchIndex": 14
 		},
 		"mangrove_swamp_reed_bed.rtex": {
+			"Scale_Factor": 4,
 			"swatchIndex": 15
 		},
 		"petrified_forest_gray_granite.rtex": {
+			"Scale_Factor": 2.6072075,
 			"swatchIndex": 16,
 			"uv_scale": 0.35
 		},
 		"sunken_ruins_crushed_granite.rtex": {
+			"Scale_Factor": 4,
 			"swatchIndex": 18,
 			"uv_scale": 0.4
 		},
 		"sunken_ruins_deep_sand.rtex": {
+			"Scale_Factor": 1.0314475,
 			"swatchIndex": 23
 		},
 		"sunken_ruins_mossy_stone.rtex": {
+			"Scale_Factor": 4,
 			"swatchIndex": 19
 		},
 		"sunken_ruins_reef_stone.rtex": {
+			"Scale_Factor": 1.1258137,
 			"swatchIndex": 20
 		},
 		"sunken_ruins_salt_sediment.rtex": {
+			"Scale_Factor": 0.3295614,
 			"swatchIndex": 24
 		},
 		"volcanic_crag_flame_core.rtex": {
@@ -4049,6 +5755,7 @@
 			"Height_Scale": 1,
 			"Normal_Scale": 1,
 			"Roughness_Scale": 1,
+			"Scale_Factor": 4,
 			"Stochastic_Tile_Size": 1,
 			"Tile_Mode": "Stochastic",
 			"Tint": "#ffffff",
@@ -4062,13 +5769,16 @@
 			"uv_scale": 0.75
 		},
 		"whispering_woods_dry_twig.rtex": {
+			"Scale_Factor": 2.6957471,
 			"swatchIndex": 26
 		},
 		"whispering_woods_faded_leaf.rtex": {
+			"Scale_Factor": 2.7543592,
 			"swatchIndex": 17
 		},
 		"whispering_woods_soft_grass.rtex": {
 			"Brightness": 1.3,
+			"Scale_Factor": 1.3309579,
 			"brightness": 1.3,
 			"swatchIndex": 21,
 			"uv_scale": 0.25
