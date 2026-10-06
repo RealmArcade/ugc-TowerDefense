@@ -261,11 +261,45 @@ public class CustomMap : IWasmModule
             if (pState.IsDefeated) continue;
 
             anyAlive = true;
-            UpdateHeroTickEffects(pState, delta);
-            UpdatePassiveIncome(pState, delta);
-            UpdateShopRotationTimer(pState, delta);
-            UpdateBossEncounterIfActive(pState, delta);
+
+            // 1. Advance timers first (single decrement per player)
+            pState.ShopRotationTimer -= delta;
+            if (!pState.Spawning)
+            {
+                pState.InterWaveTimer -= delta;
+            }
+
+            // 2. Evaluate timer thresholds
+            UpdateShopRotationTimer(pState);
             UpdateWaveStateMachine(pState, delta);
+
+            // 3. Subsystem execution with defensive isolation
+            try
+            {
+                UpdateHeroTickEffects(pState, delta);
+            }
+            catch (Exception ex)
+            {
+                _api.BroadcastMessage($"[GUEST ERROR HeroTick] {ex.GetType().Name}: {ex.Message}");
+            }
+
+            try
+            {
+                UpdatePassiveIncome(pState, delta);
+            }
+            catch (Exception ex)
+            {
+                _api.BroadcastMessage($"[GUEST ERROR Income] {ex.GetType().Name}: {ex.Message}");
+            }
+
+            try
+            {
+                UpdateBossEncounterIfActive(pState, delta);
+            }
+            catch (Exception ex)
+            {
+                _api.BroadcastMessage($"[GUEST ERROR Boss] {ex.GetType().Name}: {ex.Message}");
+            }
         }
 
         if (!anyAlive && _players.Count > 0)
@@ -277,8 +311,23 @@ public class CustomMap : IWasmModule
             return;
         }
 
-        UpdateEconomyAndUI(delta);
-        UpdateEnemyAntiSoftlockWatchdog();
+        try
+        {
+            UpdateEconomyAndUI(delta);
+        }
+        catch (Exception ex)
+        {
+            _api.BroadcastMessage($"[GUEST ERROR EconomyUI] {ex.GetType().Name}: {ex.Message}");
+        }
+
+        try
+        {
+            UpdateEnemyAntiSoftlockWatchdog();
+        }
+        catch (Exception ex)
+        {
+            _api.BroadcastMessage($"[GUEST ERROR Watchdog] {ex.GetType().Name}: {ex.Message}");
+        }
     }
 
     private void UpdateEnemyAntiSoftlockWatchdog()
@@ -437,9 +486,8 @@ public class CustomMap : IWasmModule
         UpdateLeaderboardDisplay();
     }
 
-    private void UpdateShopRotationTimer(PlayerState pState, float delta)
+    private void UpdateShopRotationTimer(PlayerState pState)
     {
-        pState.ShopRotationTimer -= delta;
 
         if (pState.ShopRotationTimer <= 5.0f && !pState.ShopWarningNotified)
         {
@@ -812,7 +860,6 @@ public class CustomMap : IWasmModule
         }
         else
         {
-            pState.InterWaveTimer -= delta;
             if (pState.InterWaveTimer <= 0f)
             {
                 BeginWave(pState, pState.CurrentWave + 1);

@@ -1435,16 +1435,16 @@
 						"crystal_mace_1": {
 							"NormalOffset": 0,
 							"ParentAttachmentId": null,
-							"PitchX": 27,
-							"PositionX": 0.44999996,
-							"PositionY": -0.47000003,
-							"PositionZ": 0.27499995,
-							"RollZ": 138,
+							"PitchX": 9,
+							"PositionX": 0.08999997,
+							"PositionY": 0.13999996,
+							"PositionZ": -0.685,
+							"RollZ": 79,
 							"Scale": 1,
 							"ScaleX": 1,
 							"ScaleY": 1,
 							"ScaleZ": 1,
-							"YawY": 173
+							"YawY": -101
 						}
 					}
 				],
@@ -2037,10 +2037,10 @@
 		"LoadingSubtitle": null,
 		"LoadingTitle": null,
 		"MapDescription": "Rogue-lite Survivor: Draft de habilidades aleatorias cada 20s con tiers de sacrificio, combate a 15 oleadas y derrota al colosal Raid Boss.",
-		"MapHeight": null,
+		"MapHeight": 256,
 		"MapName": "TOWER SURVIVORS",
 		"MapType": null,
-		"MapWidth": null,
+		"MapWidth": 256,
 		"MinimapImage": null,
 		"PlayableHeight": null,
 		"PlayableWidth": null,
