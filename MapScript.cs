@@ -96,23 +96,23 @@ public class CustomMap : IWasmModule
 
     private static readonly WaveConfig[] Waves =
     {
-        new(new[] { "zombie_soldier" }, TotalCount: 8, SpawnInterval: 0.45f, InterWaveDelay: 22.0f),
-        new(new[] { "zombie_soldier" }, TotalCount: 12, SpawnInterval: 0.40f, InterWaveDelay: 20.0f),
-        new(new[] { "zombie_soldier", "forest_goblin" }, TotalCount: 12, SpawnInterval: 0.35f, InterWaveDelay: 19.0f),
-        new(new[] { "forest_goblin", "zombie_soldier", "forest_goblin" }, TotalCount: 16, SpawnInterval: 0.30f, InterWaveDelay: 18.0f),
-        new(new[] { "giant_rock_golem", "zombie_soldier", "forest_goblin" }, TotalCount: 15, SpawnInterval: 0.40f, InterWaveDelay: 18.0f,
+        new(new[] { "unit/zombie_soldier" }, TotalCount: 8, SpawnInterval: 0.45f, InterWaveDelay: 22.0f),
+        new(new[] { "unit/zombie_soldier" }, TotalCount: 12, SpawnInterval: 0.40f, InterWaveDelay: 20.0f),
+        new(new[] { "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 12, SpawnInterval: 0.35f, InterWaveDelay: 19.0f),
+        new(new[] { "unit/forest_goblin", "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 16, SpawnInterval: 0.30f, InterWaveDelay: 18.0f),
+        new(new[] { "unit/giant_rock_golem", "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 15, SpawnInterval: 0.40f, InterWaveDelay: 18.0f,
             MiniBoss: new MiniBossInfo("MINI_BOSS_1", new Vector3(1f, 0.6f, 0.1f))),
-        new(new[] { "cyber_dragon", "zombie_soldier" }, TotalCount: 14, SpawnInterval: 0.40f, InterWaveDelay: 16.0f),
-        new(new[] { "zombie_warrior", "cyber_dragon" }, TotalCount: 16, SpawnInterval: 0.35f, InterWaveDelay: 16.0f),
-        new(new[] { "flame_drake", "forest_goblin", "zombie_warrior" }, TotalCount: 22, SpawnInterval: 0.35f, InterWaveDelay: 15.0f),
-        new(new[] { "dark_iron_ogre", "cyber_dragon", "flame_drake" }, TotalCount: 18, SpawnInterval: 0.35f, InterWaveDelay: 14.0f),
-        new(new[] { "mech_spider_monster", "dark_iron_ogre", "forest_goblin" }, TotalCount: 20, SpawnInterval: 0.35f, InterWaveDelay: 14.0f,
+        new(new[] { "unit/cyber_dragon", "unit/zombie_soldier" }, TotalCount: 14, SpawnInterval: 0.40f, InterWaveDelay: 16.0f),
+        new(new[] { "unit/zombie_warrior", "unit/cyber_dragon" }, TotalCount: 16, SpawnInterval: 0.35f, InterWaveDelay: 16.0f),
+        new(new[] { "unit/flame_drake", "unit/forest_goblin", "unit/zombie_warrior" }, TotalCount: 22, SpawnInterval: 0.35f, InterWaveDelay: 15.0f),
+        new(new[] { "unit/dark_iron_ogre", "unit/cyber_dragon", "unit/flame_drake" }, TotalCount: 18, SpawnInterval: 0.35f, InterWaveDelay: 14.0f),
+        new(new[] { "unit/mech_spider_monster", "unit/dark_iron_ogre", "unit/forest_goblin" }, TotalCount: 20, SpawnInterval: 0.35f, InterWaveDelay: 14.0f,
             MiniBoss: new MiniBossInfo("MINI_BOSS_2", new Vector3(1f, 0.3f, 0.1f))),
-        new(new[] { "zombie_warrior", "flame_drake", "cyber_dragon" }, TotalCount: 26, SpawnInterval: 0.35f, InterWaveDelay: 13.0f),
-        new(new[] { "dark_iron_ogre", "forest_goblin", "cyber_dragon" }, TotalCount: 28, SpawnInterval: 0.35f, InterWaveDelay: 13.0f),
-        new(new[] { "dark_iron_ogre", "flame_drake", "zombie_warrior" }, TotalCount: 32, SpawnInterval: 0.35f, InterWaveDelay: 12.0f),
-        new(new[] { "dark_iron_ogre", "flame_drake", "forest_goblin", "zombie_warrior" }, TotalCount: 42, SpawnInterval: 0.25f, InterWaveDelay: 15.0f),
-        new(new[] { "dragon_titan_boss" }, TotalCount: 1, SpawnInterval: 1.00f, InterWaveDelay: 20.0f, IsBoss: true)
+        new(new[] { "unit/zombie_warrior", "unit/flame_drake", "unit/cyber_dragon" }, TotalCount: 26, SpawnInterval: 0.35f, InterWaveDelay: 13.0f),
+        new(new[] { "unit/dark_iron_ogre", "unit/forest_goblin", "unit/cyber_dragon" }, TotalCount: 28, SpawnInterval: 0.35f, InterWaveDelay: 13.0f),
+        new(new[] { "unit/dark_iron_ogre", "unit/flame_drake", "unit/zombie_warrior" }, TotalCount: 32, SpawnInterval: 0.35f, InterWaveDelay: 12.0f),
+        new(new[] { "unit/dark_iron_ogre", "unit/flame_drake", "unit/forest_goblin", "unit/zombie_warrior" }, TotalCount: 42, SpawnInterval: 0.25f, InterWaveDelay: 15.0f),
+        new(new[] { "unit/dragon_titan_boss" }, TotalCount: 1, SpawnInterval: 1.00f, InterWaveDelay: 20.0f, IsBoss: true)
     };
 
     private sealed class PlayerState
@@ -218,7 +218,8 @@ public class CustomMap : IWasmModule
             }
             else
             {
-                pState.QuadrantCenter = Coordinates.GetQuadrantCenter(slotIdx);
+                int quadIndex = (activeHumanCount == 2 && slotIdx == 1) ? 4 : slotIdx;
+                pState.QuadrantCenter = Coordinates.GetQuadrantCenter(quadIndex);
             }
             _players[pIdx] = pState;
 
@@ -233,6 +234,15 @@ public class CustomMap : IWasmModule
             TriggerNewShopRotation(pState, resetTimer: true, isAutomatic: true);
 
             ShowNextWaveCountdown(pState);
+        }
+
+        if (activeHumanCount > 1)
+        {
+            _api.RegisterAbility("perk_choose_1", "[Q] Comprar Oferta 1", "Comprar oferta 1 de la tienda (-1)", "res://Assets/icons/abilities/scroll_fireball.rtex", isInstant: true);
+            _api.RegisterAbility("perk_choose_2", "[W] Comprar Oferta 2", "Comprar oferta 2 de la tienda (-2)", "res://Assets/icons/abilities/scroll_frost_nova.rtex", isInstant: true);
+            _api.RegisterAbility("perk_choose_3", "[E] Comprar Oferta 3", "Comprar oferta 3 de la tienda (-3)", "res://Assets/icons/abilities/scroll_divine_shield.rtex", isInstant: true);
+            _api.RegisterAbility("perk_reroll", "[R] Renovar Tienda", "Renovar ofertas de la tienda (-reroll)", "res://Assets/icons/abilities/magic_catalyst.rtex", isInstant: true);
+            _api.RegisterAbility("hero_meteor_spell", "[D] Meteoros", "Lluvia de meteoros", "res://Assets/icons/abilities/meteor_strike.rtex", isInstant: false);
         }
 
         _api.PanCameraTo(Coordinates.GetQuadrantCenter(0), 0.0f);
@@ -364,7 +374,7 @@ public class CustomMap : IWasmModule
         IUnit? existingHero = null;
         foreach (var unit in _api.GetAllUnits())
         {
-            if (unit.UnitId == "survivor_hero" && !unit.IsDead)
+            if ((unit.UnitId == "unit/survivor_hero" || unit.UnitId == "survivor_hero") && !unit.IsDead)
             {
                 if (Vector3.Distance(unit.Position, pState.QuadrantCenter) < 15f)
                 {
@@ -381,11 +391,7 @@ public class CustomMap : IWasmModule
         }
         else
         {
-            pState.Hero = _api.SpawnUnit("survivor_hero", pState.QuadrantCenter, false, bypassPopulation: true);
-            if (pState.Hero != null)
-            {
-                _api.SetUnitOwner(pState.Hero, pState.PlayerIndex);
-            }
+            pState.Hero = _api.SpawnUnitForPlayer("unit/survivor_hero", pState.QuadrantCenter, pState.PlayerIndex, false);
         }
 
         if (pState.Hero == null) return;
@@ -408,10 +414,7 @@ public class CustomMap : IWasmModule
         string defeatMsg = _players.Count <= 1
             ? _api.Translate("HERO_DEFEATED", pState.PlayerIndex)
             : $"P{pState.PlayerIndex + 1}: {_api.Translate("HERO_DEFEATED", pState.PlayerIndex)}";
-        if (pState.PlayerIndex == 0)
-        {
-            _api.ShowFeedbackText(defeatMsg, new Vector3(1f, 0.2f, 0.2f));
-        }
+        _api.SendMessageToPlayer(pState.PlayerIndex, defeatMsg);
         _api.BroadcastMessage(defeatMsg);
     }
 
@@ -517,6 +520,16 @@ public class CustomMap : IWasmModule
         _ => 100f
     };
 
+    private void SendPlayerShopSummary(PlayerState pState)
+    {
+        string p0 = pState.CurrentDraft[0] != null ? $"{_api.Translate(pState.CurrentDraft[0]!.NameKey, pState.PlayerIndex)} ({GetPerkCost(pState.CurrentDraft[0]!):F0}g)" : "[Agotado]";
+        string p1 = pState.CurrentDraft[1] != null ? $"{_api.Translate(pState.CurrentDraft[1]!.NameKey, pState.PlayerIndex)} ({GetPerkCost(pState.CurrentDraft[1]!):F0}g)" : "[Agotado]";
+        string p2 = pState.CurrentDraft[2] != null ? $"{_api.Translate(pState.CurrentDraft[2]!.NameKey, pState.PlayerIndex)} ({GetPerkCost(pState.CurrentDraft[2]!):F0}g)" : "[Agotado]";
+        float rerollCost = pState.RerollCount == 0 ? 0f : ShopRerollCost;
+        string msg = $"[Tienda P{pState.PlayerIndex + 1}] 1: {p0} | 2: {p1} | 3: {p2} (Reroll: {rerollCost:F0}g)";
+        _api.SendMessageToPlayer(pState.PlayerIndex, msg);
+    }
+
     private void TriggerNewShopRotation(PlayerState pState, bool resetTimer = true, bool isAutomatic = false)
     {
         if (resetTimer)
@@ -543,7 +556,7 @@ public class CustomMap : IWasmModule
             pState.CurrentDraft[slot] = RollSinglePerk(pState);
         }
 
-        if (pState.PlayerIndex == 0)
+        if (_players.Count <= 1)
         {
             for (int slot = 0; slot < 3; slot++)
             {
@@ -577,7 +590,8 @@ public class CustomMap : IWasmModule
         }
         else
         {
-            _api.BroadcastMessage($"P{pState.PlayerIndex + 1}: Ofertas de tienda renovadas.");
+            SendPlayerShopSummary(pState);
+            _api.SendMessageToPlayer(pState.PlayerIndex, _api.Translate("SHOP_READY", pState.PlayerIndex));
         }
 
         if (pState.Hero != null)
@@ -629,10 +643,7 @@ public class CustomMap : IWasmModule
         if (slotIndex < 0 || slotIndex >= 3) return;
         if (pState.SlotSold[slotIndex])
         {
-            if (pState.PlayerIndex == 0)
-            {
-                _api.ShowFeedbackText(_api.Translate("PERK_SLOT_EMPTY", pState.PlayerIndex), new Vector3(1f, 0.5f, 0.2f));
-            }
+            _api.SendMessageToPlayer(pState.PlayerIndex, _api.Translate("PERK_SLOT_EMPTY", pState.PlayerIndex));
             if (pState.Hero != null)
             {
                 _api.CreateFloatingText("! [SOLD]", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.5f, 0.2f), 0.9f);
@@ -645,10 +656,7 @@ public class CustomMap : IWasmModule
 
         if (!CanPickPerk(pState, perk))
         {
-            if (pState.PlayerIndex == 0)
-            {
-                _api.ShowFeedbackText(_api.Translate("PERK_MAX_STACKS", pState.PlayerIndex), new Vector3(1f, 0.4f, 0.2f));
-            }
+            _api.SendMessageToPlayer(pState.PlayerIndex, _api.Translate("PERK_MAX_STACKS", pState.PlayerIndex));
             if (pState.Hero != null)
             {
                 _api.CreateFloatingText("! [MAX]", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.4f, 0.2f), 0.9f);
@@ -661,10 +669,7 @@ public class CustomMap : IWasmModule
         if (currentGold < cost)
         {
             string notEnough = string.Format(_api.Translate("PERK_NOT_ENOUGH_GOLD", pState.PlayerIndex), cost, currentGold);
-            if (pState.PlayerIndex == 0)
-            {
-                _api.ShowFeedbackText(notEnough, new Vector3(1f, 0.2f, 0.2f));
-            }
+            _api.SendMessageToPlayer(pState.PlayerIndex, notEnough);
             if (pState.Hero != null)
             {
                 _api.CreateFloatingText($"! -{(cost - currentGold):F0}g", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.2f, 0.2f), 0.9f);
@@ -679,7 +684,7 @@ public class CustomMap : IWasmModule
         pState.PerkStacks[perk.Id] = current + 1;
         pState.PerksPicked++;
 
-        if (pState.PlayerIndex == 0)
+        if (_players.Count <= 1 && pState.PlayerIndex == 0)
         {
             string soldLabel = _api.Translate("PERK_SLOT_SOLD_LABEL", pState.PlayerIndex);
             string boughtId = $"perk_choose_{slotIndex + 1}";
@@ -692,12 +697,12 @@ public class CustomMap : IWasmModule
 
         string localizedPerkName = _api.Translate(perk.NameKey, pState.PlayerIndex);
         string purchaseMsg = string.Format(_api.Translate("PERK_PURCHASED", pState.PlayerIndex), localizedPerkName, pState.PerkStacks[perk.Id]);
+        _api.SendMessageToPlayer(pState.PlayerIndex, purchaseMsg);
         if (pState.PlayerIndex == 0)
         {
-            _api.ShowFeedbackText(purchaseMsg, perk.Color);
             _api.PlayClickSound();
         }
-        else
+        if (_players.Count > 1)
         {
             _api.BroadcastMessage($"P{pState.PlayerIndex + 1}: Compró {localizedPerkName} (x{pState.PerkStacks[perk.Id]}).");
         }
@@ -775,10 +780,7 @@ public class CustomMap : IWasmModule
         if (cost > 0f && _api.GetPlayerGold(pState.PlayerIndex) < cost)
         {
             string notEnough = string.Format(_api.Translate("PERK_NOT_ENOUGH_GOLD", pState.PlayerIndex), cost, _api.GetPlayerGold(pState.PlayerIndex));
-            if (pState.PlayerIndex == 0)
-            {
-                _api.ShowFeedbackText(notEnough, new Vector3(1f, 0.3f, 0.3f));
-            }
+            _api.SendMessageToPlayer(pState.PlayerIndex, notEnough);
             if (pState.Hero != null)
             {
                 _api.CreateFloatingText($"! -{(cost - _api.GetPlayerGold(pState.PlayerIndex)):F0}g", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.2f, 0.2f), 0.9f);
@@ -792,13 +794,13 @@ public class CustomMap : IWasmModule
         }
 
         pState.RerollCount++;
+        string rerollMsg = string.Format(_api.Translate("REROLL_SUCCESS", pState.PlayerIndex), ShopRerollCost);
+        _api.SendMessageToPlayer(pState.PlayerIndex, rerollMsg);
         if (pState.PlayerIndex == 0)
         {
             _api.PlayClickSound();
-            string rerollMsg = string.Format(_api.Translate("REROLL_SUCCESS", pState.PlayerIndex), ShopRerollCost);
-            _api.ShowFeedbackText(rerollMsg, new Vector3(1f, 0.85f, 0.2f));
         }
-        else
+        if (_players.Count > 1)
         {
             _api.BroadcastMessage($"P{pState.PlayerIndex + 1}: Reroll de tienda completado.");
         }
@@ -808,9 +810,9 @@ public class CustomMap : IWasmModule
 
     private string GetHeroProjectileId(PlayerState pState)
     {
-        if (pState.HasExplosiveArrows) return "fire_shard";
-        if (pState.HasFrostAura) return "frost_shard";
-        return "survivor_arrow";
+        if (pState.HasExplosiveArrows) return "weapon/fire_shard";
+        if (pState.HasFrostAura) return "weapon/frost_shard";
+        return "weapon/survivor_arrow";
     }
 
     private void RecalculateHeroStats(PlayerState pState)
@@ -987,7 +989,7 @@ public class CustomMap : IWasmModule
         string unitType = config.Composition[pState.SpawnedInWave % config.Composition.Length];
 
         IUnit? unit;
-        if (unitType == "dragon_titan_boss")
+        if (unitType == "unit/dragon_titan_boss" || unitType == "dragon_titan_boss")
         {
             var bossPos = pState.QuadrantCenter + new Vector3(0f, 0f, -10.0f);
             unit = _api.SpawnUnit(unitType, bossPos, true);
@@ -1094,9 +1096,9 @@ public class CustomMap : IWasmModule
 
     private void SpawnBossEscortWave(PlayerState pState)
     {
-        for (int s = 0; s < 8; s++) SpawnSingleEscort(pState, "zombie_soldier");
-        for (int g = 0; g < 4; g++) SpawnSingleEscort(pState, "forest_goblin");
-        for (int o = 0; o < (pState.BossEnraged ? 2 : 0); o++) SpawnSingleEscort(pState, "dark_iron_ogre");
+        for (int s = 0; s < 8; s++) SpawnSingleEscort(pState, "unit/zombie_soldier");
+        for (int g = 0; g < 4; g++) SpawnSingleEscort(pState, "unit/forest_goblin");
+        for (int o = 0; o < (pState.BossEnraged ? 2 : 0); o++) SpawnSingleEscort(pState, "unit/dark_iron_ogre");
 
         _api.BroadcastMessage(_api.Translate("RAID_BOSS_ESCORT", pState.PlayerIndex));
     }
@@ -1118,7 +1120,7 @@ public class CustomMap : IWasmModule
     {
         if (_gameOver || victim == null || attacker == null || victim.IsDead) return;
 
-        if (victim.IsEnemy && !attacker.IsEnemy && attacker.UnitId == "survivor_hero")
+        if (victim.IsEnemy && !attacker.IsEnemy && (attacker.UnitId == "unit/survivor_hero" || attacker.UnitId == "survivor_hero"))
         {
             var pState = _players.Values.FirstOrDefault(p => p.Hero != null && p.Hero.UniqueId == attacker.UniqueId);
             if (pState != null)
@@ -1128,7 +1130,7 @@ public class CustomMap : IWasmModule
             }
         }
 
-        if (!victim.IsEnemy && victim.UnitId == "survivor_hero" && attacker.IsEnemy)
+        if (!victim.IsEnemy && (victim.UnitId == "unit/survivor_hero" || victim.UnitId == "survivor_hero") && attacker.IsEnemy)
         {
             var pState = _players.Values.FirstOrDefault(p => p.Hero != null && p.Hero.UniqueId == victim.UniqueId);
             if (pState != null && pState.HasDivineThorns && !attacker.IsDead && attacker.Health > 0f)
@@ -1245,7 +1247,7 @@ public class CustomMap : IWasmModule
             pState.TotalDamageDealt += 75f;
             DealBonusDamage(nearby, 75f);
             _api.SpawnVisualEffect("lightning", nearby.Position, 1.0f);
-            _api.SpawnProjectile("survivor_arrow", primary.Position, nearby.Position, 50f);
+            _api.SpawnProjectile("weapon/survivor_arrow", primary.Position, nearby.Position, 50f);
             jumps++;
         }
     }
@@ -1255,7 +1257,7 @@ public class CustomMap : IWasmModule
         _api.SpawnVisualEffect("fireblast", primary.Position, 1.4f);
         if (pState.Hero != null)
         {
-            _api.SpawnProjectile("fire_shard", pState.Hero.Position, primary.Position, 40f);
+            _api.SpawnProjectile("weapon/fire_shard", pState.Hero.Position, primary.Position, 40f);
         }
         float splashDamage = damage * 0.50f;
 
@@ -1337,15 +1339,15 @@ public class CustomMap : IWasmModule
 
     private float GetUnitBounty(string unitId) => unitId switch
     {
-        "dragon_titan_boss" => 1000.0f,
-        "mech_spider_monster" => 250.0f,
-        "giant_rock_golem" => 150.0f,
-        "dark_iron_ogre" => 20.0f,
-        "cyber_dragon" => 20.0f,
-        "flame_drake" => 20.0f,
-        "zombie_warrior" => 15.0f,
-        "forest_goblin" => 10.0f,
-        "zombie_soldier" => 10.0f,
+        "unit/dragon_titan_boss" or "dragon_titan_boss" => 1000.0f,
+        "unit/mech_spider_monster" or "mech_spider_monster" => 250.0f,
+        "unit/giant_rock_golem" or "giant_rock_golem" => 150.0f,
+        "unit/dark_iron_ogre" or "dark_iron_ogre" => 20.0f,
+        "unit/cyber_dragon" or "cyber_dragon" => 20.0f,
+        "unit/flame_drake" or "flame_drake" => 20.0f,
+        "unit/zombie_warrior" or "zombie_warrior" => 15.0f,
+        "unit/forest_goblin" or "forest_goblin" => 10.0f,
+        "unit/zombie_soldier" or "zombie_soldier" => 10.0f,
         _ => 10.0f
     };
 
@@ -1380,7 +1382,7 @@ public class CustomMap : IWasmModule
             bounty *= 2.50f;
         }
 
-        if (pState.HasMidasTouch && unit.UnitId != "dragon_titan_boss" && _api.RandomFloat(0f, 1f) < 0.15f)
+        if (pState.HasMidasTouch && unit.UnitId is not ("unit/dragon_titan_boss" or "dragon_titan_boss") && _api.RandomFloat(0f, 1f) < 0.15f)
         {
             bounty += 40.0f;
             _api.CreateFloatingText(_api.Translate("MIDAS_FLOATING", pState.PlayerIndex), unit.Position + new Vector3(0, 2.3f, 0), new Vector3(1f, 0.85f, 0.1f), 1.3f);
@@ -1390,7 +1392,7 @@ public class CustomMap : IWasmModule
         pState.TotalGoldEarned += bounty;
         _api.CreateFloatingText($"+{bounty:F0}g", unit.Position + new Vector3(0, 1.8f, 0), new Vector3(1f, 0.85f, 0.1f), 1.2f);
 
-        if (unit.UnitId == "dragon_titan_boss")
+        if (unit.UnitId is "unit/dragon_titan_boss" or "dragon_titan_boss")
         {
             pState.BossDefeated = true;
             bool allBossesDead = _players.Values.All(p => p.IsDefeated || p.BossDefeated);
@@ -1435,29 +1437,54 @@ public class CustomMap : IWasmModule
     {
         if (_gameOver) return;
 
-        var pState = ResolvePlayer(caster: null, selected: selected);
-        if (pState == null)
+        PlayerState? pState = null;
+        if (selected != null && _players.TryGetValue(selected.Player, out var pByUnit))
         {
-            _api.BroadcastMessage("Aviso: Selecciona a tu héroe para usar comandos de tienda (-1, -2, -3, -reroll).");
-            return;
+            pState = pByUnit;
+        }
+        else
+        {
+            pState = ResolvePlayer(caster: null, selected: selected);
         }
 
-        if (pState.IsDefeated) return;
+        if (pState == null && _players.Count == 1)
+        {
+            pState = _players.Values.FirstOrDefault();
+        }
+
+        if (pState == null || pState.IsDefeated) return;
 
         string clean = message.Trim().ToLowerInvariant();
         switch (clean)
         {
             case "-1":
+            case "1":
                 TryBuyPerk(pState, 0);
                 break;
             case "-2":
+            case "2":
                 TryBuyPerk(pState, 1);
                 break;
             case "-3":
+            case "3":
                 TryBuyPerk(pState, 2);
                 break;
             case "-reroll":
+            case "reroll":
+            case "-r":
                 TryRerollShop(pState);
+                break;
+            case "-shop":
+            case "shop":
+            case "-tienda":
+            case "tienda":
+                SendPlayerShopSummary(pState);
+                break;
+            case "-help":
+            case "help":
+            case "-ayuda":
+            case "ayuda":
+                _api.SendMessageToPlayer(pState.PlayerIndex, "Comandos: -1, -2, -3 (comprar), -reroll (renovar), -shop (ver ofertas)");
                 break;
         }
     }
@@ -1486,7 +1513,7 @@ public class CustomMap : IWasmModule
             case "hero_meteor_spell":
                 if (pState.Hero != null)
                 {
-                    _api.SpawnProjectile("boss_meteor", pState.Hero.Position, targetPosition, 26f);
+                    _api.SpawnProjectile("weapon/boss_meteor", pState.Hero.Position, targetPosition, 26f);
                     _api.SpawnVisualEffect("fireblast", targetPosition, 2.5f);
                     _api.CreateFloatingText(_api.Translate("METEOR_FLOATING", pState.PlayerIndex), targetPosition + new Vector3(0, 2f, 0), new Vector3(1f, 0.4f, 0.1f), 1.2f);
                     foreach (var enemy in _api.GetUnitsInRadius(targetPosition, 4.5f))
