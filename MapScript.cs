@@ -416,7 +416,6 @@ public class CustomMap : IWasmModule
             : $"P{pState.PlayerIndex + 1}: {_api.Translate("HERO_DEFEATED", pState.PlayerIndex)}";
         _api.SendMessageToPlayer(pState.PlayerIndex, defeatMsg);
         _api.BroadcastMessage(defeatMsg);
-        _api.TriggerPlayerDefeat(pState.PlayerIndex, "Hero fallen");
     }
 
     private void UpdateHeroTickEffects(PlayerState pState, float delta)
