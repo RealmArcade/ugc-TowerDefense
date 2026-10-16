@@ -25,20 +25,22 @@
     "LoadingSubtitle": null,
     "LoadingBodyText": null,
     "HowToPlayInstructions": [
-      "Protege a tu H\u00E9roe Central en el medio de la isla: si muere, la partida termina.",
-      "Cada 20 segundos obtendr\u00E1s un Draft de 3 Habilidades aleatorias (Normal, Rara, \u00C9pica o Maldita). Elige con -1, -2, -3 o los botones de habilidad.",
+      "Protege a tu Héroe Central en el medio de la isla: si muere, la partida termina.",
+      "Cada 20 segundos obtendrás un Draft de 3 Habilidades aleatorias (Normal, Rara, Épica o Maldita). Elige con -1, -2, -3 o los botones de habilidad.",
       "Usa -reroll para barajar nuevas opciones (1ro gratis, luego cuesta oro incremental).",
-      "Escribe -perks para consultar tu lista de talentos y -stats para ver tus estad\u00EDsticas.",
-      "Compra mejoras con oro en el chat (-help) o botones del h\u00E9roe.",
-      "Prep\u00E1rate en la oleada 15 para la llegada del Drag\u00F3n Tit\u00E1n (Raid Boss)."
+      "Escribe -perks para consultar tu lista de talentos y -stats para ver tus estadísticas.",
+      "Compra mejoras con oro en el chat (-help) o botones del héroe.",
+      "Prepárate en la oleada 15 para la llegada del Dragón Titán (Raid Boss)."
     ],
-    "HowToPlayObjective": "Protege a tu H\u00E9roe Central, construye una sinergia letal de habilidades cada 20s y derrota al Drag\u00F3n Tit\u00E1n en la oleada final.",
+    "HowToPlayObjective": "Protege a tu Héroe Central, construye una sinergia letal de habilidades cada 20s y derrota al Dragón Titán en la oleada final.",
     "Version": null,
     "Changelog": null,
     "PlayerSlots": null,
     "Teams": null,
     "Tags": null,
-    "MapType": null
+    "MapType": null,
+    "TestAiPlayerCount": null,
+    "TestRandomizeSlots": null
   },
   "Dependencies": [],
   "Templates": {
@@ -121,6 +123,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -201,12 +205,14 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
         "TemplateID": "unit/cyber_dragon",
         "Name": "Cyber Dragon",
-        "Description": "Drag\u00F3n cibern\u00E9tico volador. Vuela en l\u00EDnea recta directo al castillo.",
+        "Description": "Dragón cibernético volador. Vuela en línea recta directo al castillo.",
         "MaxHp": 450,
         "Damage": 30,
         "Range": 9,
@@ -323,12 +329,14 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
         "TemplateID": "unit/dark_iron_ogre",
         "Name": "Dark Iron Ogre",
-        "Description": "Ogro tit\u00E1nico de hierro oscuro. Absorbe grandes cantidades de da\u00F1o.",
+        "Description": "Ogro titánico de hierro oscuro. Absorbe grandes cantidades de daño.",
         "MaxHp": 750,
         "Damage": 45,
         "Range": 2.2,
@@ -445,12 +453,14 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
         "TemplateID": "unit/dragon_titan_boss",
         "Name": "Dragon Titan Boss",
-        "Description": "Gran Raid Boss Oleada 15. Colosal drag\u00F3n tit\u00E1n. Entra en Enrage al 50% de vida.",
+        "Description": "Gran Raid Boss Oleada 15. Colosal dragón titán. Entra en Enrage al 50% de vida.",
         "MaxHp": 12000,
         "Damage": 150,
         "Range": 4,
@@ -567,12 +577,14 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
         "TemplateID": "unit/flame_drake",
         "Name": "Flame Drake",
-        "Description": "Draco igneo volador. Asalta las defensas sobrevolando obst\u00E1culos.",
+        "Description": "Draco igneo volador. Asalta las defensas sobrevolando obstáculos.",
         "MaxHp": 380,
         "Damage": 26,
         "Range": 8,
@@ -689,12 +701,14 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
         "TemplateID": "unit/forest_goblin",
         "Name": "Forest Goblin",
-        "Description": "Goblin del bosque sumamente r\u00E1pido y evasivo.",
+        "Description": "Goblin del bosque sumamente rápido y evasivo.",
         "MaxHp": 70,
         "Damage": 10,
         "Range": 1.8,
@@ -811,12 +825,14 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
         "TemplateID": "unit/giant_rock_golem",
         "Name": "Giant Rock Golem",
-        "Description": "Mini-Boss Oleada 5. Coloso de roca inmune a efectos de ralentizaci\u00F3n.",
+        "Description": "Mini-Boss Oleada 5. Coloso de roca inmune a efectos de ralentización.",
         "MaxHp": 3200,
         "Damage": 60,
         "Range": 2.5,
@@ -933,12 +949,14 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
         "TemplateID": "unit/mech_spider_monster",
         "Name": "Mech Spider Monster",
-        "Description": "Mini-Boss Oleada 10. Ar\u00E1cnido mec\u00E1nico demoledor con da\u00F1o masivo a estructuras.",
+        "Description": "Mini-Boss Oleada 10. Arácnido mecánico demoledor con daño masivo a estructuras.",
         "MaxHp": 5000,
         "Damage": 90,
         "Range": 3,
@@ -1055,12 +1073,14 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
         "TemplateID": "unit/survivor_hero",
-        "Name": "H\u00E9roe del Survivor",
-        "Description": "H\u00E9roe Caballero central del Survivor. Defiende la posici\u00F3n sagrada aniquilando a las oleadas enemigas con tajos y proyectiles m\u00E1gicos. Mej\u00F3ralo en la tienda de habilidades o con comandos (-help).",
+        "Name": "Héroe del Survivor",
+        "Description": "Héroe Caballero central del Survivor. Defiende la posición sagrada aniquilando a las oleadas enemigas con tajos y proyectiles mágicos. Mejóralo en la tienda de habilidades o con comandos (-help).",
         "MaxHp": 1200,
         "Damage": 45,
         "Range": 38,
@@ -1183,12 +1203,14 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
         "TemplateID": "unit/zombie_soldier",
         "Name": "Zombie Soldier",
-        "Description": "Infanter\u00EDa no-muerta enjambre b\u00E1sica. D\u00E9bil pero numerosa.",
+        "Description": "Infantería no-muerta enjambre básica. Débil pero numerosa.",
         "MaxHp": 110,
         "Damage": 13,
         "Range": 1.8,
@@ -1305,6 +1327,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -1427,6 +1451,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       }
     ],
@@ -1509,6 +1535,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -1589,6 +1617,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -1669,6 +1699,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -1749,6 +1781,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -1829,6 +1863,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -1909,6 +1945,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -1989,6 +2027,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -2069,6 +2109,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -2149,6 +2191,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -2229,6 +2273,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -2309,6 +2355,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -2389,6 +2437,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       },
       {
@@ -2469,6 +2519,8 @@
         "SoundEvents": null,
         "SpawnShader": null,
         "DeathShader": null,
+        "ProceduralAnimation": null,
+        "EnableProceduralAnimation": null,
         "DespawnShader": null
       }
     ],
@@ -3279,7 +3331,7 @@
       {
         "TemplateID": "ability/hero_meteor_spell",
         "Name": "[D] Meteorito Igneo",
-        "Description": "[D] Meteorito Igneo \u2014 Lanza un meteorito colosal sobre el area objetivo infligiendo 120 de dano en area.",
+        "Description": "[D] Meteorito Igneo — Lanza un meteorito colosal sobre el area objetivo infligiendo 120 de dano en area.",
         "AbilityType": "target_spell",
         "IconPath": "res://Assets/icons/abilities/meteor_strike.rtex",
         "ManaCost": 0,
@@ -3293,7 +3345,10 @@
         "Healing": 0,
         "SummonedUnitId": null,
         "SummonCount": 0,
-        "SummonDuration": 0
+        "SummonDuration": 0,
+        "GridX": -1,
+        "GridY": -1,
+        "Hotkey": null
       },
       {
         "TemplateID": "ability/perk_choose_1",
@@ -3312,7 +3367,10 @@
         "Healing": 0,
         "SummonedUnitId": null,
         "SummonCount": 0,
-        "SummonDuration": 0
+        "SummonDuration": 0,
+        "GridX": -1,
+        "GridY": -1,
+        "Hotkey": null
       },
       {
         "TemplateID": "ability/perk_choose_2",
@@ -3331,7 +3389,10 @@
         "Healing": 0,
         "SummonedUnitId": null,
         "SummonCount": 0,
-        "SummonDuration": 0
+        "SummonDuration": 0,
+        "GridX": -1,
+        "GridY": -1,
+        "Hotkey": null
       },
       {
         "TemplateID": "ability/perk_choose_3",
@@ -3350,7 +3411,10 @@
         "Healing": 0,
         "SummonedUnitId": null,
         "SummonCount": 0,
-        "SummonDuration": 0
+        "SummonDuration": 0,
+        "GridX": -1,
+        "GridY": -1,
+        "Hotkey": null
       },
       {
         "TemplateID": "ability/perk_reroll",
@@ -3369,7 +3433,10 @@
         "Healing": 0,
         "SummonedUnitId": null,
         "SummonCount": 0,
-        "SummonDuration": 0
+        "SummonDuration": 0,
+        "GridX": -1,
+        "GridY": -1,
+        "Hotkey": null
       }
     ],
     "Weapons": [
@@ -3747,6 +3814,1443 @@
   "CustomWaterProfiles": [],
   "CustomEnvironmentPresets": [],
   "DefaultEnvironmentPreset": null,
+  "textures": {
+    "terrain/abyssal_trench_bottom_sediment": {
+      "SwatchIndex": 0,
+      "ScaleFactor": 4,
+      "TexturePath": "abyssal_trench_bottom_sediment.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/abyssal_trench_crush_sand": {
+      "SwatchIndex": 32,
+      "ScaleFactor": 4,
+      "TexturePath": "abyssal_trench_crush_sand.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/abyssal_trench_marine_silt": {
+      "SwatchIndex": 13,
+      "ScaleFactor": 4,
+      "TexturePath": "abyssal_trench_marine_silt.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/abyssal_trench_salt_scab": {
+      "SwatchIndex": 22,
+      "ScaleFactor": 0.4163014,
+      "TexturePath": "abyssal_trench_salt_scab.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/ancient_jungle_misty_stone": {
+      "SwatchIndex": 1,
+      "ScaleFactor": 4,
+      "TexturePath": "ancient_jungle_misty_stone.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/ancient_jungle_mossy_stone": {
+      "SwatchIndex": 2,
+      "ScaleFactor": 4,
+      "TexturePath": "ancient_jungle_mossy_stone.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1.6,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/ancient_jungle_overgrown_path": {
+      "SwatchIndex": 3,
+      "ScaleFactor": 4,
+      "TexturePath": "ancient_jungle_overgrown_path.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1.6,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/bioluminescent_jungle_aura_petal": {
+      "SwatchIndex": 33,
+      "ScaleFactor": 1.4120841,
+      "TexturePath": "bioluminescent_jungle_aura_petal.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/deep_trench_cavern_grit": {
+      "SwatchIndex": 6,
+      "ScaleFactor": 4,
+      "TexturePath": "deep_trench_cavern_grit.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/deep_trench_dense_mud": {
+      "SwatchIndex": 7,
+      "ScaleFactor": 4,
+      "TexturePath": "deep_trench_dense_mud.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 2.5,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 0.2,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/dusty_canyon_barren_slope": {
+      "SwatchIndex": 28,
+      "ScaleFactor": 0.70523673,
+      "TexturePath": "dusty_canyon_barren_slope.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/dusty_canyon_burnt_mesa": {
+      "SwatchIndex": 27,
+      "ScaleFactor": 4,
+      "TexturePath": "dusty_canyon_burnt_mesa.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/dusty_canyon_desert_floor": {
+      "SwatchIndex": 30,
+      "ScaleFactor": 0.7269137,
+      "TexturePath": "dusty_canyon_desert_floor.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/dusty_canyon_granite_basin": {
+      "SwatchIndex": 10,
+      "ScaleFactor": 3.0931616,
+      "TexturePath": "dusty_canyon_granite_basin.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1.1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/dusty_canyon_granite_hill": {
+      "SwatchIndex": 29,
+      "ScaleFactor": 1.8120342,
+      "TexturePath": "dusty_canyon_granite_hill.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/dusty_canyon_scarce_soil": {
+      "SwatchIndex": 9,
+      "ScaleFactor": 0.4576266,
+      "TexturePath": "dusty_canyon_scarce_soil.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/floating_isles_float_moss": {
+      "SwatchIndex": 31,
+      "ScaleFactor": 4,
+      "TexturePath": "floating_isles_float_moss.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/floating_isles_void_crack_stone": {
+      "SwatchIndex": 5,
+      "ScaleFactor": 4,
+      "TexturePath": "floating_isles_void_crack_stone.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/floating_isles_void_root": {
+      "SwatchIndex": 4,
+      "ScaleFactor": 4,
+      "TexturePath": "floating_isles_void_root.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 2.5,
+      "Tint": "#ffffff",
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/frozen_tundra_arctic_dirt": {
+      "SwatchIndex": 11,
+      "ScaleFactor": 1.3807359,
+      "TexturePath": "frozen_tundra_arctic_dirt.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1.5,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/frozen_tundra_mud": {
+      "SwatchIndex": 12,
+      "ScaleFactor": 0.86515486,
+      "TexturePath": "frozen_tundra_mud.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1.15,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/mangrove_swamp_bog_grass": {
+      "SwatchIndex": 14,
+      "ScaleFactor": 4,
+      "TexturePath": "mangrove_swamp_bog_grass.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 2.5,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/mangrove_swamp_reed_bed": {
+      "SwatchIndex": 15,
+      "ScaleFactor": 4,
+      "TexturePath": "mangrove_swamp_reed_bed.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/petrified_forest_gray_granite": {
+      "SwatchIndex": 16,
+      "ScaleFactor": 2.6072075,
+      "TexturePath": "petrified_forest_gray_granite.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 0.35,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/sunken_ruins_crushed_granite": {
+      "SwatchIndex": 18,
+      "ScaleFactor": 4,
+      "TexturePath": "sunken_ruins_crushed_granite.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 0.4,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/sunken_ruins_deep_sand": {
+      "SwatchIndex": 23,
+      "ScaleFactor": 1.0314475,
+      "TexturePath": "sunken_ruins_deep_sand.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/sunken_ruins_mossy_stone": {
+      "SwatchIndex": 19,
+      "ScaleFactor": 4,
+      "TexturePath": "sunken_ruins_mossy_stone.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/sunken_ruins_reef_stone": {
+      "SwatchIndex": 20,
+      "ScaleFactor": 1.1258137,
+      "TexturePath": "sunken_ruins_reef_stone.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/sunken_ruins_salt_sediment": {
+      "SwatchIndex": 24,
+      "ScaleFactor": 0.3295614,
+      "TexturePath": "sunken_ruins_salt_sediment.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/volcanic_crag_flame_core": {
+      "SwatchIndex": 8,
+      "ScaleFactor": 1.9613065,
+      "TexturePath": "volcanic_crag_flame_core.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/whispering_forest_dense_brush": {
+      "SwatchIndex": 25,
+      "ScaleFactor": 4,
+      "TexturePath": "whispering_forest_dense_brush.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 2.5,
+      "Tint": "#ffffff",
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 0.75,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/whispering_woods_dry_twig": {
+      "SwatchIndex": 26,
+      "ScaleFactor": 2.6957471,
+      "TexturePath": "whispering_woods_dry_twig.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/whispering_woods_faded_leaf": {
+      "SwatchIndex": 17,
+      "ScaleFactor": 2.7543592,
+      "TexturePath": "whispering_woods_faded_leaf.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 1,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    },
+    "terrain/whispering_woods_soft_grass": {
+      "SwatchIndex": 21,
+      "ScaleFactor": 1.3309579,
+      "TexturePath": "whispering_woods_soft_grass.rtex",
+      "TextureSize": 0,
+      "NoiseConfig": null,
+      "Brightness": 1.3,
+      "Tint": null,
+      "RoughnessScale": 1,
+      "NormalScale": 1,
+      "HeightScale": 1,
+      "HeightOffset": 0,
+      "CrevicePower": 1,
+      "TileMode": "Stochastic",
+      "UvScale": 0.25,
+      "StochasticTileSize": 1,
+      "CrossFade": 0,
+      "Contrast": 0,
+      "Saturation": 0,
+      "Specular": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "DefaultPathingCode": 44,
+      "DecalBombingRules": [],
+      "VfxBombingRules": []
+    }
+  },
+  "decals": {
+    "decal/acid_drip": {
+      "TexturePath": "acid_drip.rtex",
+      "Tint": null,
+      "Brightness": 1,
+      "Contrast": 1,
+      "Saturation": 1,
+      "Opacity": 1,
+      "AlbedoMix": 0,
+      "NormalStrength": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "BlendMode": null,
+      "TextureNormal": null,
+      "TextureOrm": null,
+      "TextureEmission": null,
+      "EmissionEnergy": 0,
+      "AnimateOpacity": false,
+      "OpacityPulseSpeed": 0,
+      "MinOpacity": 0,
+      "MaxOpacity": 0,
+      "AnimateEmission": false,
+      "EmissionPulseSpeed": 0,
+      "MinEmission": 0,
+      "MaxEmission": 0,
+      "AnimateScale": false,
+      "ScalePulseSpeed": 0,
+      "MinScaleRatio": 0,
+      "MaxScaleRatio": 0,
+      "UpperFade": 0,
+      "LowerFade": 0
+    },
+    "decal/arcane_spark": {
+      "TexturePath": "arcane_spark.rtex",
+      "Tint": null,
+      "Brightness": 1,
+      "Contrast": 1,
+      "Saturation": 1,
+      "Opacity": 1,
+      "AlbedoMix": 0,
+      "NormalStrength": 0,
+      "Roughness": 0,
+      "Metallic": 0,
+      "BlendMode": null,
+      "TextureNormal": null,
+      "TextureOrm": null,
+      "TextureEmission": null,
+      "EmissionEnergy": 0,
+      "AnimateOpacity": false,
+      "OpacityPulseSpeed": 0,
+      "MinOpacity": 0,
+      "MaxOpacity": 0,
+      "AnimateEmission": false,
+      "EmissionPulseSpeed": 0,
+      "MinEmission": 0,
+      "MaxEmission": 0,
+      "AnimateScale": false,
+      "ScalePulseSpeed": 0,
+      "MinScaleRatio": 0,
+      "MaxScaleRatio": 0,
+      "UpperFade": 0,
+      "LowerFade": 0
+    }
+  },
+  "vfx_spritesheets": {
+    "spritesheet/arcane_surge_sheet": {
+      "Columns": 4,
+      "Rows": 4,
+      "Fps": 20,
+      "SubframeBlend": false,
+      "TexturePath": null
+    },
+    "spritesheet/solar_flare_sheet": {
+      "Columns": 4,
+      "Rows": 4,
+      "Fps": 20,
+      "SubframeBlend": false,
+      "TexturePath": null
+    }
+  },
+  "noise_textures": {},
+  "icons": {
+    "icon/bat_heart_gem": {
+      "TexturePath": null
+    },
+    "icon/battering_ram": {
+      "TexturePath": null
+    },
+    "icon/blue_energy_bolts": {
+      "TexturePath": null
+    },
+    "icon/blue_energy_tornado": {
+      "TexturePath": null
+    },
+    "icon/blue_magic_flame": {
+      "TexturePath": null
+    },
+    "icon/blue_magic_hand": {
+      "TexturePath": null
+    },
+    "icon/cosmic_orb": {
+      "TexturePath": null
+    },
+    "icon/dagger_down": {
+      "TexturePath": null
+    },
+    "icon/death_aura": {
+      "TexturePath": null
+    },
+    "icon/divine_flame": {
+      "TexturePath": null
+    },
+    "icon/divine_reach": {
+      "TexturePath": null
+    },
+    "icon/electric_eye": {
+      "TexturePath": null
+    },
+    "icon/electric_hand": {
+      "TexturePath": null
+    },
+    "icon/electric_punch": {
+      "TexturePath": null
+    },
+    "icon/energy_explosion": {
+      "TexturePath": null
+    },
+    "icon/explosion": {
+      "TexturePath": null
+    },
+    "icon/fiery_hands": {
+      "TexturePath": null
+    },
+    "icon/fire_and_ice": {
+      "TexturePath": null
+    },
+    "icon/fire_breath": {
+      "TexturePath": null
+    },
+    "icon/fire_elemental": {
+      "TexturePath": null
+    },
+    "icon/fire_elemental_2": {
+      "TexturePath": null
+    },
+    "icon/fire_hand_ability": {
+      "TexturePath": null
+    },
+    "icon/fire_hourglass_shield": {
+      "TexturePath": null
+    },
+    "icon/fire_lightning_gate": {
+      "TexturePath": null
+    },
+    "icon/fire_paw": {
+      "TexturePath": null
+    },
+    "icon/fire_power_punch": {
+      "TexturePath": null
+    },
+    "icon/fire_ring": {
+      "TexturePath": null
+    },
+    "icon/fire_spell": {
+      "TexturePath": null
+    },
+    "icon/flame_guardian_shield": {
+      "TexturePath": null
+    },
+    "icon/flame_hand": {
+      "TexturePath": null
+    },
+    "icon/flame_hand_2": {
+      "TexturePath": null
+    },
+    "icon/flame_trident": {
+      "TexturePath": null
+    },
+    "icon/flame_ward": {
+      "TexturePath": null
+    },
+    "icon/frost_hand": {
+      "TexturePath": null
+    },
+    "icon/golden_champion_shield": {
+      "TexturePath": null
+    },
+    "icon/golden_fist": {
+      "TexturePath": null
+    },
+    "icon/golden_hammers": {
+      "TexturePath": null
+    },
+    "icon/green_explosion": {
+      "TexturePath": null
+    },
+    "icon/green_magic_claw": {
+      "TexturePath": null
+    },
+    "icon/green_magic_flame": {
+      "TexturePath": null
+    },
+    "icon/green_magic_hand_1": {
+      "TexturePath": null
+    },
+    "icon/green_magic_portal": {
+      "TexturePath": null
+    },
+    "icon/green_power_hand": {
+      "TexturePath": null
+    },
+    "icon/hero_revive": {
+      "TexturePath": null
+    },
+    "icon/holy_cross": {
+      "TexturePath": null
+    },
+    "icon/ice_blast_arrow": {
+      "TexturePath": null
+    },
+    "icon/ice_flame": {
+      "TexturePath": null
+    },
+    "icon/ice_hand_1": {
+      "TexturePath": null
+    },
+    "icon/ice_portal": {
+      "TexturePath": null
+    },
+    "icon/ice_spirit_spell": {
+      "TexturePath": null
+    },
+    "icon/ice_wizard": {
+      "TexturePath": null
+    },
+    "icon/lightning_horseshoe": {
+      "TexturePath": null
+    },
+    "icon/lightning_spell": {
+      "TexturePath": null
+    },
+    "icon/lightning_strike": {
+      "TexturePath": null
+    },
+    "icon/lightning_strike_1": {
+      "TexturePath": null
+    },
+    "icon/lightning_strike_2": {
+      "TexturePath": null
+    },
+    "icon/lightning_strike_3": {
+      "TexturePath": null
+    },
+    "icon/magic_caster": {
+      "TexturePath": null
+    },
+    "icon/magic_catalyst": {
+      "TexturePath": null
+    },
+    "icon/magic_circle": {
+      "TexturePath": null
+    },
+    "icon/magic_circle_1": {
+      "TexturePath": null
+    },
+    "icon/magic_damage": {
+      "TexturePath": null
+    },
+    "icon/magic_explosion": {
+      "TexturePath": null
+    },
+    "icon/magic_fist": {
+      "TexturePath": null
+    },
+    "icon/magic_fist_1": {
+      "TexturePath": null
+    },
+    "icon/magic_gate": {
+      "TexturePath": null
+    },
+    "icon/magic_hand": {
+      "TexturePath": null
+    },
+    "icon/magic_hand_1": {
+      "TexturePath": null
+    },
+    "icon/magic_hand_2": {
+      "TexturePath": null
+    },
+    "icon/magic_healing_light": {
+      "TexturePath": null
+    },
+    "icon/magic_orb": {
+      "TexturePath": null
+    },
+    "icon/magic_portal": {
+      "TexturePath": null
+    },
+    "icon/magic_portal_1": {
+      "TexturePath": null
+    },
+    "icon/magic_portal_2": {
+      "TexturePath": null
+    },
+    "icon/magic_power": {
+      "TexturePath": null
+    },
+    "icon/magic_ritual": {
+      "TexturePath": null
+    },
+    "icon/magic_star": {
+      "TexturePath": null
+    },
+    "icon/magic_sword": {
+      "TexturePath": null
+    },
+    "icon/magic_upgrade_arrow": {
+      "TexturePath": null
+    },
+    "icon/magic_woman": {
+      "TexturePath": null
+    },
+    "icon/mana_wreath": {
+      "TexturePath": null
+    },
+    "icon/meat_on_board": {
+      "TexturePath": null
+    },
+    "icon/mech_gear": {
+      "TexturePath": null
+    },
+    "icon/meteor_strike": {
+      "TexturePath": null
+    },
+    "icon/mind_ward": {
+      "TexturePath": null
+    },
+    "icon/orbital_defense": {
+      "TexturePath": null
+    },
+    "icon/poisonous_ring": {
+      "TexturePath": null
+    },
+    "icon/portal": {
+      "TexturePath": null
+    },
+    "icon/portal_1": {
+      "TexturePath": null
+    },
+    "icon/portal_core": {
+      "TexturePath": null
+    },
+    "icon/portal_entrance": {
+      "TexturePath": null
+    },
+    "icon/powerful_fist": {
+      "TexturePath": null
+    },
+    "icon/purple_energy_ring": {
+      "TexturePath": null
+    },
+    "icon/purple_lightning_fist": {
+      "TexturePath": null
+    },
+    "icon/purple_magic_hand": {
+      "TexturePath": null
+    },
+    "icon/purple_magic_spell": {
+      "TexturePath": null
+    },
+    "icon/purple_magic_sphere": {
+      "TexturePath": null
+    },
+    "icon/purple_moon_aurora": {
+      "TexturePath": null
+    },
+    "icon/purple_star_magic": {
+      "TexturePath": null
+    },
+    "icon/purple_starburst": {
+      "TexturePath": null
+    },
+    "icon/red_target_icon": {
+      "TexturePath": null
+    },
+    "icon/root_down": {
+      "TexturePath": null
+    },
+    "icon/shield_rank_1": {
+      "TexturePath": null
+    },
+    "icon/skull_arrow": {
+      "TexturePath": null
+    },
+    "icon/star_projectile": {
+      "TexturePath": null
+    },
+    "icon/starburst_power": {
+      "TexturePath": null
+    },
+    "icon/storm_eye": {
+      "TexturePath": null
+    },
+    "icon/storm_lightning": {
+      "TexturePath": null
+    },
+    "icon/storm_portal": {
+      "TexturePath": null
+    },
+    "icon/sun_glyph": {
+      "TexturePath": null
+    },
+    "icon/sword_and_shield": {
+      "TexturePath": null
+    },
+    "icon/swords_shield": {
+      "TexturePath": null
+    },
+    "icon/teleport_stump": {
+      "TexturePath": null
+    },
+    "icon/teleportation": {
+      "TexturePath": null
+    },
+    "icon/victory_flag": {
+      "TexturePath": null
+    },
+    "icon/volcanic_earthshot": {
+      "TexturePath": null
+    },
+    "icon/volcanic_sun": {
+      "TexturePath": null
+    },
+    "icon/water_spell": {
+      "TexturePath": null
+    },
+    "icon/water_upward_arrow": {
+      "TexturePath": null
+    },
+    "icon/welder": {
+      "TexturePath": null
+    },
+    "icon/winged_star_shield": {
+      "TexturePath": null
+    },
+    "icon/wood_logs": {
+      "TexturePath": null
+    }
+  },
+  "skyboxes": {
+    "skybox/jade_shrine": {
+      "TexturePath": null
+    },
+    "skybox/star_reach": {
+      "TexturePath": null
+    }
+  },
+  "ribbons": {},
+  "SpawnShader": {
+    "SpawnShader/earth_crumble": {
+      "Name": "Earth Ground Crumble",
+      "TransitionMode": 3,
+      "Direction": 1,
+      "EdgeColor": "#99734cff",
+      "EdgeWidth": 0.05,
+      "EdgeEmission": 2,
+      "NoiseScale": 8,
+      "NoiseRoughness": 0.8,
+      "FresnelPower": 1,
+      "VertexDisplacement": 0.25,
+      "AlphaFade": 1,
+      "Duration": 1.1,
+      "AssetType": "SpawnShader"
+    },
+    "SpawnShader/fire_demolish": {
+      "Name": "Fire Ember Dissolve",
+      "TransitionMode": 1,
+      "Direction": 1,
+      "EdgeColor": "#ff590cff",
+      "EdgeWidth": 0.08,
+      "EdgeEmission": 7,
+      "NoiseScale": 16,
+      "NoiseRoughness": 0.7,
+      "FresnelPower": 1.5,
+      "VertexDisplacement": 0.15,
+      "AlphaFade": 1,
+      "Duration": 1.5,
+      "AssetType": "SpawnShader"
+    },
+    "SpawnShader/frost_crystallize": {
+      "Name": "Frost Crystallize",
+      "TransitionMode": 4,
+      "Direction": 2,
+      "EdgeColor": "#b2e5ffff",
+      "EdgeWidth": 0.05,
+      "EdgeEmission": 5,
+      "NoiseScale": 25,
+      "NoiseRoughness": 0.6,
+      "FresnelPower": 3.5,
+      "VertexDisplacement": 0.03,
+      "AlphaFade": 0.95,
+      "Duration": 1.3,
+      "AssetType": "SpawnShader"
+    },
+    "SpawnShader/hologram_warp": {
+      "Name": "Hologram Scanlines",
+      "TransitionMode": 2,
+      "Direction": 0,
+      "EdgeColor": "#66ff33ff",
+      "EdgeWidth": 0.04,
+      "EdgeEmission": 4,
+      "NoiseScale": 20,
+      "NoiseRoughness": 0.2,
+      "FresnelPower": 4,
+      "VertexDisplacement": 0.02,
+      "AlphaFade": 0.75,
+      "Duration": 1,
+      "AssetType": "SpawnShader"
+    },
+    "SpawnShader/magic_blueprint": {
+      "Name": "Magic Blueprint",
+      "TransitionMode": 0,
+      "Direction": 0,
+      "EdgeColor": "#00e5ffff",
+      "EdgeWidth": 0.06,
+      "EdgeEmission": 6,
+      "NoiseScale": 12,
+      "NoiseRoughness": 0.4,
+      "FresnelPower": 3,
+      "VertexDisplacement": 0,
+      "AlphaFade": 0.9,
+      "Duration": 1.2,
+      "AssetType": "SpawnShader"
+    },
+    "SpawnShader/shadow_void": {
+      "Name": "Shadow Void Collapse",
+      "TransitionMode": 5,
+      "Direction": 3,
+      "EdgeColor": "#b219ffff",
+      "EdgeWidth": 0.07,
+      "EdgeEmission": 8,
+      "NoiseScale": 14,
+      "NoiseRoughness": 0.9,
+      "FresnelPower": 2,
+      "VertexDisplacement": 0.18,
+      "AlphaFade": 1,
+      "Duration": 1.4,
+      "AssetType": "SpawnShader"
+    }
+  },
+  "gdshader": {},
   "Models": {
     "adventurer.rmesh": {
       "DespillPlayerColor": false,
@@ -7588,1442 +9092,5 @@
       "NormalizeLuminance": true,
       "Scales": 1.5
     }
-  },
-  "textures": {
-    "terrain/abyssal_trench_bottom_sediment": {
-      "SwatchIndex": 0,
-      "ScaleFactor": 4,
-      "TexturePath": "abyssal_trench_bottom_sediment.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/abyssal_trench_crush_sand": {
-      "SwatchIndex": 32,
-      "ScaleFactor": 4,
-      "TexturePath": "abyssal_trench_crush_sand.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/abyssal_trench_marine_silt": {
-      "SwatchIndex": 13,
-      "ScaleFactor": 4,
-      "TexturePath": "abyssal_trench_marine_silt.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/abyssal_trench_salt_scab": {
-      "SwatchIndex": 22,
-      "ScaleFactor": 0.4163014,
-      "TexturePath": "abyssal_trench_salt_scab.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/ancient_jungle_misty_stone": {
-      "SwatchIndex": 1,
-      "ScaleFactor": 4,
-      "TexturePath": "ancient_jungle_misty_stone.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/ancient_jungle_mossy_stone": {
-      "SwatchIndex": 2,
-      "ScaleFactor": 4,
-      "TexturePath": "ancient_jungle_mossy_stone.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1.6,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/ancient_jungle_overgrown_path": {
-      "SwatchIndex": 3,
-      "ScaleFactor": 4,
-      "TexturePath": "ancient_jungle_overgrown_path.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1.6,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/bioluminescent_jungle_aura_petal": {
-      "SwatchIndex": 33,
-      "ScaleFactor": 1.4120841,
-      "TexturePath": "bioluminescent_jungle_aura_petal.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/deep_trench_cavern_grit": {
-      "SwatchIndex": 6,
-      "ScaleFactor": 4,
-      "TexturePath": "deep_trench_cavern_grit.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/deep_trench_dense_mud": {
-      "SwatchIndex": 7,
-      "ScaleFactor": 4,
-      "TexturePath": "deep_trench_dense_mud.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 2.5,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 0.2,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/dusty_canyon_barren_slope": {
-      "SwatchIndex": 28,
-      "ScaleFactor": 0.70523673,
-      "TexturePath": "dusty_canyon_barren_slope.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/dusty_canyon_burnt_mesa": {
-      "SwatchIndex": 27,
-      "ScaleFactor": 4,
-      "TexturePath": "dusty_canyon_burnt_mesa.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/dusty_canyon_desert_floor": {
-      "SwatchIndex": 30,
-      "ScaleFactor": 0.7269137,
-      "TexturePath": "dusty_canyon_desert_floor.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/dusty_canyon_granite_basin": {
-      "SwatchIndex": 10,
-      "ScaleFactor": 3.0931616,
-      "TexturePath": "dusty_canyon_granite_basin.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1.1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/dusty_canyon_granite_hill": {
-      "SwatchIndex": 29,
-      "ScaleFactor": 1.8120342,
-      "TexturePath": "dusty_canyon_granite_hill.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/dusty_canyon_scarce_soil": {
-      "SwatchIndex": 9,
-      "ScaleFactor": 0.4576266,
-      "TexturePath": "dusty_canyon_scarce_soil.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/floating_isles_float_moss": {
-      "SwatchIndex": 31,
-      "ScaleFactor": 4,
-      "TexturePath": "floating_isles_float_moss.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/floating_isles_void_crack_stone": {
-      "SwatchIndex": 5,
-      "ScaleFactor": 4,
-      "TexturePath": "floating_isles_void_crack_stone.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/floating_isles_void_root": {
-      "SwatchIndex": 4,
-      "ScaleFactor": 4,
-      "TexturePath": "floating_isles_void_root.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 2.5,
-      "Tint": "#ffffff",
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/frozen_tundra_arctic_dirt": {
-      "SwatchIndex": 11,
-      "ScaleFactor": 1.3807359,
-      "TexturePath": "frozen_tundra_arctic_dirt.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1.5,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/frozen_tundra_mud": {
-      "SwatchIndex": 12,
-      "ScaleFactor": 0.86515486,
-      "TexturePath": "frozen_tundra_mud.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1.15,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/mangrove_swamp_bog_grass": {
-      "SwatchIndex": 14,
-      "ScaleFactor": 4,
-      "TexturePath": "mangrove_swamp_bog_grass.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 2.5,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/mangrove_swamp_reed_bed": {
-      "SwatchIndex": 15,
-      "ScaleFactor": 4,
-      "TexturePath": "mangrove_swamp_reed_bed.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/petrified_forest_gray_granite": {
-      "SwatchIndex": 16,
-      "ScaleFactor": 2.6072075,
-      "TexturePath": "petrified_forest_gray_granite.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 0.35,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/sunken_ruins_crushed_granite": {
-      "SwatchIndex": 18,
-      "ScaleFactor": 4,
-      "TexturePath": "sunken_ruins_crushed_granite.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 0.4,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/sunken_ruins_deep_sand": {
-      "SwatchIndex": 23,
-      "ScaleFactor": 1.0314475,
-      "TexturePath": "sunken_ruins_deep_sand.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/sunken_ruins_mossy_stone": {
-      "SwatchIndex": 19,
-      "ScaleFactor": 4,
-      "TexturePath": "sunken_ruins_mossy_stone.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/sunken_ruins_reef_stone": {
-      "SwatchIndex": 20,
-      "ScaleFactor": 1.1258137,
-      "TexturePath": "sunken_ruins_reef_stone.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/sunken_ruins_salt_sediment": {
-      "SwatchIndex": 24,
-      "ScaleFactor": 0.3295614,
-      "TexturePath": "sunken_ruins_salt_sediment.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/volcanic_crag_flame_core": {
-      "SwatchIndex": 8,
-      "ScaleFactor": 1.9613065,
-      "TexturePath": "volcanic_crag_flame_core.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/whispering_forest_dense_brush": {
-      "SwatchIndex": 25,
-      "ScaleFactor": 4,
-      "TexturePath": "whispering_forest_dense_brush.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 2.5,
-      "Tint": "#ffffff",
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 0.75,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/whispering_woods_dry_twig": {
-      "SwatchIndex": 26,
-      "ScaleFactor": 2.6957471,
-      "TexturePath": "whispering_woods_dry_twig.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/whispering_woods_faded_leaf": {
-      "SwatchIndex": 17,
-      "ScaleFactor": 2.7543592,
-      "TexturePath": "whispering_woods_faded_leaf.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 1,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    },
-    "terrain/whispering_woods_soft_grass": {
-      "SwatchIndex": 21,
-      "ScaleFactor": 1.3309579,
-      "TexturePath": "whispering_woods_soft_grass.rtex",
-      "TextureSize": 0,
-      "NoiseConfig": null,
-      "Brightness": 1.3,
-      "Tint": null,
-      "RoughnessScale": 1,
-      "NormalScale": 1,
-      "HeightScale": 1,
-      "HeightOffset": 0,
-      "CrevicePower": 1,
-      "TileMode": "Stochastic",
-      "UvScale": 0.25,
-      "StochasticTileSize": 1,
-      "CrossFade": 0,
-      "Contrast": 0,
-      "Saturation": 0,
-      "Specular": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "DefaultPathingCode": 44,
-      "DecalBombingRules": [],
-      "VfxBombingRules": []
-    }
-  },
-  "decals": {
-    "decal/acid_drip": {
-      "TexturePath": "acid_drip.rtex",
-      "Tint": null,
-      "Brightness": 1,
-      "Contrast": 1,
-      "Saturation": 1,
-      "Opacity": 1,
-      "AlbedoMix": 0,
-      "NormalStrength": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "BlendMode": null,
-      "TextureNormal": null,
-      "TextureOrm": null,
-      "TextureEmission": null,
-      "EmissionEnergy": 0,
-      "AnimateOpacity": false,
-      "OpacityPulseSpeed": 0,
-      "MinOpacity": 0,
-      "MaxOpacity": 0,
-      "AnimateEmission": false,
-      "EmissionPulseSpeed": 0,
-      "MinEmission": 0,
-      "MaxEmission": 0,
-      "AnimateScale": false,
-      "ScalePulseSpeed": 0,
-      "MinScaleRatio": 0,
-      "MaxScaleRatio": 0,
-      "UpperFade": 0,
-      "LowerFade": 0
-    },
-    "decal/arcane_spark": {
-      "TexturePath": "arcane_spark.rtex",
-      "Tint": null,
-      "Brightness": 1,
-      "Contrast": 1,
-      "Saturation": 1,
-      "Opacity": 1,
-      "AlbedoMix": 0,
-      "NormalStrength": 0,
-      "Roughness": 0,
-      "Metallic": 0,
-      "BlendMode": null,
-      "TextureNormal": null,
-      "TextureOrm": null,
-      "TextureEmission": null,
-      "EmissionEnergy": 0,
-      "AnimateOpacity": false,
-      "OpacityPulseSpeed": 0,
-      "MinOpacity": 0,
-      "MaxOpacity": 0,
-      "AnimateEmission": false,
-      "EmissionPulseSpeed": 0,
-      "MinEmission": 0,
-      "MaxEmission": 0,
-      "AnimateScale": false,
-      "ScalePulseSpeed": 0,
-      "MinScaleRatio": 0,
-      "MaxScaleRatio": 0,
-      "UpperFade": 0,
-      "LowerFade": 0
-    }
-  },
-  "vfx_spritesheets": {
-    "spritesheet/arcane_surge_sheet": {
-      "Columns": 4,
-      "Rows": 4,
-      "Fps": 20,
-      "SubframeBlend": false,
-      "TexturePath": null
-    },
-    "spritesheet/solar_flare_sheet": {
-      "Columns": 4,
-      "Rows": 4,
-      "Fps": 20,
-      "SubframeBlend": false,
-      "TexturePath": null
-    }
-  },
-  "noise_textures": {},
-  "icons": {
-    "icon/bat_heart_gem": {
-      "TexturePath": null
-    },
-    "icon/battering_ram": {
-      "TexturePath": null
-    },
-    "icon/blue_energy_bolts": {
-      "TexturePath": null
-    },
-    "icon/blue_energy_tornado": {
-      "TexturePath": null
-    },
-    "icon/blue_magic_flame": {
-      "TexturePath": null
-    },
-    "icon/blue_magic_hand": {
-      "TexturePath": null
-    },
-    "icon/cosmic_orb": {
-      "TexturePath": null
-    },
-    "icon/dagger_down": {
-      "TexturePath": null
-    },
-    "icon/death_aura": {
-      "TexturePath": null
-    },
-    "icon/divine_flame": {
-      "TexturePath": null
-    },
-    "icon/divine_reach": {
-      "TexturePath": null
-    },
-    "icon/electric_eye": {
-      "TexturePath": null
-    },
-    "icon/electric_hand": {
-      "TexturePath": null
-    },
-    "icon/electric_punch": {
-      "TexturePath": null
-    },
-    "icon/energy_explosion": {
-      "TexturePath": null
-    },
-    "icon/explosion": {
-      "TexturePath": null
-    },
-    "icon/fiery_hands": {
-      "TexturePath": null
-    },
-    "icon/fire_and_ice": {
-      "TexturePath": null
-    },
-    "icon/fire_breath": {
-      "TexturePath": null
-    },
-    "icon/fire_elemental": {
-      "TexturePath": null
-    },
-    "icon/fire_elemental_2": {
-      "TexturePath": null
-    },
-    "icon/fire_hand_ability": {
-      "TexturePath": null
-    },
-    "icon/fire_hourglass_shield": {
-      "TexturePath": null
-    },
-    "icon/fire_lightning_gate": {
-      "TexturePath": null
-    },
-    "icon/fire_paw": {
-      "TexturePath": null
-    },
-    "icon/fire_power_punch": {
-      "TexturePath": null
-    },
-    "icon/fire_ring": {
-      "TexturePath": null
-    },
-    "icon/fire_spell": {
-      "TexturePath": null
-    },
-    "icon/flame_guardian_shield": {
-      "TexturePath": null
-    },
-    "icon/flame_hand": {
-      "TexturePath": null
-    },
-    "icon/flame_hand_2": {
-      "TexturePath": null
-    },
-    "icon/flame_trident": {
-      "TexturePath": null
-    },
-    "icon/flame_ward": {
-      "TexturePath": null
-    },
-    "icon/frost_hand": {
-      "TexturePath": null
-    },
-    "icon/golden_champion_shield": {
-      "TexturePath": null
-    },
-    "icon/golden_fist": {
-      "TexturePath": null
-    },
-    "icon/golden_hammers": {
-      "TexturePath": null
-    },
-    "icon/green_explosion": {
-      "TexturePath": null
-    },
-    "icon/green_magic_claw": {
-      "TexturePath": null
-    },
-    "icon/green_magic_flame": {
-      "TexturePath": null
-    },
-    "icon/green_magic_hand_1": {
-      "TexturePath": null
-    },
-    "icon/green_magic_portal": {
-      "TexturePath": null
-    },
-    "icon/green_power_hand": {
-      "TexturePath": null
-    },
-    "icon/hero_revive": {
-      "TexturePath": null
-    },
-    "icon/holy_cross": {
-      "TexturePath": null
-    },
-    "icon/ice_blast_arrow": {
-      "TexturePath": null
-    },
-    "icon/ice_flame": {
-      "TexturePath": null
-    },
-    "icon/ice_hand_1": {
-      "TexturePath": null
-    },
-    "icon/ice_portal": {
-      "TexturePath": null
-    },
-    "icon/ice_spirit_spell": {
-      "TexturePath": null
-    },
-    "icon/ice_wizard": {
-      "TexturePath": null
-    },
-    "icon/lightning_horseshoe": {
-      "TexturePath": null
-    },
-    "icon/lightning_spell": {
-      "TexturePath": null
-    },
-    "icon/lightning_strike": {
-      "TexturePath": null
-    },
-    "icon/lightning_strike_1": {
-      "TexturePath": null
-    },
-    "icon/lightning_strike_2": {
-      "TexturePath": null
-    },
-    "icon/lightning_strike_3": {
-      "TexturePath": null
-    },
-    "icon/magic_caster": {
-      "TexturePath": null
-    },
-    "icon/magic_catalyst": {
-      "TexturePath": null
-    },
-    "icon/magic_circle": {
-      "TexturePath": null
-    },
-    "icon/magic_circle_1": {
-      "TexturePath": null
-    },
-    "icon/magic_damage": {
-      "TexturePath": null
-    },
-    "icon/magic_explosion": {
-      "TexturePath": null
-    },
-    "icon/magic_fist": {
-      "TexturePath": null
-    },
-    "icon/magic_fist_1": {
-      "TexturePath": null
-    },
-    "icon/magic_gate": {
-      "TexturePath": null
-    },
-    "icon/magic_hand": {
-      "TexturePath": null
-    },
-    "icon/magic_hand_1": {
-      "TexturePath": null
-    },
-    "icon/magic_hand_2": {
-      "TexturePath": null
-    },
-    "icon/magic_healing_light": {
-      "TexturePath": null
-    },
-    "icon/magic_orb": {
-      "TexturePath": null
-    },
-    "icon/magic_portal": {
-      "TexturePath": null
-    },
-    "icon/magic_portal_1": {
-      "TexturePath": null
-    },
-    "icon/magic_portal_2": {
-      "TexturePath": null
-    },
-    "icon/magic_power": {
-      "TexturePath": null
-    },
-    "icon/magic_ritual": {
-      "TexturePath": null
-    },
-    "icon/magic_star": {
-      "TexturePath": null
-    },
-    "icon/magic_sword": {
-      "TexturePath": null
-    },
-    "icon/magic_upgrade_arrow": {
-      "TexturePath": null
-    },
-    "icon/magic_woman": {
-      "TexturePath": null
-    },
-    "icon/mana_wreath": {
-      "TexturePath": null
-    },
-    "icon/meat_on_board": {
-      "TexturePath": null
-    },
-    "icon/mech_gear": {
-      "TexturePath": null
-    },
-    "icon/meteor_strike": {
-      "TexturePath": null
-    },
-    "icon/mind_ward": {
-      "TexturePath": null
-    },
-    "icon/orbital_defense": {
-      "TexturePath": null
-    },
-    "icon/poisonous_ring": {
-      "TexturePath": null
-    },
-    "icon/portal": {
-      "TexturePath": null
-    },
-    "icon/portal_1": {
-      "TexturePath": null
-    },
-    "icon/portal_core": {
-      "TexturePath": null
-    },
-    "icon/portal_entrance": {
-      "TexturePath": null
-    },
-    "icon/powerful_fist": {
-      "TexturePath": null
-    },
-    "icon/purple_energy_ring": {
-      "TexturePath": null
-    },
-    "icon/purple_lightning_fist": {
-      "TexturePath": null
-    },
-    "icon/purple_magic_hand": {
-      "TexturePath": null
-    },
-    "icon/purple_magic_spell": {
-      "TexturePath": null
-    },
-    "icon/purple_magic_sphere": {
-      "TexturePath": null
-    },
-    "icon/purple_moon_aurora": {
-      "TexturePath": null
-    },
-    "icon/purple_star_magic": {
-      "TexturePath": null
-    },
-    "icon/purple_starburst": {
-      "TexturePath": null
-    },
-    "icon/red_target_icon": {
-      "TexturePath": null
-    },
-    "icon/root_down": {
-      "TexturePath": null
-    },
-    "icon/shield_rank_1": {
-      "TexturePath": null
-    },
-    "icon/skull_arrow": {
-      "TexturePath": null
-    },
-    "icon/star_projectile": {
-      "TexturePath": null
-    },
-    "icon/starburst_power": {
-      "TexturePath": null
-    },
-    "icon/storm_eye": {
-      "TexturePath": null
-    },
-    "icon/storm_lightning": {
-      "TexturePath": null
-    },
-    "icon/storm_portal": {
-      "TexturePath": null
-    },
-    "icon/sun_glyph": {
-      "TexturePath": null
-    },
-    "icon/sword_and_shield": {
-      "TexturePath": null
-    },
-    "icon/swords_shield": {
-      "TexturePath": null
-    },
-    "icon/teleport_stump": {
-      "TexturePath": null
-    },
-    "icon/teleportation": {
-      "TexturePath": null
-    },
-    "icon/victory_flag": {
-      "TexturePath": null
-    },
-    "icon/volcanic_earthshot": {
-      "TexturePath": null
-    },
-    "icon/volcanic_sun": {
-      "TexturePath": null
-    },
-    "icon/water_spell": {
-      "TexturePath": null
-    },
-    "icon/water_upward_arrow": {
-      "TexturePath": null
-    },
-    "icon/welder": {
-      "TexturePath": null
-    },
-    "icon/winged_star_shield": {
-      "TexturePath": null
-    },
-    "icon/wood_logs": {
-      "TexturePath": null
-    }
-  },
-  "skyboxes": {
-    "skybox/jade_shrine": {
-      "TexturePath": null
-    },
-    "skybox/star_reach": {
-      "TexturePath": null
-    }
-  },
-  "ribbons": {},
-  "SpawnShader": {
-    "SpawnShader/earth_crumble": {
-      "Name": "Earth Ground Crumble",
-      "TransitionMode": 3,
-      "Direction": 1,
-      "EdgeColor": "#99734cff",
-      "EdgeWidth": 0.05,
-      "EdgeEmission": 2,
-      "NoiseScale": 8,
-      "NoiseRoughness": 0.8,
-      "FresnelPower": 1,
-      "VertexDisplacement": 0.25,
-      "AlphaFade": 1,
-      "Duration": 1.1,
-      "AssetType": "SpawnShader"
-    },
-    "SpawnShader/fire_demolish": {
-      "Name": "Fire Ember Dissolve",
-      "TransitionMode": 1,
-      "Direction": 1,
-      "EdgeColor": "#ff590cff",
-      "EdgeWidth": 0.08,
-      "EdgeEmission": 7,
-      "NoiseScale": 16,
-      "NoiseRoughness": 0.7,
-      "FresnelPower": 1.5,
-      "VertexDisplacement": 0.15,
-      "AlphaFade": 1,
-      "Duration": 1.5,
-      "AssetType": "SpawnShader"
-    },
-    "SpawnShader/frost_crystallize": {
-      "Name": "Frost Crystallize",
-      "TransitionMode": 4,
-      "Direction": 2,
-      "EdgeColor": "#b2e5ffff",
-      "EdgeWidth": 0.05,
-      "EdgeEmission": 5,
-      "NoiseScale": 25,
-      "NoiseRoughness": 0.6,
-      "FresnelPower": 3.5,
-      "VertexDisplacement": 0.03,
-      "AlphaFade": 0.95,
-      "Duration": 1.3,
-      "AssetType": "SpawnShader"
-    },
-    "SpawnShader/hologram_warp": {
-      "Name": "Hologram Scanlines",
-      "TransitionMode": 2,
-      "Direction": 0,
-      "EdgeColor": "#66ff33ff",
-      "EdgeWidth": 0.04,
-      "EdgeEmission": 4,
-      "NoiseScale": 20,
-      "NoiseRoughness": 0.2,
-      "FresnelPower": 4,
-      "VertexDisplacement": 0.02,
-      "AlphaFade": 0.75,
-      "Duration": 1,
-      "AssetType": "SpawnShader"
-    },
-    "SpawnShader/magic_blueprint": {
-      "Name": "Magic Blueprint",
-      "TransitionMode": 0,
-      "Direction": 0,
-      "EdgeColor": "#00e5ffff",
-      "EdgeWidth": 0.06,
-      "EdgeEmission": 6,
-      "NoiseScale": 12,
-      "NoiseRoughness": 0.4,
-      "FresnelPower": 3,
-      "VertexDisplacement": 0,
-      "AlphaFade": 0.9,
-      "Duration": 1.2,
-      "AssetType": "SpawnShader"
-    },
-    "SpawnShader/shadow_void": {
-      "Name": "Shadow Void Collapse",
-      "TransitionMode": 5,
-      "Direction": 3,
-      "EdgeColor": "#b219ffff",
-      "EdgeWidth": 0.07,
-      "EdgeEmission": 8,
-      "NoiseScale": 14,
-      "NoiseRoughness": 0.9,
-      "FresnelPower": 2,
-      "VertexDisplacement": 0.18,
-      "AlphaFade": 1,
-      "Duration": 1.4,
-      "AssetType": "SpawnShader"
-    }
-  },
-  "gdshader": {}
+  }
 }

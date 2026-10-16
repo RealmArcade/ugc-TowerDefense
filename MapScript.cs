@@ -187,6 +187,44 @@ public class CustomMap : IWasmModule
     private readonly Dictionary<int, int> _unitQuadrantMap = new();
     private bool _gameOver;
     private float _economyScanTimer;
+    private int _enemyPlayerIndex = -1;
+
+    private int GetEnemyPlayerIndex()
+    {
+        if (_enemyPlayerIndex >= 0) return _enemyPlayerIndex;
+
+        for (int i = 0; i < 12; i++)
+        {
+            if (_api.IsPlayerActive(i) && (_api.IsPlayerComputer(i) || _api.GetPlayerName(i) == "Enemy_AI"))
+            {
+                _enemyPlayerIndex = i;
+                return _enemyPlayerIndex;
+            }
+        }
+
+        for (int i = 0; i < 12; i++)
+        {
+            if (_api.IsPlayerActive(i) && !_players.ContainsKey(i))
+            {
+                _enemyPlayerIndex = i;
+                return _enemyPlayerIndex;
+            }
+        }
+
+        for (int i = 11; i >= 0; i--)
+        {
+            if (!_players.ContainsKey(i))
+            {
+                _api.SetPlayerActive(i, true);
+                _api.SetPlayerComputerControlled(i, true);
+                _enemyPlayerIndex = i;
+                return _enemyPlayerIndex;
+            }
+        }
+
+        _enemyPlayerIndex = 1;
+        return _enemyPlayerIndex;
+    }
 
     public void Initialize(IGameAPI api)
     {
@@ -195,6 +233,7 @@ public class CustomMap : IWasmModule
         _economyScanTimer = 0f;
         _players.Clear();
         _unitQuadrantMap.Clear();
+        _enemyPlayerIndex = -1;
         _api.SetSummaryTableHeaders("PLAYER", "DAMAGE", "INCOME", "SCORE");
 
         var activePlayers = new List<int>();
@@ -207,6 +246,14 @@ public class CustomMap : IWasmModule
         }
         if (activePlayers.Count == 0) activePlayers.Add(0);
         int activeHumanCount = activePlayers.Count;
+
+        int enemySlot = GetEnemyPlayerIndex();
+        _api.SetPlayerTeam(enemySlot, 1);
+        foreach (var pIdx in activePlayers)
+        {
+            _api.SetPlayerTeam(pIdx, 0);
+            _api.SetPlayersAllied(pIdx, enemySlot, false);
+        }
 
         for (int slotIdx = 0; slotIdx < activePlayers.Count; slotIdx++)
         {
@@ -245,7 +292,10 @@ public class CustomMap : IWasmModule
             _api.RegisterAbility("hero_meteor_spell", "[D] Meteoros", "Lluvia de meteoros", "res://Assets/icons/abilities/meteor_strike.rtex", isInstant: false);
         }
 
-        _api.PanCameraTo(Coordinates.GetQuadrantCenter(0), 0.0f);
+        foreach (var pState in _players.Values)
+        {
+            _api.PanPlayerCameraTo(pState.PlayerIndex, pState.QuadrantCenter, 0.0f);
+        }
 
         _api.OnUnitDied += OnUnitDied;
         _api.OnUnitDamaged += OnUnitDamaged;
@@ -391,7 +441,7 @@ public class CustomMap : IWasmModule
         }
         else
         {
-            pState.Hero = _api.SpawnUnitForPlayer("unit/survivor_hero", pState.QuadrantCenter, pState.PlayerIndex, false);
+            pState.Hero = _api.SpawnUnitForPlayer("unit/survivor_hero", new Vector2(pState.QuadrantCenter.X, pState.QuadrantCenter.Z), pState.PlayerIndex, false);
         }
 
         if (pState.Hero == null) return;
@@ -400,10 +450,7 @@ public class CustomMap : IWasmModule
         _api.SetUnitColor(pState.Hero, new Vector3(1f, 1f, 1f));
         RecalculateHeroStats(pState);
 
-        if (pState.PlayerIndex == 0)
-        {
-            _api.SelectUnit(pState.Hero);
-        }
+        _api.SelectPlayerUnit(pState.PlayerIndex, pState.Hero);
     }
 
     private void CheckDefeatCondition(PlayerState pState)
@@ -585,7 +632,7 @@ public class CustomMap : IWasmModule
             string meteorTooltip = _api.Translate("METEOR_SPELL_TOOLTIP", pState.PlayerIndex);
             _api.RegisterAbility("hero_meteor_spell", meteorName, meteorTooltip, "res://Assets/icons/abilities/meteor_strike.rtex", isInstant: false);
 
-            _api.PlayClickSound();
+            _api.PlayPlayerClickSound(pState.PlayerIndex);
             _api.ShowFeedbackText(_api.Translate("SHOP_READY", pState.PlayerIndex), new Vector3(1f, 0.9f, 0.2f));
         }
         else
@@ -698,10 +745,7 @@ public class CustomMap : IWasmModule
         string localizedPerkName = _api.Translate(perk.NameKey, pState.PlayerIndex);
         string purchaseMsg = string.Format(_api.Translate("PERK_PURCHASED", pState.PlayerIndex), localizedPerkName, pState.PerkStacks[perk.Id]);
         _api.SendMessageToPlayer(pState.PlayerIndex, purchaseMsg);
-        if (pState.PlayerIndex == 0)
-        {
-            _api.PlayClickSound();
-        }
+        _api.PlayPlayerClickSound(pState.PlayerIndex);
         if (_players.Count > 1)
         {
             _api.BroadcastMessage($"P{pState.PlayerIndex + 1}: Compró {localizedPerkName} (x{pState.PerkStacks[perk.Id]}).");
@@ -796,10 +840,7 @@ public class CustomMap : IWasmModule
         pState.RerollCount++;
         string rerollMsg = string.Format(_api.Translate("REROLL_SUCCESS", pState.PlayerIndex), ShopRerollCost);
         _api.SendMessageToPlayer(pState.PlayerIndex, rerollMsg);
-        if (pState.PlayerIndex == 0)
-        {
-            _api.PlayClickSound();
-        }
+        _api.PlayPlayerClickSound(pState.PlayerIndex);
         if (_players.Count > 1)
         {
             _api.BroadcastMessage($"P{pState.PlayerIndex + 1}: Reroll de tienda completado.");
@@ -957,8 +998,8 @@ public class CustomMap : IWasmModule
         if (pState.PlayerIndex == 0)
         {
             _api.StopCountdownTimer();
-            _api.PlayWarningSound();
         }
+        _api.PlayPlayerWarningSound(pState.PlayerIndex);
 
         if (config.IsBoss)
         {
@@ -988,13 +1029,15 @@ public class CustomMap : IWasmModule
         var config = Waves[pState.WaveBeingSpawned - 1];
         string unitType = config.Composition[pState.SpawnedInWave % config.Composition.Length];
 
+        int enemySlot = GetEnemyPlayerIndex();
         IUnit? unit;
         if (unitType == "unit/dragon_titan_boss" || unitType == "dragon_titan_boss")
         {
             var bossPos = pState.QuadrantCenter + new Vector3(0f, 0f, -10.0f);
-            unit = _api.SpawnUnit(unitType, bossPos, true);
+            unit = _api.SpawnUnitForPlayer(unitType, new Vector2(bossPos.X, bossPos.Z), enemySlot, true);
             if (unit != null)
             {
+                unit.IsEnemy = true;
                 pState.RaidBossInstance = unit;
                 unit.Scale = 5.0f;
             }
@@ -1002,7 +1045,11 @@ public class CustomMap : IWasmModule
         else
         {
             var spawnPos = Coordinates.GetRandomSpawnPointOnRing(_api, pState.QuadrantCenter, SpawnRingMinRadius, SpawnRingMaxRadius, SpawnHeight);
-            unit = _api.SpawnUnit(unitType, spawnPos, true);
+            unit = _api.SpawnUnitForPlayer(unitType, new Vector2(spawnPos.X, spawnPos.Z), enemySlot, true);
+            if (unit != null)
+            {
+                unit.IsEnemy = true;
+            }
         }
 
         if (unit != null)
@@ -1068,7 +1115,7 @@ public class CustomMap : IWasmModule
         boss.Speed = 8.25f;
         _api.SetUnitColor(boss, new Vector3(1f, 0.2f, 0.2f));
         _api.ShowFeedbackText(_api.Translate("RAID_BOSS_ENRAGE", pState.PlayerIndex), new Vector3(1f, 0.15f, 0.15f));
-        _api.PlayWarningSound();
+        _api.PlayPlayerWarningSound(pState.PlayerIndex);
         _api.ShakeCamera(3.0f, 1.5f);
     }
 
@@ -1087,11 +1134,11 @@ public class CustomMap : IWasmModule
         pState.BossIndicatorTimer = 0f;
 
         _api.ShowFeedbackText(_api.Translate("RAID_BOSS_ALERT", pState.PlayerIndex), new Vector3(1f, 0.85f, 0.1f));
-        _api.PlayWarningSound();
+        _api.PlayPlayerWarningSound(pState.PlayerIndex);
         _api.ShakeCamera(2.5f, 2.0f);
         var bossPos = pState.QuadrantCenter + new Vector3(0f, 0f, -10.0f);
-        _api.PanCameraTo(bossPos, 1.5f);
-        _api.PingMinimap(bossPos);
+        _api.PanPlayerCameraTo(pState.PlayerIndex, bossPos, 1.5f);
+        _api.PingPlayerMinimap(pState.PlayerIndex, bossPos);
     }
 
     private void SpawnBossEscortWave(PlayerState pState)
@@ -1106,9 +1153,11 @@ public class CustomMap : IWasmModule
     private void SpawnSingleEscort(PlayerState pState, string unitType)
     {
         var spawnPos = Coordinates.GetRandomSpawnPointOnRing(_api, pState.QuadrantCenter, SpawnRingMinRadius, SpawnRingMaxRadius, SpawnHeight);
-        var unit = _api.SpawnUnit(unitType, spawnPos, true);
+        int enemySlot = GetEnemyPlayerIndex();
+        var unit = _api.SpawnUnitForPlayer(unitType, new Vector2(spawnPos.X, spawnPos.Z), enemySlot, true);
         if (unit != null)
         {
+            unit.IsEnemy = true;
             _unitQuadrantMap[unit.UniqueId] = pState.PlayerIndex;
 
             unit.AttackMove(pState.QuadrantCenter);
@@ -1401,7 +1450,10 @@ public class CustomMap : IWasmModule
                 _gameOver = true;
                 _api.StopCountdownTimer();
                 _api.ShowFeedbackText(_api.Translate("RAID_BOSS_DEFEATED", 0), new Vector3(1f, 0.9f, 0.2f));
-                _api.PlayClickSound();
+                foreach (var p in _players.Values)
+                {
+                    _api.PlayPlayerClickSound(p.PlayerIndex);
+                }
                 _api.TriggerVictory();
             }
         }
