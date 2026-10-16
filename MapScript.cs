@@ -297,18 +297,6 @@ public class CustomMap : IWasmModule
             _api.PanPlayerCameraTo(pState.PlayerIndex, pState.QuadrantCenter, 0.0f);
         }
 
-        var activeHeroIds = new HashSet<int>(_players.Values.Where(p => p.Hero != null).Select(p => p.Hero!.UniqueId));
-        foreach (var unit in _api.GetAllUnits())
-        {
-            if (unit != null && !unit.IsDead && (unit.UnitId == "unit/survivor_hero" || unit.UnitId == "survivor_hero"))
-            {
-                if (!activeHeroIds.Contains(unit.UniqueId))
-                {
-                    _api.KillUnit(unit);
-                }
-            }
-        }
-
         _api.OnUnitDied += OnUnitDied;
         _api.OnUnitDamaged += OnUnitDamaged;
         _api.OnPlayerChatMessage += OnPlayerChatMessage;

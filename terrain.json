@@ -1,7 +1,88 @@
 {
   "Width": 256,
   "Depth": 256,
-  "Units": [],
+  "Units": [
+    {
+      "TemplateId": "unit/survivor_hero",
+      "PosX": -150,
+      "PosY": 3,
+      "PosZ": -150,
+      "RotationY": 0,
+      "Scale": 2.6,
+      "IsEnemy": false,
+      "Player": 0
+    },
+    {
+      "TemplateId": "unit/survivor_hero",
+      "PosX": -150,
+      "PosY": 3,
+      "PosZ": 0,
+      "RotationY": 0,
+      "Scale": 2.6,
+      "IsEnemy": false,
+      "Player": 0
+    },
+    {
+      "TemplateId": "unit/survivor_hero",
+      "PosX": 0,
+      "PosY": 3,
+      "PosZ": -150,
+      "RotationY": 0,
+      "Scale": 2.6,
+      "IsEnemy": false,
+      "Player": 0
+    },
+    {
+      "TemplateId": "unit/survivor_hero",
+      "PosX": -150,
+      "PosY": 3,
+      "PosZ": 150,
+      "RotationY": 0,
+      "Scale": 2.6,
+      "IsEnemy": false,
+      "Player": 0
+    },
+    {
+      "TemplateId": "unit/survivor_hero",
+      "PosX": 150,
+      "PosY": 3,
+      "PosZ": -150,
+      "RotationY": 0,
+      "Scale": 2.6,
+      "IsEnemy": false,
+      "Player": 0
+    },
+    {
+      "TemplateId": "unit/survivor_hero",
+      "PosX": 0,
+      "PosY": 3,
+      "PosZ": 150,
+      "RotationY": 0,
+      "Scale": 2.6,
+      "IsEnemy": false,
+      "Player": 0
+    },
+    {
+      "TemplateId": "unit/survivor_hero",
+      "PosX": 150,
+      "PosY": 3,
+      "PosZ": 0,
+      "RotationY": 0,
+      "Scale": 2.6,
+      "IsEnemy": false,
+      "Player": 0
+    },
+    {
+      "TemplateId": "unit/survivor_hero",
+      "PosX": 150,
+      "PosY": 3,
+      "PosZ": 150,
+      "RotationY": 0,
+      "Scale": 2.6,
+      "IsEnemy": false,
+      "Player": 0
+    }
+  ],
   "Props": [
     {
       "TemplateId": "prop/cactus_plant",
