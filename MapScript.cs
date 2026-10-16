@@ -271,6 +271,7 @@ public class CustomMap : IWasmModule
             _players[pIdx] = pState;
 
             _api.SetPlayerGold(pIdx, InitialGold);
+            _api.SetPlayerTeam(pIdx, 0);
             SpawnSurvivorHero(pState);
 
             pState.SlotSold[0] = false;
@@ -283,18 +284,29 @@ public class CustomMap : IWasmModule
             ShowNextWaveCountdown(pState);
         }
 
-        if (activeHumanCount > 1)
+        for (int i = 0; i < activePlayers.Count; i++)
         {
-            _api.RegisterAbility("perk_choose_1", "[Q] Comprar Oferta 1", "Comprar oferta 1 de la tienda (-1)", "res://Assets/icons/abilities/scroll_fireball.rtex", isInstant: true);
-            _api.RegisterAbility("perk_choose_2", "[W] Comprar Oferta 2", "Comprar oferta 2 de la tienda (-2)", "res://Assets/icons/abilities/scroll_frost_nova.rtex", isInstant: true);
-            _api.RegisterAbility("perk_choose_3", "[E] Comprar Oferta 3", "Comprar oferta 3 de la tienda (-3)", "res://Assets/icons/abilities/scroll_divine_shield.rtex", isInstant: true);
-            _api.RegisterAbility("perk_reroll", "[R] Renovar Tienda", "Renovar ofertas de la tienda (-reroll)", "res://Assets/icons/abilities/magic_catalyst.rtex", isInstant: true);
-            _api.RegisterAbility("hero_meteor_spell", "[D] Meteoros", "Lluvia de meteoros", "res://Assets/icons/abilities/meteor_strike.rtex", isInstant: false);
+            for (int j = i + 1; j < activePlayers.Count; j++)
+            {
+                _api.SetPlayersAllied(activePlayers[i], activePlayers[j], true);
+            }
         }
 
         foreach (var pState in _players.Values)
         {
             _api.PanPlayerCameraTo(pState.PlayerIndex, pState.QuadrantCenter, 0.0f);
+        }
+
+        var activeHeroIds = new HashSet<int>(_players.Values.Where(p => p.Hero != null).Select(p => p.Hero!.UniqueId));
+        foreach (var unit in _api.GetAllUnits())
+        {
+            if (unit != null && !unit.IsDead && (unit.UnitId == "unit/survivor_hero" || unit.UnitId == "survivor_hero"))
+            {
+                if (!activeHeroIds.Contains(unit.UniqueId))
+                {
+                    _api.KillUnit(unit);
+                }
+            }
         }
 
         _api.OnUnitDied += OnUnitDied;
@@ -450,6 +462,7 @@ public class CustomMap : IWasmModule
         _api.SetUnitColor(pState.Hero, new Vector3(1f, 1f, 1f));
         RecalculateHeroStats(pState);
 
+        _api.PanPlayerCameraTo(pState.PlayerIndex, pState.QuadrantCenter, 0.0f);
         _api.SelectPlayerUnit(pState.PlayerIndex, pState.Hero);
     }
 
@@ -603,43 +616,36 @@ public class CustomMap : IWasmModule
             pState.CurrentDraft[slot] = RollSinglePerk(pState);
         }
 
-        if (_players.Count <= 1)
+        for (int slot = 0; slot < 3; slot++)
         {
-            for (int slot = 0; slot < 3; slot++)
+            var p = pState.CurrentDraft[slot];
+            if (p != null)
             {
-                var p = pState.CurrentDraft[slot];
-                if (p != null)
-                {
-                    float cost = GetPerkCost(p);
-                    string key = slot switch { 0 => "Q", 1 => "W", _ => "E" };
-                    string abilityId = $"perk_choose_{slot + 1}";
-                    string translatedName = _api.Translate(p.NameKey, pState.PlayerIndex);
-                    string translatedDesc = _api.Translate(p.DescKey, pState.PlayerIndex);
-                    string name = $"[{key}] {translatedName} ({cost:F0}g)";
-                    string tooltip = $"[{key}] {translatedName} — Cost: {cost:F0}g\n{translatedDesc}";
-                    _api.RegisterAbility(abilityId, name, tooltip, p.IconPath, isInstant: true);
-                }
+                float cost = GetPerkCost(p);
+                string key = slot switch { 0 => "Q", 1 => "W", _ => "E" };
+                string abilityId = $"perk_choose_{slot + 1}";
+                string translatedName = _api.Translate(p.NameKey, pState.PlayerIndex);
+                string translatedDesc = _api.Translate(p.DescKey, pState.PlayerIndex);
+                string name = $"[{key}] {translatedName} ({cost:F0}g)";
+                string tooltip = $"[{key}] {translatedName} — Cost: {cost:F0}g\n{translatedDesc}";
+                _api.RegisterPlayerAbility(pState.PlayerIndex, abilityId, name, tooltip, p.IconPath, isInstant: true);
             }
-
-            float rerollCost = pState.RerollCount == 0 ? 0f : ShopRerollCost;
-            string rerollName = pState.RerollCount == 0
-                ? _api.Translate("REROLL_FREE", pState.PlayerIndex)
-                : string.Format(_api.Translate("REROLL_COST", pState.PlayerIndex), rerollCost);
-            string rerollTooltip = string.Format(_api.Translate("REROLL_TOOLTIP", pState.PlayerIndex), rerollCost);
-            _api.RegisterAbility("perk_reroll", rerollName, rerollTooltip, "res://Assets/icons/abilities/magic_catalyst.rtex", isInstant: true);
-
-            string meteorName = _api.Translate("METEOR_SPELL_NAME", pState.PlayerIndex);
-            string meteorTooltip = _api.Translate("METEOR_SPELL_TOOLTIP", pState.PlayerIndex);
-            _api.RegisterAbility("hero_meteor_spell", meteorName, meteorTooltip, "res://Assets/icons/abilities/meteor_strike.rtex", isInstant: false);
-
-            _api.PlayPlayerClickSound(pState.PlayerIndex);
-            _api.ShowFeedbackText(_api.Translate("SHOP_READY", pState.PlayerIndex), new Vector3(1f, 0.9f, 0.2f));
         }
-        else
-        {
-            SendPlayerShopSummary(pState);
-            _api.SendMessageToPlayer(pState.PlayerIndex, _api.Translate("SHOP_READY", pState.PlayerIndex));
-        }
+
+        float rerollCost = pState.RerollCount == 0 ? 0f : ShopRerollCost;
+        string rerollName = pState.RerollCount == 0
+            ? _api.Translate("REROLL_FREE", pState.PlayerIndex)
+            : string.Format(_api.Translate("REROLL_COST", pState.PlayerIndex), rerollCost);
+        string rerollTooltip = string.Format(_api.Translate("REROLL_TOOLTIP", pState.PlayerIndex), rerollCost);
+        _api.RegisterPlayerAbility(pState.PlayerIndex, "perk_reroll", rerollName, rerollTooltip, "res://Assets/icons/abilities/magic_catalyst.rtex", isInstant: true);
+
+        string meteorName = _api.Translate("METEOR_SPELL_NAME", pState.PlayerIndex);
+        string meteorTooltip = _api.Translate("METEOR_SPELL_TOOLTIP", pState.PlayerIndex);
+        _api.RegisterPlayerAbility(pState.PlayerIndex, "hero_meteor_spell", meteorName, meteorTooltip, "res://Assets/icons/abilities/meteor_strike.rtex", isInstant: false);
+
+        _api.PlayPlayerClickSound(pState.PlayerIndex);
+        _api.ShowPlayerFeedbackText(pState.PlayerIndex, _api.Translate("SHOP_READY", pState.PlayerIndex), new Vector3(1f, 0.9f, 0.2f));
+        SendPlayerShopSummary(pState);
 
         if (pState.Hero != null)
         {
@@ -731,13 +737,10 @@ public class CustomMap : IWasmModule
         pState.PerkStacks[perk.Id] = current + 1;
         pState.PerksPicked++;
 
-        if (_players.Count <= 1 && pState.PlayerIndex == 0)
-        {
-            string soldLabel = _api.Translate("PERK_SLOT_SOLD_LABEL", pState.PlayerIndex);
-            string boughtId = $"perk_choose_{slotIndex + 1}";
-            string perkName = _api.Translate(perk.NameKey, pState.PlayerIndex);
-            _api.RegisterAbility(boughtId, $"{soldLabel} {perkName}", $"{soldLabel} {perkName} (x{pState.PerkStacks[perk.Id]})", perk.IconPath, isInstant: true);
-        }
+        string soldLabel = _api.Translate("PERK_SLOT_SOLD_LABEL", pState.PlayerIndex);
+        string boughtId = $"perk_choose_{slotIndex + 1}";
+        string perkName = _api.Translate(perk.NameKey, pState.PlayerIndex);
+        _api.RegisterPlayerAbility(pState.PlayerIndex, boughtId, $"{soldLabel} {perkName}", $"{soldLabel} {perkName} (x{pState.PerkStacks[perk.Id]})", perk.IconPath, isInstant: true);
 
         ApplyPerkAcquisition(pState, perk);
         RecalculateHeroStats(pState);
@@ -1547,6 +1550,8 @@ public class CustomMap : IWasmModule
 
         var pState = ResolvePlayer(caster, selected: null, abilityId: abilityId, targetPosition: targetPosition);
         if (pState == null || pState.IsDefeated) return;
+
+        if (caster != null && pState.Hero != null && caster.UniqueId != pState.Hero.UniqueId) return;
 
         switch (abilityId)
         {

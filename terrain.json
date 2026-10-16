@@ -1,18 +1,7 @@
 {
   "Width": 256,
   "Depth": 256,
-  "Units": [
-    {
-      "TemplateId": "unit/survivor_hero",
-      "PosX": -150,
-      "PosY": 3,
-      "PosZ": -150,
-      "RotationY": 0,
-      "Scale": 2.6,
-      "IsEnemy": false,
-      "Player": 0
-    }
-  ],
+  "Units": [],
   "Props": [
     {
       "TemplateId": "prop/cactus_plant",
