@@ -224,6 +224,7 @@ public class CustomMap : IWasmModule
             _players[pIdx] = pState;
 
             _api.SetPlayerGold(pIdx, InitialGold);
+            _api.SetPlayerTeam(pIdx, 0);
             SpawnSurvivorHero(pState);
 
             pState.SlotSold[0] = false;
@@ -234,6 +235,26 @@ public class CustomMap : IWasmModule
             TriggerNewShopRotation(pState, resetTimer: true, isAutomatic: true);
 
             ShowNextWaveCountdown(pState);
+        }
+
+        for (int i = 0; i < activePlayers.Count; i++)
+        {
+            for (int j = i + 1; j < activePlayers.Count; j++)
+            {
+                _api.SetPlayersAllied(activePlayers[i], activePlayers[j], true);
+            }
+        }
+
+        var activeHeroIds = new HashSet<int>(_players.Values.Where(p => p.Hero != null).Select(p => p.Hero!.UniqueId));
+        foreach (var unit in _api.GetAllUnits())
+        {
+            if (unit != null && !unit.IsDead && (unit.UnitId == "unit/survivor_hero" || unit.UnitId == "survivor_hero"))
+            {
+                if (!activeHeroIds.Contains(unit.UniqueId))
+                {
+                    _api.KillUnit(unit);
+                }
+            }
         }
 
         if (activeHumanCount > 1)
@@ -1495,6 +1516,8 @@ public class CustomMap : IWasmModule
 
         var pState = ResolvePlayer(caster, selected: null, abilityId: abilityId, targetPosition: targetPosition);
         if (pState == null || pState.IsDefeated) return;
+
+        if (caster != null && pState.Hero != null && caster.UniqueId != pState.Hero.UniqueId) return;
 
         switch (abilityId)
         {
