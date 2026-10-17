@@ -9,7 +9,7 @@
       "PosZ": -150,
       "RotationY": 0,
       "Scale": 2.6,
-      "IsEnemy": false,
+      "IsEnemy": true,
       "Player": 0
     }
   ],
