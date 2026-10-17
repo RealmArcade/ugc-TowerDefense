@@ -3986,11 +3986,6 @@
             Gets or sets a value indicating whether overhead health and mana bars are hidden for this unit.
             </summary>
         </member>
-        <member name="P:Realm.MapAPI.UnitId.IsEnemy">
-            <summary>
-            Gets or sets a value indicating whether this unit is considered hostile or belonging to an enemy team.
-            </summary>
-        </member>
         <member name="P:Realm.MapAPI.UnitId.Facing">
             <summary>
             Gets or sets the facing orientation of the unit in radians.
