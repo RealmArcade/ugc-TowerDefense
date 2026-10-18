@@ -207,7 +207,7 @@ public class CustomMap : IWasmModule
         var activePlayers = new List<int>();
         for (int i = 0; i < 12; i++)
         {
-            if (_api.IsPlayerActive(i) && !_api.IsPlayerComputer(i) && _api.GetPlayerName(i) != "Enemy_AI")
+            if (_api.GetPlayer(i).IsActive && !_api.GetPlayer(i).IsComputer && _api.GetPlayerName(i) != "Enemy_AI")
             {
                 activePlayers.Add(i);
             }
@@ -695,7 +695,7 @@ public class CustomMap : IWasmModule
         }
 
         float cost = GetPerkCost(perk);
-        float currentGold = _api.GetPlayerGold(pState.PlayerIndex);
+        float currentGold = _api.GetPlayer(pState.PlayerIndex).Gold;
         if (currentGold < cost)
         {
             string notEnough = string.Format(_api.Translate("PERK_NOT_ENOUGH_GOLD", pState.PlayerIndex), cost, currentGold);
@@ -804,13 +804,13 @@ public class CustomMap : IWasmModule
     private void TryRerollShop(PlayerState pState)
     {
         float cost = pState.RerollCount == 0 ? 0f : ShopRerollCost;
-        if (cost > 0f && _api.GetPlayerGold(pState.PlayerIndex) < cost)
+        if (cost > 0f && _api.GetPlayer(pState.PlayerIndex).Gold < cost)
         {
-            string notEnough = string.Format(_api.Translate("PERK_NOT_ENOUGH_GOLD", pState.PlayerIndex), cost, _api.GetPlayerGold(pState.PlayerIndex));
+            string notEnough = string.Format(_api.Translate("PERK_NOT_ENOUGH_GOLD", pState.PlayerIndex), cost, _api.GetPlayer(pState.PlayerIndex).Gold);
             _api.SendMessageToPlayer(pState.PlayerIndex, notEnough);
             if (pState.Hero.IsValid)
             {
-                _api.CreateFloatingText($"! -{(cost - _api.GetPlayerGold(pState.PlayerIndex)):F0}g", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.2f, 0.2f), 0.9f);
+                _api.CreateFloatingText($"! -{(cost - _api.GetPlayer(pState.PlayerIndex).Gold):F0}g", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.2f, 0.2f), 0.9f);
             }
             return;
         }
@@ -1581,7 +1581,7 @@ public class CustomMap : IWasmModule
             if (!_players.TryGetValue(0, out var p0)) return;
 
             _api.SetLeaderboardValue(_api.Translate("LB_WAVE", 0), $"{p0.CurrentWave} / {TotalWaves}");
-            _api.SetLeaderboardValue(_api.Translate("LB_GOLD", 0), $"{(int)_api.GetPlayerGold(0)} (+{(int)p0.CurrentIncomePerSecond}/s)");
+            _api.SetLeaderboardValue(_api.Translate("LB_GOLD", 0), $"{(int)_api.GetPlayer(0).Gold} (+{(int)p0.CurrentIncomePerSecond}/s)");
             _api.SetLeaderboardValue(_api.Translate("LB_SHOP", 0), $"{p0.ShopRotationTimer:F0}s / 40s | Perks: {p0.PerksPicked}");
             _api.SetLeaderboardValue(_api.Translate("LB_KILLS", 0), $"{p0.TotalKills}");
             _api.SetLeaderboardValue(_api.Translate("LB_ENEMIES", 0), $"{Math.Max(0, p0.AliveInWave)}");
@@ -1592,7 +1592,7 @@ public class CustomMap : IWasmModule
             {
                 string prefix = $"P{p.PlayerIndex + 1}";
                 string status = p.IsDefeated ? "(CAÍDO)" : (p.CurrentWave >= TotalWaves ? "(VICTORIA)" : $"W{p.CurrentWave}/{TotalWaves}");
-                _api.SetLeaderboardValue($"{prefix} ORO", $"{(int)_api.GetPlayerGold(p.PlayerIndex)} (+{(int)p.CurrentIncomePerSecond}/s)");
+                _api.SetLeaderboardValue($"{prefix} ORO", $"{(int)_api.GetPlayer(p.PlayerIndex).Gold} (+{(int)p.CurrentIncomePerSecond}/s)");
                 _api.SetLeaderboardValue($"{prefix} ESTADO", $"{status} | Kills: {p.TotalKills}");
             }
         }
