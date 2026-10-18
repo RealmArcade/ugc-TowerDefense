@@ -40,7 +40,8 @@
     "Tags": null,
     "MapType": null,
     "TestAiPlayerCount": null,
-    "TestRandomizeSlots": null
+    "TestRandomizeSlots": null,
+    "TestRandomSeed": null
   },
   "Dependencies": [],
   "Templates": {
