@@ -2,7 +2,7 @@
   "MapName": "TOWER SURVIVORS",
   "Author": "Horaid_Topa",
   "Version": "1.0.0",
-  "Description": "Rogue-lite Survivor: 4-Player cooperative arena, rotating skill draft, 15 perilous waves and titan raid boss.",
+  "Description": "Rogue-lite Survivor: 8-Player cooperative arena, rotating skill draft, 15 perilous waves and titan raid boss.",
   "Tags": [
     "TowerDefense",
     "Survivor",
@@ -466,11 +466,11 @@
       "AGENTS.md": "891a37c63c6d8bec37bdea9e67b07e9ab2f4649ffe251f7c01ad07093da29348",
       "Coordinates.cs": "b61b81f28be3dab2c8fc687ae69cdc0d86154ca525969f0ec14d8f42a2c1f77f",
       "CustomMap.csproj": "e2c083a99c6cddc083c932d33580c20327b81a124f8a2126e3c88908b34c89b8",
-      "CustomMap.wasm": "b04b378f61460745118d0e769805cc5b31fdfff27c5319e20886391d13b7ab97",
+      "CustomMap.wasm": "e0d40f62e933b158496d6a941b668d53fd4f02119c44516c0c75789d19d18f45",
       "Directory.Build.targets": "78e34a25cb8ab8340c598c9b1ba5d1ae2e6a8989ea69bc50a7425d5aa2be9695",
       "island_import.png": "8f343b0534492813dda01e2a05fdef4af5a72956d2d647c52d2b5975b74c7fef",
       "LICENSE.md": "cf7660fe2a1e73d981dd627c1f47b53992d3135f14dd6fdd3b7d87cd4c1daa05",
-      "MapScript.cs": "7678aa716ab07538968f9eba35358bb89b8e707c4988ba4691069f5829c79f35",
+      "MapScript.cs": "9c082f59104953e31d46b63d1955637b07e6c62f1863539a31d19c7006cd24f2",
       "MapTemplates.g.cs": "1b8a765b1c5651e53f198432b194358149567ab5db2800e31b24413162ab4a20",
       "metadata.json": "b7015306135bf1c32ae3a0c4eaeb02e68f1f4725a8eba9134605ab53a85f06bc",
       "nuget.config": "8c84f4c3095277b7516bbe6f1e187e033012def0c0c5dd56cbba48f51d5778bf",
@@ -485,18 +485,18 @@
       "terrain_splat_weights.exr": "9d459de1de0a5f8b1ebf675e5abba773fadca10c70d8adc9e7cfa67bc0e0b808",
       "terrain_splat_weights.png": "463208e69a0ffbc0f02fca7da00c5b3012b0fa769c73ad79dd500591a54d8744",
       "terrain_water.exr": "74ea622ef8501c718d7ad4850e0f2e0d514f86d89fb77b0bf8c7ee2013ce5b67",
-      "thumbnail.png": "9370c403233a07f9668f65937befa6abd33a62d6eb54cf082969f382205bcdc9",
+      "thumbnail.png": "0b64c9704863f834f7f6409328508fbfd0b1dc038024d034f60d71e4d4677150",
       "WasmEntryPoint.g.cs": "205a81e2e99026d4f7162b563533487d6409c2eee0780e7ba5caa9bdb58e3445",
       "lib/Realm.EditorAPI.xml": "89d50702da299ac6c50cd177808766095feadbd91cd03199d0c4aa4a57218918",
       "lib/Realm.MapAPI.deps.json": "962673307f152cd15aec70f90eea72a39cae0dc1d43dac9f56aba56cfb213073",
-      "lib/Realm.MapAPI.dll": "c6a6bc696e818a18d234486d28f0d6fd7d54bdac7e48d51440249433988b45ba",
-      "lib/Realm.MapAPI.pdb": "c62889c1e06c11cbf52c7fd2019911d4e5e42692f3ead5a3d7d9f32e8c9f6772",
+      "lib/Realm.MapAPI.dll": "695ce586cd2eccdcff8aea6fadaec1948efadd336603fcbc2da95149e89df3c9",
+      "lib/Realm.MapAPI.pdb": "1134a9ceb1d5aff795d268c094a0ea5bfeb565601e67a0810e7c669dc55c959a",
       "lib/Realm.MapAPI.xml": "3ed1c5e937a5d4bf15719dee8b1a49f864010afdb0ca2ca824921eb355772bd8",
       "locale/en.json": "239a919b55ad890f2c457f9c9dc77242992151491864fca47056f1d2706eb4f9",
       "locale/es.json": "f74d7870a9d78d1abdcedbfd6e1f71af565c32e6f9eb3b5161ef89615b2662fc",
       "wit/game.g.wit": "51669bf092d927bfd96a78b3790974803e0ee7df5d3600eab82e95a1e355debd",
-      "bin/Release/net10.0/wasi-wasm/native/CustomMap.wasm": "b04b378f61460745118d0e769805cc5b31fdfff27c5319e20886391d13b7ab97",
-      "bin/Release/net10.0/wasi-wasm/publish/CustomMap.wasm": "b04b378f61460745118d0e769805cc5b31fdfff27c5319e20886391d13b7ab97"
+      "bin/Release/net10.0/wasi-wasm/native/CustomMap.wasm": "e0d40f62e933b158496d6a941b668d53fd4f02119c44516c0c75789d19d18f45",
+      "bin/Release/net10.0/wasi-wasm/publish/CustomMap.wasm": "e0d40f62e933b158496d6a941b668d53fd4f02119c44516c0c75789d19d18f45"
     }
   }
 }
