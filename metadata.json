@@ -5,7 +5,7 @@
     "MapName": "TOWER SURVIVORS",
     "MapDescription": "Rogue-lite Survivor: Draft de habilidades aleatorias cada 20s con tiers de sacrificio, combate a 15 oleadas y derrota al colosal Raid Boss.",
     "Author": null,
-    "SuggestedPlayers": null,
+    "SuggestedPlayers": "1 - 8",
     "MinimapImage": null,
     "ShroudType": "visible",
     "WeatherType": null,
@@ -39,9 +39,10 @@
     "Teams": null,
     "Tags": null,
     "MapType": null,
-    "TestAiPlayerCount": null,
-    "TestRandomizeSlots": null,
-    "TestRandomSeed": null
+    "TestAiPlayerCount": 7,
+    "TestRandomizeSlots": true,
+    "TestRandomSeed": 0,
+    "MaxTestPlayers": 8
   },
   "Dependencies": [],
   "Templates": {
