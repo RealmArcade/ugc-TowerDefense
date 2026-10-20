@@ -5,7 +5,7 @@
     "MapName": "TOWER SURVIVORS",
     "MapDescription": "Rogue-lite Survivor: Draft de habilidades aleatorias cada 20s con tiers de sacrificio, combate a 15 oleadas y derrota al colosal Raid Boss.",
     "Author": null,
-    "SuggestedPlayers": null,
+    "SuggestedPlayers": "1 - 8",
     "MinimapImage": null,
     "ShroudType": "visible",
     "WeatherType": null,
@@ -39,8 +39,10 @@
     "Teams": null,
     "Tags": null,
     "MapType": null,
-    "TestAiPlayerCount": null,
-    "TestRandomizeSlots": null
+    "TestAiPlayerCount": 7,
+    "TestRandomizeSlots": true,
+    "TestRandomSeed": 0,
+    "MaxTestPlayers": 8
   },
   "Dependencies": [],
   "Templates": {
@@ -118,6 +120,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -125,7 +128,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "unit/orc_warrior_7",
@@ -200,6 +204,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -207,7 +212,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "unit/cyber_dragon",
@@ -324,6 +330,7 @@
         },
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -331,7 +338,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "unit/dark_iron_ogre",
@@ -448,6 +456,7 @@
         },
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -455,7 +464,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "unit/dragon_titan_boss",
@@ -572,6 +582,7 @@
         },
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -579,7 +590,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "unit/flame_drake",
@@ -696,6 +708,7 @@
         },
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -703,7 +716,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "unit/forest_goblin",
@@ -820,6 +834,7 @@
         },
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -827,7 +842,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "unit/giant_rock_golem",
@@ -944,6 +960,7 @@
         },
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -951,7 +968,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "unit/mech_spider_monster",
@@ -1068,6 +1086,7 @@
         },
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -1075,7 +1094,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "unit/survivor_hero",
@@ -1198,6 +1218,7 @@
         },
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -1205,7 +1226,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "unit/zombie_soldier",
@@ -1322,6 +1344,7 @@
         },
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -1329,7 +1352,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "unit/zombie_warrior",
@@ -1446,6 +1470,7 @@
         },
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -1453,7 +1478,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       }
     ],
     "Buildings": [
@@ -1530,6 +1556,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -1537,7 +1564,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "building/golden_temple",
@@ -1612,6 +1640,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -1619,7 +1648,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "building/ice_castle_1",
@@ -1694,6 +1724,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -1701,7 +1732,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "building/ice_tower_1",
@@ -1776,6 +1808,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -1783,7 +1816,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "building/magic_tower_4",
@@ -1858,6 +1892,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -1865,7 +1900,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "building/skull_tower",
@@ -1940,6 +1976,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -1947,7 +1984,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "building/stone_tower_14",
@@ -2022,6 +2060,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -2029,7 +2068,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "building/timber_framed_house",
@@ -2104,6 +2144,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -2111,7 +2152,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "building/tower",
@@ -2186,6 +2228,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -2193,7 +2236,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "building/tower_1",
@@ -2268,6 +2312,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -2275,7 +2320,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "building/volcano_entrance",
@@ -2350,6 +2396,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -2357,7 +2404,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "building/wooden_tower",
@@ -2432,6 +2480,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -2439,7 +2488,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       },
       {
         "TemplateID": "building/wooden_workshop",
@@ -2514,6 +2564,7 @@
         "ObjectAttachments": null,
         "Sounds": null,
         "StartingItems": null,
+        "ShopItems": null,
         "Upgrades": null,
         "StatusEffects": null,
         "SoundEvents": null,
@@ -2521,7 +2572,8 @@
         "DeathShader": null,
         "ProceduralAnimation": null,
         "EnableProceduralAnimation": null,
-        "DespawnShader": null
+        "DespawnShader": null,
+        "ConstructionRange": 4
       }
     ],
     "Resources": [],

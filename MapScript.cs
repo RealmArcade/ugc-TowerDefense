@@ -118,7 +118,7 @@ public class CustomMap : IWasmModule
     private sealed class PlayerState
     {
         public int PlayerIndex { get; }
-        public IUnit? Hero { get; set; }
+        public UnitId Hero = UnitId.Invalid;
         public Vector3 QuadrantCenter { get; set; }
         public bool IsDefeated { get; set; }
 
@@ -164,7 +164,7 @@ public class CustomMap : IWasmModule
         public float TotalGoldEarned;
         public float CurrentIncomePerSecond = BasePassiveGoldPerSecond;
 
-        public IUnit? RaidBossInstance;
+        public UnitId RaidBossInstance = UnitId.Invalid;
         public bool BossEnraged;
         public float BossEscortTimer;
         public float BossIndicatorTimer;
@@ -187,44 +187,13 @@ public class CustomMap : IWasmModule
     private readonly Dictionary<int, int> _unitQuadrantMap = new();
     private bool _gameOver;
     private float _economyScanTimer;
-    private int _enemyPlayerIndex = -1;
+    private const int EnemyProxyPlayerOffset = 12;
 
-    private int GetEnemyPlayerIndex()
-    {
-        if (_enemyPlayerIndex >= 0) return _enemyPlayerIndex;
+    private static int GetEnemyPlayerIndex(int playerIndex) => playerIndex + EnemyProxyPlayerOffset;
 
-        for (int i = 0; i < 12; i++)
-        {
-            if (_api.IsPlayerActive(i) && (_api.IsPlayerComputer(i) || _api.GetPlayerName(i) == "Enemy_AI"))
-            {
-                _enemyPlayerIndex = i;
-                return _enemyPlayerIndex;
-            }
-        }
+    private bool IsEnemy(UnitId unit, int playerIndex) => unit.IsValid && !_api.ArePlayersAllied(unit.Player, playerIndex);
 
-        for (int i = 0; i < 12; i++)
-        {
-            if (_api.IsPlayerActive(i) && !_players.ContainsKey(i))
-            {
-                _enemyPlayerIndex = i;
-                return _enemyPlayerIndex;
-            }
-        }
-
-        for (int i = 11; i >= 0; i--)
-        {
-            if (!_players.ContainsKey(i))
-            {
-                _api.SetPlayerActive(i, true);
-                _api.SetPlayerComputerControlled(i, true);
-                _enemyPlayerIndex = i;
-                return _enemyPlayerIndex;
-            }
-        }
-
-        _enemyPlayerIndex = 1;
-        return _enemyPlayerIndex;
-    }
+    private bool AreEnemies(UnitId unitA, UnitId unitB) => unitA.IsValid && unitB.IsValid && !_api.ArePlayersAllied(unitA.Player, unitB.Player);
 
     public void Initialize(IGameAPI api)
     {
@@ -233,45 +202,60 @@ public class CustomMap : IWasmModule
         _economyScanTimer = 0f;
         _players.Clear();
         _unitQuadrantMap.Clear();
-        _enemyPlayerIndex = -1;
         _api.SetSummaryTableHeaders("PLAYER", "DAMAGE", "INCOME", "SCORE");
 
-        var activePlayers = new List<int>();
-        for (int i = 0; i < 12; i++)
-        {
-            if (_api.IsPlayerActive(i) && !_api.IsPlayerComputer(i) && _api.GetPlayerName(i) != "Enemy_AI")
-            {
-                activePlayers.Add(i);
-            }
-        }
-        if (activePlayers.Count == 0) activePlayers.Add(0);
-        int activeHumanCount = activePlayers.Count;
+        const int MaxSurvivors = 8;
+        var participants = _api.GetActivePlayerIndices(EnemyProxyPlayerOffset)
+            .Where(i => i > 0)
+            .ToList();
 
-        int enemySlot = GetEnemyPlayerIndex();
-        _api.SetPlayerTeam(enemySlot, 1);
-        foreach (var pIdx in activePlayers)
+        if (participants.Count == 0)
+        {
+            participants.Add(1);
+        }
+
+        if (participants.Count > MaxSurvivors)
+        {
+            foreach (int slot in participants)
+            {
+                _api.ShowPlayerFeedbackText(slot, _api.Translate("TOO_MANY_PLAYERS", slot), new Vector3(1f, 0.3f, 0.3f));
+            }
+            return;
+        }
+
+        var activePlayerIndices = participants;
+        int activeCount = activePlayerIndices.Count;
+
+        foreach (var pIdx in activePlayerIndices)
         {
             _api.SetPlayerTeam(pIdx, 0);
-            _api.SetPlayersAllied(pIdx, enemySlot, false);
+            int enemySlot = GetEnemyPlayerIndex(pIdx);
+            _api.SetPlayerActive(enemySlot, true);
+            _api.SetPlayerComputerControlled(enemySlot, true);
+            _api.SetPlayerTeam(enemySlot, 1);
+            foreach (var otherPlayer in activePlayerIndices)
+            {
+                _api.SetPlayersAllied(otherPlayer, enemySlot, false);
+            }
         }
 
-        for (int slotIdx = 0; slotIdx < activePlayers.Count; slotIdx++)
+        for (int i = 0; i < activePlayerIndices.Count; i++)
         {
-            int pIdx = activePlayers[slotIdx];
+            for (int j = i + 1; j < activePlayerIndices.Count; j++)
+            {
+                _api.SetPlayersAllied(activePlayerIndices[i], activePlayerIndices[j], true);
+            }
+        }
+
+        for (int slotIdx = 0; slotIdx < activePlayerIndices.Count; slotIdx++)
+        {
+            int pIdx = activePlayerIndices[slotIdx];
             var pState = new PlayerState(pIdx);
-            if (activeHumanCount <= 1)
-            {
-                pState.QuadrantCenter = Coordinates.QuadrantCenters[0];
-            }
-            else
-            {
-                int quadIndex = (activeHumanCount == 2 && slotIdx == 1) ? 4 : slotIdx;
-                pState.QuadrantCenter = Coordinates.GetQuadrantCenter(quadIndex);
-            }
+            int quadIndex = (activeCount == 2 && slotIdx == 1) ? 4 : (slotIdx % 8);
+            pState.QuadrantCenter = Coordinates.GetQuadrantCenter(quadIndex);
             _players[pIdx] = pState;
 
             _api.SetPlayerGold(pIdx, InitialGold);
-            _api.SetPlayerTeam(pIdx, 0);
             SpawnSurvivorHero(pState);
 
             pState.SlotSold[0] = false;
@@ -284,12 +268,13 @@ public class CustomMap : IWasmModule
             ShowNextWaveCountdown(pState);
         }
 
-        for (int i = 0; i < activePlayers.Count; i++)
+        foreach (var pState in _players.Values)
         {
-            for (int j = i + 1; j < activePlayers.Count; j++)
-            {
-                _api.SetPlayersAllied(activePlayers[i], activePlayers[j], true);
-            }
+            _api.RegisterPlayerAbility(pState.PlayerIndex, "perk_choose_1", "[Q] Comprar Oferta 1", "Comprar oferta 1 de la tienda (-1)", "res://Assets/icons/abilities/scroll_fireball.rtex", isInstant: true);
+            _api.RegisterPlayerAbility(pState.PlayerIndex, "perk_choose_2", "[W] Comprar Oferta 2", "Comprar oferta 2 de la tienda (-2)", "res://Assets/icons/abilities/scroll_frost_nova.rtex", isInstant: true);
+            _api.RegisterPlayerAbility(pState.PlayerIndex, "perk_choose_3", "[E] Comprar Oferta 3", "Comprar oferta 3 de la tienda (-3)", "res://Assets/icons/abilities/scroll_divine_shield.rtex", isInstant: true);
+            _api.RegisterPlayerAbility(pState.PlayerIndex, "perk_reroll", "[R] Renovar Tienda", "Renovar ofertas de la tienda (-reroll)", "res://Assets/icons/abilities/magic_catalyst.rtex", isInstant: true);
+            _api.RegisterPlayerAbility(pState.PlayerIndex, "hero_meteor_spell", "[D] Meteoros", "Lluvia de meteoros", "res://Assets/icons/abilities/meteor_strike.rtex", isInstant: false);
         }
 
         foreach (var pState in _players.Values)
@@ -305,7 +290,8 @@ public class CustomMap : IWasmModule
         _api.SetLeaderboardVisible("TOWER SURVIVORS", true);
         UpdateLeaderboardDisplay();
 
-        _api.BroadcastMessage(_api.Translate("WELCOME_MESSAGE", 0));
+        int firstPlayer = activePlayerIndices[0];
+        _api.BroadcastMessage(_api.Translate("WELCOME_MESSAGE", firstPlayer));
     }
 
     public void Update(IGameAPI api, float delta)
@@ -394,8 +380,9 @@ public class CustomMap : IWasmModule
     {
         foreach (var unit in _api.GetAllUnits())
         {
-            if (unit == null || unit.IsDead || !unit.IsEnemy) continue;
+            if (!unit.IsValid || unit.IsDead) continue;
             if (!_unitQuadrantMap.TryGetValue(unit.UniqueId, out int playerIndex)) continue;
+            if (!IsEnemy(unit, playerIndex)) continue;
             if (!_players.TryGetValue(playerIndex, out var pState)) continue;
 
             float dist = Vector3.Distance(new Vector3(unit.Position.X, 0f, unit.Position.Z), new Vector3(pState.QuadrantCenter.X, 0f, pState.QuadrantCenter.Z));
@@ -421,10 +408,10 @@ public class CustomMap : IWasmModule
 
     private void SpawnSurvivorHero(PlayerState pState)
     {
-        IUnit? existingHero = null;
+        UnitId existingHero = UnitId.Invalid;
         foreach (var unit in _api.GetAllUnits())
         {
-            if ((unit.UnitId == "unit/survivor_hero" || unit.UnitId == "survivor_hero") && !unit.IsDead)
+            if ((unit.TemplateID == "unit/survivor_hero" || unit.TemplateID == "survivor_hero") && !unit.IsDead)
             {
                 if (Vector3.Distance(unit.Position, pState.QuadrantCenter) < 15f)
                 {
@@ -434,7 +421,7 @@ public class CustomMap : IWasmModule
             }
         }
 
-        if (existingHero != null)
+        if (existingHero.IsValid)
         {
             pState.Hero = existingHero;
             _api.SetUnitOwner(pState.Hero, pState.PlayerIndex);
@@ -444,19 +431,19 @@ public class CustomMap : IWasmModule
             pState.Hero = _api.SpawnUnitForPlayer("unit/survivor_hero", new Vector2(pState.QuadrantCenter.X, pState.QuadrantCenter.Z), pState.PlayerIndex, false);
         }
 
-        if (pState.Hero == null) return;
+        if (!pState.Hero.IsValid) return;
 
-        pState.Hero.Speed = 0f;
+        var hero = pState.Hero;
+        hero.Speed = 0f;
         _api.SetUnitColor(pState.Hero, new Vector3(1f, 1f, 1f));
         RecalculateHeroStats(pState);
 
-        _api.PanPlayerCameraTo(pState.PlayerIndex, pState.QuadrantCenter, 0.0f);
         _api.SelectPlayerUnit(pState.PlayerIndex, pState.Hero);
     }
 
     private void CheckDefeatCondition(PlayerState pState)
     {
-        if (pState.Hero != null && !pState.Hero.IsDead && pState.Hero.Health > 0f) return;
+        if (pState.Hero.IsValid && !pState.Hero.IsDead && pState.Hero.Health > 0f) return;
 
         pState.IsDefeated = true;
         string defeatMsg = _players.Count <= 1
@@ -469,7 +456,7 @@ public class CustomMap : IWasmModule
     private void UpdateHeroTickEffects(PlayerState pState, float delta)
     {
         var hero = pState.Hero;
-        if (hero == null || hero.IsDead) return;
+        if (!hero.IsValid || hero.IsDead) return;
 
         hero.Speed = 0f;
         pState.TotalPlayTime += delta;
@@ -491,7 +478,7 @@ public class CustomMap : IWasmModule
                 _api.CreateFloatingText("¡ESCARCHA!", hero.Position + new Vector3(0, 2.5f, 0), new Vector3(0.4f, 0.9f, 1.0f), 0.9f);
                 foreach (var enemy in _api.GetUnitsInRadius(hero.Position, 20f))
                 {
-                    if (enemy != null && enemy.IsEnemy && !enemy.IsDead && enemy.Health > 0f)
+                    if (enemy.IsValid && IsEnemy(enemy, pState.PlayerIndex) && !enemy.IsDead && enemy.Health > 0f)
                     {
                         enemy.Speed = MathF.Max(1.5f, enemy.Speed * 0.60f);
                     }
@@ -543,11 +530,8 @@ public class CustomMap : IWasmModule
         if (pState.ShopRotationTimer <= 5.0f && !pState.ShopWarningNotified)
         {
             pState.ShopWarningNotified = true;
-            if (pState.PlayerIndex == 0)
-            {
-                _api.ShowFeedbackText(_api.Translate("SHOP_ROTATING_SOON", pState.PlayerIndex), new Vector3(1f, 0.75f, 0.2f));
-            }
-            if (pState.Hero != null)
+            _api.ShowPlayerFeedbackText(pState.PlayerIndex, _api.Translate("SHOP_ROTATING_SOON", pState.PlayerIndex), new Vector3(1f, 0.75f, 0.2f));
+            if (pState.Hero.IsValid)
             {
                 _api.CreateFloatingText(_api.Translate("SHOP_ROTATING_SOON", pState.PlayerIndex), pState.Hero.Position + new Vector3(0, 2.5f, 0), new Vector3(1f, 0.75f, 0.2f), 1.2f);
             }
@@ -604,38 +588,45 @@ public class CustomMap : IWasmModule
             pState.CurrentDraft[slot] = RollSinglePerk(pState);
         }
 
-        for (int slot = 0; slot < 3; slot++)
+        if (_players.Count <= 1)
         {
-            var p = pState.CurrentDraft[slot];
-            if (p != null)
+            for (int slot = 0; slot < 3; slot++)
             {
-                float cost = GetPerkCost(p);
-                string key = slot switch { 0 => "Q", 1 => "W", _ => "E" };
-                string abilityId = $"perk_choose_{slot + 1}";
-                string translatedName = _api.Translate(p.NameKey, pState.PlayerIndex);
-                string translatedDesc = _api.Translate(p.DescKey, pState.PlayerIndex);
-                string name = $"[{key}] {translatedName} ({cost:F0}g)";
-                string tooltip = $"[{key}] {translatedName} — Cost: {cost:F0}g\n{translatedDesc}";
-                _api.RegisterPlayerAbility(pState.PlayerIndex, abilityId, name, tooltip, p.IconPath, isInstant: true);
+                var p = pState.CurrentDraft[slot];
+                if (p != null)
+                {
+                    float cost = GetPerkCost(p);
+                    string key = slot switch { 0 => "Q", 1 => "W", _ => "E" };
+                    string abilityId = $"perk_choose_{slot + 1}";
+                    string translatedName = _api.Translate(p.NameKey, pState.PlayerIndex);
+                    string translatedDesc = _api.Translate(p.DescKey, pState.PlayerIndex);
+                    string name = $"[{key}] {translatedName} ({cost:F0}g)";
+                    string tooltip = $"[{key}] {translatedName} — Cost: {cost:F0}g\n{translatedDesc}";
+                    _api.RegisterAbility(abilityId, name, tooltip, p.IconPath, isInstant: true);
+                }
             }
+
+            float rerollCost = pState.RerollCount == 0 ? 0f : ShopRerollCost;
+            string rerollName = pState.RerollCount == 0
+                ? _api.Translate("REROLL_FREE", pState.PlayerIndex)
+                : string.Format(_api.Translate("REROLL_COST", pState.PlayerIndex), rerollCost);
+            string rerollTooltip = string.Format(_api.Translate("REROLL_TOOLTIP", pState.PlayerIndex), rerollCost);
+            _api.RegisterAbility("perk_reroll", rerollName, rerollTooltip, "res://Assets/icons/abilities/magic_catalyst.rtex", isInstant: true);
+
+            string meteorName = _api.Translate("METEOR_SPELL_NAME", pState.PlayerIndex);
+            string meteorTooltip = _api.Translate("METEOR_SPELL_TOOLTIP", pState.PlayerIndex);
+            _api.RegisterAbility("hero_meteor_spell", meteorName, meteorTooltip, "res://Assets/icons/abilities/meteor_strike.rtex", isInstant: false);
+
+            _api.PlayPlayerClickSound(pState.PlayerIndex);
+            _api.ShowFeedbackText(_api.Translate("SHOP_READY", pState.PlayerIndex), new Vector3(1f, 0.9f, 0.2f));
+        }
+        else
+        {
+            SendPlayerShopSummary(pState);
+            _api.SendMessageToPlayer(pState.PlayerIndex, _api.Translate("SHOP_READY", pState.PlayerIndex));
         }
 
-        float rerollCost = pState.RerollCount == 0 ? 0f : ShopRerollCost;
-        string rerollName = pState.RerollCount == 0
-            ? _api.Translate("REROLL_FREE", pState.PlayerIndex)
-            : string.Format(_api.Translate("REROLL_COST", pState.PlayerIndex), rerollCost);
-        string rerollTooltip = string.Format(_api.Translate("REROLL_TOOLTIP", pState.PlayerIndex), rerollCost);
-        _api.RegisterPlayerAbility(pState.PlayerIndex, "perk_reroll", rerollName, rerollTooltip, "res://Assets/icons/abilities/magic_catalyst.rtex", isInstant: true);
-
-        string meteorName = _api.Translate("METEOR_SPELL_NAME", pState.PlayerIndex);
-        string meteorTooltip = _api.Translate("METEOR_SPELL_TOOLTIP", pState.PlayerIndex);
-        _api.RegisterPlayerAbility(pState.PlayerIndex, "hero_meteor_spell", meteorName, meteorTooltip, "res://Assets/icons/abilities/meteor_strike.rtex", isInstant: false);
-
-        _api.PlayPlayerClickSound(pState.PlayerIndex);
-        _api.ShowPlayerFeedbackText(pState.PlayerIndex, _api.Translate("SHOP_READY", pState.PlayerIndex), new Vector3(1f, 0.9f, 0.2f));
-        SendPlayerShopSummary(pState);
-
-        if (pState.Hero != null)
+        if (pState.Hero.IsValid)
         {
             _api.CreateFloatingText(_api.Translate("SHOP_FLOATING", pState.PlayerIndex), pState.Hero.Position + new Vector3(0, 2.8f, 0), new Vector3(1f, 0.9f, 0.2f), 1.5f);
         }
@@ -685,7 +676,7 @@ public class CustomMap : IWasmModule
         if (pState.SlotSold[slotIndex])
         {
             _api.SendMessageToPlayer(pState.PlayerIndex, _api.Translate("PERK_SLOT_EMPTY", pState.PlayerIndex));
-            if (pState.Hero != null)
+            if (pState.Hero.IsValid)
             {
                 _api.CreateFloatingText("! [SOLD]", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.5f, 0.2f), 0.9f);
             }
@@ -698,7 +689,7 @@ public class CustomMap : IWasmModule
         if (!CanPickPerk(pState, perk))
         {
             _api.SendMessageToPlayer(pState.PlayerIndex, _api.Translate("PERK_MAX_STACKS", pState.PlayerIndex));
-            if (pState.Hero != null)
+            if (pState.Hero.IsValid)
             {
                 _api.CreateFloatingText("! [MAX]", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.4f, 0.2f), 0.9f);
             }
@@ -706,12 +697,12 @@ public class CustomMap : IWasmModule
         }
 
         float cost = GetPerkCost(perk);
-        float currentGold = _api.GetPlayerGold(pState.PlayerIndex);
+        float currentGold = _api.GetPlayer(pState.PlayerIndex).Gold;
         if (currentGold < cost)
         {
             string notEnough = string.Format(_api.Translate("PERK_NOT_ENOUGH_GOLD", pState.PlayerIndex), cost, currentGold);
             _api.SendMessageToPlayer(pState.PlayerIndex, notEnough);
-            if (pState.Hero != null)
+            if (pState.Hero.IsValid)
             {
                 _api.CreateFloatingText($"! -{(cost - currentGold):F0}g", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.2f, 0.2f), 0.9f);
             }
@@ -725,10 +716,13 @@ public class CustomMap : IWasmModule
         pState.PerkStacks[perk.Id] = current + 1;
         pState.PerksPicked++;
 
-        string soldLabel = _api.Translate("PERK_SLOT_SOLD_LABEL", pState.PlayerIndex);
-        string boughtId = $"perk_choose_{slotIndex + 1}";
-        string perkName = _api.Translate(perk.NameKey, pState.PlayerIndex);
-        _api.RegisterPlayerAbility(pState.PlayerIndex, boughtId, $"{soldLabel} {perkName}", $"{soldLabel} {perkName} (x{pState.PerkStacks[perk.Id]})", perk.IconPath, isInstant: true);
+        if (_players.Count <= 1 && pState.PlayerIndex == 0)
+        {
+            string soldLabel = _api.Translate("PERK_SLOT_SOLD_LABEL", pState.PlayerIndex);
+            string boughtId = $"perk_choose_{slotIndex + 1}";
+            string perkName = _api.Translate(perk.NameKey, pState.PlayerIndex);
+            _api.RegisterAbility(boughtId, $"{soldLabel} {perkName}", $"{soldLabel} {perkName} (x{pState.PerkStacks[perk.Id]})", perk.IconPath, isInstant: true);
+        }
 
         ApplyPerkAcquisition(pState, perk);
         RecalculateHeroStats(pState);
@@ -742,7 +736,7 @@ public class CustomMap : IWasmModule
             _api.BroadcastMessage($"P{pState.PlayerIndex + 1}: Compró {localizedPerkName} (x{pState.PerkStacks[perk.Id]}).");
         }
 
-        if (pState.Hero != null)
+        if (pState.Hero.IsValid)
         {
             _api.CreateFloatingText($"+{localizedPerkName} (x{pState.PerkStacks[perk.Id]})", pState.Hero.Position + new Vector3(0, 2.5f, 0), perk.Color, 1.4f);
             _api.SpawnVisualEffect("holylight", pState.Hero.Position + new Vector3(0, 1.2f, 0), 1.3f);
@@ -776,7 +770,7 @@ public class CustomMap : IWasmModule
                 pState.DemonDealExtraWavesRemaining = 2;
                 _api.AdjustPlayerGold(pState.PlayerIndex, 1000f);
                 pState.TotalGoldEarned += 1000f;
-                if (pState.Hero != null) pState.Hero.Health = pState.Hero.MaxHealth;
+                if (pState.Hero.IsValid) { var h = pState.Hero; h.Health = h.MaxHealth; }
                 _api.ShowFeedbackText(_api.Translate("DEMON_DEAL_TRIGGER", pState.PlayerIndex), new Vector3(0.95f, 0.15f, 0.15f));
                 break;
             case "blind_fury":
@@ -804,7 +798,7 @@ public class CustomMap : IWasmModule
                 pState.HasPiercingShot = true;
                 break;
             case "vigor_potion":
-                if (pState.Hero != null) pState.Hero.Health = MathF.Min(pState.Hero.MaxHealth, pState.Hero.Health + 200f);
+                if (pState.Hero.IsValid) { var h = pState.Hero; h.Health = MathF.Min(h.MaxHealth, h.Health + 200f); }
                 break;
         }
     }
@@ -812,13 +806,13 @@ public class CustomMap : IWasmModule
     private void TryRerollShop(PlayerState pState)
     {
         float cost = pState.RerollCount == 0 ? 0f : ShopRerollCost;
-        if (cost > 0f && _api.GetPlayerGold(pState.PlayerIndex) < cost)
+        if (cost > 0f && _api.GetPlayer(pState.PlayerIndex).Gold < cost)
         {
-            string notEnough = string.Format(_api.Translate("PERK_NOT_ENOUGH_GOLD", pState.PlayerIndex), cost, _api.GetPlayerGold(pState.PlayerIndex));
+            string notEnough = string.Format(_api.Translate("PERK_NOT_ENOUGH_GOLD", pState.PlayerIndex), cost, _api.GetPlayer(pState.PlayerIndex).Gold);
             _api.SendMessageToPlayer(pState.PlayerIndex, notEnough);
-            if (pState.Hero != null)
+            if (pState.Hero.IsValid)
             {
-                _api.CreateFloatingText($"! -{(cost - _api.GetPlayerGold(pState.PlayerIndex)):F0}g", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.2f, 0.2f), 0.9f);
+                _api.CreateFloatingText($"! -{(cost - _api.GetPlayer(pState.PlayerIndex).Gold):F0}g", pState.Hero.Position + new Vector3(0, 2f, 0), new Vector3(1f, 0.2f, 0.2f), 0.9f);
             }
             return;
         }
@@ -850,7 +844,7 @@ public class CustomMap : IWasmModule
     private void RecalculateHeroStats(PlayerState pState)
     {
         var hero = pState.Hero;
-        if (hero == null || hero.IsDead) return;
+        if (!hero.IsValid || hero.IsDead) return;
 
         int vigorStacks = pState.GetPerkStackCount("vigor_potion");
         float bonusMaxHp = vigorStacks * 350.0f;
@@ -959,7 +953,7 @@ public class CustomMap : IWasmModule
         {
             float delay = Waves[next - 1].InterWaveDelay;
             pState.InterWaveTimer = delay;
-            if (pState.PlayerIndex == 0)
+            if (_players.Count == 1)
             {
                 string label = string.Format(_api.Translate("WAVE_INTERMISSION", pState.PlayerIndex), next);
                 _api.StartCountdownTimer(delay, label);
@@ -986,7 +980,7 @@ public class CustomMap : IWasmModule
         pState.SpawnInterval = config.SpawnInterval;
         pState.SpawnTimer = 0f;
 
-        if (pState.PlayerIndex == 0)
+        if (_players.Count == 1)
         {
             _api.StopCountdownTimer();
         }
@@ -1020,15 +1014,14 @@ public class CustomMap : IWasmModule
         var config = Waves[pState.WaveBeingSpawned - 1];
         string unitType = config.Composition[pState.SpawnedInWave % config.Composition.Length];
 
-        int enemySlot = GetEnemyPlayerIndex();
-        IUnit? unit;
+        int enemySlot = GetEnemyPlayerIndex(pState.PlayerIndex);
+        UnitId unit = UnitId.Invalid;
         if (unitType == "unit/dragon_titan_boss" || unitType == "dragon_titan_boss")
         {
             var bossPos = pState.QuadrantCenter + new Vector3(0f, 0f, -10.0f);
             unit = _api.SpawnUnitForPlayer(unitType, new Vector2(bossPos.X, bossPos.Z), enemySlot, true);
-            if (unit != null)
+            if (unit.IsValid)
             {
-                unit.IsEnemy = true;
                 pState.RaidBossInstance = unit;
                 unit.Scale = 5.0f;
             }
@@ -1037,13 +1030,9 @@ public class CustomMap : IWasmModule
         {
             var spawnPos = Coordinates.GetRandomSpawnPointOnRing(_api, pState.QuadrantCenter, SpawnRingMinRadius, SpawnRingMaxRadius, SpawnHeight);
             unit = _api.SpawnUnitForPlayer(unitType, new Vector2(spawnPos.X, spawnPos.Z), enemySlot, true);
-            if (unit != null)
-            {
-                unit.IsEnemy = true;
-            }
         }
 
-        if (unit != null)
+        if (unit.IsValid)
         {
             _unitQuadrantMap[unit.UniqueId] = pState.PlayerIndex;
 
@@ -1082,14 +1071,14 @@ public class CustomMap : IWasmModule
     {
         if (pState.WaveBeingSpawned != 15) return;
         var boss = pState.RaidBossInstance;
-        if (boss == null || boss.IsDead) return;
+        if (!boss.IsValid || boss.IsDead) return;
 
         UpdateBossTargetIndicator(pState, boss, delta);
         UpdateBossEnragePhase(pState, boss);
         UpdateBossEscortTimer(pState, delta);
     }
 
-    private void UpdateBossTargetIndicator(PlayerState pState, IUnit boss, float delta)
+    private void UpdateBossTargetIndicator(PlayerState pState, UnitId boss, float delta)
     {
         pState.BossIndicatorTimer -= delta;
         if (pState.BossIndicatorTimer > 0f) return;
@@ -1098,7 +1087,7 @@ public class CustomMap : IWasmModule
         _api.SpawnTargetIndicator(boss.Position, new Vector3(1f, 0.1f, 0.1f));
     }
 
-    private void UpdateBossEnragePhase(PlayerState pState, IUnit boss)
+    private void UpdateBossEnragePhase(PlayerState pState, UnitId boss)
     {
         if (pState.BossEnraged || boss.Health > boss.MaxHealth * 0.5f) return;
 
@@ -1144,11 +1133,10 @@ public class CustomMap : IWasmModule
     private void SpawnSingleEscort(PlayerState pState, string unitType)
     {
         var spawnPos = Coordinates.GetRandomSpawnPointOnRing(_api, pState.QuadrantCenter, SpawnRingMinRadius, SpawnRingMaxRadius, SpawnHeight);
-        int enemySlot = GetEnemyPlayerIndex();
+        int enemySlot = GetEnemyPlayerIndex(pState.PlayerIndex);
         var unit = _api.SpawnUnitForPlayer(unitType, new Vector2(spawnPos.X, spawnPos.Z), enemySlot, true);
-        if (unit != null)
+        if (unit.IsValid)
         {
-            unit.IsEnemy = true;
             _unitQuadrantMap[unit.UniqueId] = pState.PlayerIndex;
 
             unit.AttackMove(pState.QuadrantCenter);
@@ -1156,13 +1144,13 @@ public class CustomMap : IWasmModule
         }
     }
 
-    private void OnUnitDamaged(IUnit victim, IUnit attacker, float damage)
+    private void OnUnitDamaged(UnitId victim, UnitId attacker, float damage)
     {
-        if (_gameOver || victim == null || attacker == null || victim.IsDead) return;
+        if (_gameOver || !victim.IsValid || !attacker.IsValid || victim.IsDead) return;
 
-        if (victim.IsEnemy && !attacker.IsEnemy && (attacker.UnitId == "unit/survivor_hero" || attacker.UnitId == "survivor_hero"))
+        if (AreEnemies(victim, attacker) && (attacker.TemplateID == "unit/survivor_hero" || attacker.TemplateID == "survivor_hero"))
         {
-            var pState = _players.Values.FirstOrDefault(p => p.Hero != null && p.Hero.UniqueId == attacker.UniqueId);
+            var pState = _players.Values.FirstOrDefault(p => p.Hero.IsValid && p.Hero.UniqueId == attacker.UniqueId);
             if (pState != null)
             {
                 pState.TotalDamageDealt += damage;
@@ -1170,9 +1158,9 @@ public class CustomMap : IWasmModule
             }
         }
 
-        if (!victim.IsEnemy && (victim.UnitId == "unit/survivor_hero" || victim.UnitId == "survivor_hero") && attacker.IsEnemy)
+        if (AreEnemies(victim, attacker) && (victim.TemplateID == "unit/survivor_hero" || victim.TemplateID == "survivor_hero"))
         {
-            var pState = _players.Values.FirstOrDefault(p => p.Hero != null && p.Hero.UniqueId == victim.UniqueId);
+            var pState = _players.Values.FirstOrDefault(p => p.Hero.IsValid && p.Hero.UniqueId == victim.UniqueId);
             if (pState != null && pState.HasDivineThorns && !attacker.IsDead && attacker.Health > 0f)
             {
                 float reflectDamage = damage * 0.50f;
@@ -1189,7 +1177,7 @@ public class CustomMap : IWasmModule
         }
     }
 
-    private void DealBonusDamage(IUnit victim, float amount)
+    private void DealBonusDamage(UnitId victim, float amount)
     {
         victim.Health -= amount;
         if (victim.Health <= 0f)
@@ -1198,10 +1186,10 @@ public class CustomMap : IWasmModule
         }
     }
 
-    private void ApplyHeroAttackProcs(PlayerState pState, IUnit victim, float damage)
+    private void ApplyHeroAttackProcs(PlayerState pState, UnitId victim, float damage)
     {
         var hero = pState.Hero;
-        if (hero == null) return;
+        if (!hero.IsValid) return;
 
         int sharpStacks = pState.GetPerkStackCount("sharp_precision");
         float critChance = sharpStacks * 0.20f;
@@ -1272,7 +1260,7 @@ public class CustomMap : IWasmModule
         }
     }
 
-    private void ApplyChainLightning(PlayerState pState, IUnit primary)
+    private void ApplyChainLightning(PlayerState pState, UnitId primary)
     {
         _api.SpawnVisualEffect("lightning", primary.Position, 1.5f);
         _api.CreateFloatingText(_api.Translate("LIGHTNING_FLOATING", pState.PlayerIndex), primary.Position + new Vector3(0, 2f, 0), new Vector3(0.3f, 0.7f, 1.0f), 0.8f);
@@ -1280,7 +1268,7 @@ public class CustomMap : IWasmModule
         int jumps = 0;
         foreach (var nearby in _api.GetUnitsInRadius(primary.Position, 14f))
         {
-            if (nearby == null || !nearby.IsEnemy || nearby.UniqueId == primary.UniqueId || nearby.IsDead || nearby.Health <= 0f)
+            if (!nearby.IsValid || !IsEnemy(nearby, pState.PlayerIndex) || nearby.UniqueId == primary.UniqueId || nearby.IsDead || nearby.Health <= 0f)
                 continue;
             if (jumps >= 4) break;
 
@@ -1292,10 +1280,10 @@ public class CustomMap : IWasmModule
         }
     }
 
-    private void ApplyExplosiveArrows(PlayerState pState, IUnit primary, float damage)
+    private void ApplyExplosiveArrows(PlayerState pState, UnitId primary, float damage)
     {
         _api.SpawnVisualEffect("fireblast", primary.Position, 1.4f);
-        if (pState.Hero != null)
+        if (pState.Hero.IsValid)
         {
             _api.SpawnProjectile("weapon/fire_shard", pState.Hero.Position, primary.Position, 40f);
         }
@@ -1303,7 +1291,7 @@ public class CustomMap : IWasmModule
 
         foreach (var nearby in _api.GetUnitsInRadius(primary.Position, 5f))
         {
-            if (nearby == null || !nearby.IsEnemy || nearby.UniqueId == primary.UniqueId || nearby.IsDead || nearby.Health <= 0f)
+            if (!nearby.IsValid || !IsEnemy(nearby, pState.PlayerIndex) || nearby.UniqueId == primary.UniqueId || nearby.IsDead || nearby.Health <= 0f)
                 continue;
 
             pState.TotalDamageDealt += splashDamage;
@@ -1311,13 +1299,20 @@ public class CustomMap : IWasmModule
         }
     }
 
-    private void ApplyPiercingShot(PlayerState pState, IUnit primary, float damage)
+    private void ApplyPiercingShot(PlayerState pState, UnitId primary, float damage)
     {
         float pierceDamage = damage * 0.70f;
-        var behind = _api.GetUnitsInRadius(primary.Position, 8f)
-            .FirstOrDefault(u => u != null && u.IsEnemy && u.UniqueId != primary.UniqueId && !u.IsDead && u.Health > 0f);
+        UnitId behind = UnitId.Invalid;
+        foreach (var u in _api.GetUnitsInRadius(primary.Position, 8f))
+        {
+            if (u.IsValid && IsEnemy(u, pState.PlayerIndex) && u.UniqueId != primary.UniqueId && !u.IsDead && u.Health > 0f)
+            {
+                behind = u;
+                break;
+            }
+        }
 
-        if (behind != null)
+        if (behind.IsValid)
         {
             pState.TotalDamageDealt += pierceDamage;
             DealBonusDamage(behind, pierceDamage);
@@ -1326,13 +1321,13 @@ public class CustomMap : IWasmModule
         }
     }
 
-    private void ApplyUnstableVortex(PlayerState pState, IUnit primary)
+    private void ApplyUnstableVortex(PlayerState pState, UnitId primary)
     {
-        if (pState.Hero == null) return;
+        if (!pState.Hero.IsValid) return;
         int shotCount = 0;
         foreach (var nearby in _api.GetUnitsInRadius(primary.Position, 15f))
         {
-            if (nearby == null || !nearby.IsEnemy || nearby.UniqueId == primary.UniqueId || nearby.IsDead || nearby.Health <= 0f)
+            if (!nearby.IsValid || !IsEnemy(nearby, pState.PlayerIndex) || nearby.UniqueId == primary.UniqueId || nearby.IsDead || nearby.Health <= 0f)
                 continue;
             if (shotCount >= 2) break;
 
@@ -1344,13 +1339,20 @@ public class CustomMap : IWasmModule
         }
     }
 
-    private void FireFuryArrow(PlayerState pState, IUnit victim)
+    private void FireFuryArrow(PlayerState pState, UnitId victim)
     {
-        if (pState.Hero == null) return;
-        var secondary = _api.GetUnitsInRadius(victim.Position, 10f)
-            .FirstOrDefault(u => u != null && u.IsEnemy && u.UniqueId != victim.UniqueId && !u.IsDead && u.Health > 0f);
+        if (!pState.Hero.IsValid) return;
+        UnitId secondary = UnitId.Invalid;
+        foreach (var u in _api.GetUnitsInRadius(victim.Position, 10f))
+        {
+            if (u.IsValid && IsEnemy(u, pState.PlayerIndex) && u.UniqueId != victim.UniqueId && !u.IsDead && u.Health > 0f)
+            {
+                secondary = u;
+                break;
+            }
+        }
 
-        if (secondary == null) return;
+        if (!secondary.IsValid) return;
 
         pState.TotalDamageDealt += pState.Hero.Damage;
         DealBonusDamage(secondary, pState.Hero.Damage);
@@ -1358,15 +1360,15 @@ public class CustomMap : IWasmModule
         _api.CreateFloatingText(_api.Translate("FURY_FLOATING", pState.PlayerIndex), secondary.Position + new Vector3(0f, 2f, 0f), new Vector3(1f, 0.4f, 0.1f), 0.8f);
     }
 
-    private void ApplyMultiShot(PlayerState pState, IUnit victim, float damage, int targetLimit)
+    private void ApplyMultiShot(PlayerState pState, UnitId victim, float damage, int targetLimit)
     {
-        if (pState.Hero == null) return;
+        if (!pState.Hero.IsValid) return;
         float splash = damage * MultiShotSplashRatio;
         int hits = 0;
 
         foreach (var nearby in _api.GetUnitsInRadius(victim.Position, 7f))
         {
-            if (nearby == null || !nearby.IsEnemy || nearby.UniqueId == victim.UniqueId || nearby.IsDead || nearby.Health <= 0f)
+            if (!nearby.IsValid || !IsEnemy(nearby, pState.PlayerIndex) || nearby.UniqueId == victim.UniqueId || nearby.IsDead || nearby.Health <= 0f)
                 continue;
             if (hits >= targetLimit) break;
 
@@ -1391,56 +1393,64 @@ public class CustomMap : IWasmModule
         _ => 10.0f
     };
 
-    private void OnUnitDied(IUnit unit, IUnit? killer)
+    private void OnUnitDied(UnitId unit, UnitId killer)
     {
-        if (_gameOver || unit == null || !unit.IsEnemy) return;
+        if (_gameOver || !unit.IsValid) return;
+
+        int waveOwnerIndex = 0;
+        if (_unitQuadrantMap.TryGetValue(unit.UniqueId, out int mappedIdx))
+        {
+            waveOwnerIndex = mappedIdx;
+            _unitQuadrantMap.Remove(unit.UniqueId);
+        }
+
+        if (!IsEnemy(unit, waveOwnerIndex)) return;
 
         foreach (var p in _players.Values)
         {
             p.ThornsCooldowns.Remove(unit.UniqueId);
         }
 
-        int pIdx = 0;
-        if (_unitQuadrantMap.TryGetValue(unit.UniqueId, out int mappedIdx))
+        if (!_players.TryGetValue(waveOwnerIndex, out var waveOwner))
         {
-            pIdx = mappedIdx;
-            _unitQuadrantMap.Remove(unit.UniqueId);
+            waveOwner = _players.Values.FirstOrDefault();
+            if (waveOwner == null) return;
         }
 
-        if (!_players.TryGetValue(pIdx, out var pState))
-        {
-            pState = _players.Values.FirstOrDefault();
-            if (pState == null) return;
-        }
+        int creditIndex = killer.IsValid && killer.Player > 0 && _players.ContainsKey(killer.Player)
+            ? killer.Player
+            : waveOwner.PlayerIndex;
 
-        pState.AliveInWave = Math.Max(0, pState.AliveInWave - 1);
-        pState.TotalKills++;
+        var creditPlayer = _players[creditIndex];
 
-        float bounty = GetUnitBounty(unit.UnitId);
-        if (pState.HasUnboundGreed)
+        waveOwner.AliveInWave = Math.Max(0, waveOwner.AliveInWave - 1);
+        creditPlayer.TotalKills++;
+
+        float bounty = GetUnitBounty(unit.TemplateID);
+        if (creditPlayer.HasUnboundGreed)
         {
             bounty *= 2.50f;
         }
 
-        if (pState.HasMidasTouch && unit.UnitId is not ("unit/dragon_titan_boss" or "dragon_titan_boss") && _api.RandomFloat(0f, 1f) < 0.15f)
+        if (creditPlayer.HasMidasTouch && unit.TemplateID is not ("unit/dragon_titan_boss" or "dragon_titan_boss") && _api.RandomFloat(0f, 1f) < 0.15f)
         {
             bounty += 40.0f;
-            _api.CreateFloatingText(_api.Translate("MIDAS_FLOATING", pState.PlayerIndex), unit.Position + new Vector3(0, 2.3f, 0), new Vector3(1f, 0.85f, 0.1f), 1.3f);
+            _api.CreateFloatingText(_api.Translate("MIDAS_FLOATING", creditPlayer.PlayerIndex), unit.Position + new Vector3(0, 2.3f, 0), new Vector3(1f, 0.85f, 0.1f), 1.3f);
         }
 
-        _api.AdjustPlayerGold(pState.PlayerIndex, bounty);
-        pState.TotalGoldEarned += bounty;
+        _api.AdjustPlayerGold(creditPlayer.PlayerIndex, bounty);
+        creditPlayer.TotalGoldEarned += bounty;
         _api.CreateFloatingText($"+{bounty:F0}g", unit.Position + new Vector3(0, 1.8f, 0), new Vector3(1f, 0.85f, 0.1f), 1.2f);
 
-        if (unit.UnitId is "unit/dragon_titan_boss" or "dragon_titan_boss")
+        if (unit.TemplateID is "unit/dragon_titan_boss" or "dragon_titan_boss")
         {
-            pState.BossDefeated = true;
+            waveOwner.BossDefeated = true;
             bool allBossesDead = _players.Values.All(p => p.IsDefeated || p.BossDefeated);
             if (allBossesDead)
             {
                 _gameOver = true;
                 _api.StopCountdownTimer();
-                _api.ShowFeedbackText(_api.Translate("RAID_BOSS_DEFEATED", 0), new Vector3(1f, 0.9f, 0.2f));
+                _api.ShowFeedbackText(_api.Translate("RAID_BOSS_DEFEATED", waveOwner.PlayerIndex), new Vector3(1f, 0.9f, 0.2f));
                 foreach (var p in _players.Values)
                 {
                     _api.PlayPlayerClickSound(p.PlayerIndex);
@@ -1449,19 +1459,18 @@ public class CustomMap : IWasmModule
             }
         }
     }
-
-    private PlayerState? ResolvePlayer(IUnit? caster, IUnit? selected = null, string? abilityId = null, Vector3? targetPosition = null)
+    private PlayerState? ResolvePlayer(UnitId caster, UnitId selected = default, string? abilityId = null, Vector3? targetPosition = null)
     {
-        if (caster != null)
+        if (caster.IsValid)
         {
-            var byHero = _players.Values.FirstOrDefault(p => p.Hero != null && p.Hero.UniqueId == caster.UniqueId);
+            var byHero = _players.Values.FirstOrDefault(p => p.Hero.IsValid && p.Hero.UniqueId == caster.UniqueId);
             if (byHero != null) return byHero;
             if (_players.TryGetValue(caster.Player, out var pByUnit)) return pByUnit;
         }
 
-        if (selected != null)
+        if (selected.IsValid)
         {
-            var byHero = _players.Values.FirstOrDefault(p => p.Hero != null && p.Hero.UniqueId == selected.UniqueId);
+            var byHero = _players.Values.FirstOrDefault(p => p.Hero.IsValid && p.Hero.UniqueId == selected.UniqueId);
             if (byHero != null) return byHero;
             if (_players.TryGetValue(selected.Player, out var pBySel)) return pBySel;
         }
@@ -1476,18 +1485,18 @@ public class CustomMap : IWasmModule
         return null;
     }
 
-    private void OnPlayerChatMessage(string message, IUnit? selected)
+    private void OnPlayerChatMessage(string message, UnitId selected)
     {
         if (_gameOver) return;
 
         PlayerState? pState = null;
-        if (selected != null && _players.TryGetValue(selected.Player, out var pByUnit))
+        if (selected.IsValid && _players.TryGetValue(selected.Player, out var pByUnit))
         {
             pState = pByUnit;
         }
         else
         {
-            pState = ResolvePlayer(caster: null, selected: selected);
+            pState = ResolvePlayer(caster: UnitId.Invalid, selected: selected);
         }
 
         if (pState == null && _players.Count == 1)
@@ -1532,14 +1541,12 @@ public class CustomMap : IWasmModule
         }
     }
 
-    private void OnSpellCast(IUnit? caster, string abilityId, Vector3 targetPosition)
+    private void OnSpellCast(UnitId caster, string abilityId, Vector3 targetPosition)
     {
         if (_gameOver) return;
 
-        var pState = ResolvePlayer(caster, selected: null, abilityId: abilityId, targetPosition: targetPosition);
+        var pState = ResolvePlayer(caster, selected: UnitId.Invalid, abilityId: abilityId, targetPosition: targetPosition);
         if (pState == null || pState.IsDefeated) return;
-
-        if (caster != null && pState.Hero != null && caster.UniqueId != pState.Hero.UniqueId) return;
 
         switch (abilityId)
         {
@@ -1556,14 +1563,14 @@ public class CustomMap : IWasmModule
                 TryRerollShop(pState);
                 break;
             case "hero_meteor_spell":
-                if (pState.Hero != null)
+                if (pState.Hero.IsValid)
                 {
                     _api.SpawnProjectile("weapon/boss_meteor", pState.Hero.Position, targetPosition, 26f);
                     _api.SpawnVisualEffect("fireblast", targetPosition, 2.5f);
                     _api.CreateFloatingText(_api.Translate("METEOR_FLOATING", pState.PlayerIndex), targetPosition + new Vector3(0, 2f, 0), new Vector3(1f, 0.4f, 0.1f), 1.2f);
                     foreach (var enemy in _api.GetUnitsInRadius(targetPosition, 4.5f))
                     {
-                        if (enemy != null && enemy.IsEnemy && !enemy.IsDead && enemy.Health > 0f)
+                        if (enemy.IsValid && IsEnemy(enemy, pState.PlayerIndex) && !enemy.IsDead && enemy.Health > 0f)
                         {
                             pState.TotalDamageDealt += 120f;
                             DealBonusDamage(enemy, 120f);
@@ -1578,22 +1585,30 @@ public class CustomMap : IWasmModule
     {
         if (_players.Count <= 1)
         {
-            if (!_players.TryGetValue(0, out var p0)) return;
+            var p0 = _players.Values.FirstOrDefault();
+            if (p0 == null) return;
 
-            _api.SetLeaderboardValue(_api.Translate("LB_WAVE", 0), $"{p0.CurrentWave} / {TotalWaves}");
-            _api.SetLeaderboardValue(_api.Translate("LB_GOLD", 0), $"{(int)_api.GetPlayerGold(0)} (+{(int)p0.CurrentIncomePerSecond}/s)");
-            _api.SetLeaderboardValue(_api.Translate("LB_SHOP", 0), $"{p0.ShopRotationTimer:F0}s / 40s | Perks: {p0.PerksPicked}");
-            _api.SetLeaderboardValue(_api.Translate("LB_KILLS", 0), $"{p0.TotalKills}");
-            _api.SetLeaderboardValue(_api.Translate("LB_ENEMIES", 0), $"{Math.Max(0, p0.AliveInWave)}");
+            _api.SetLeaderboardValue(_api.Translate("LB_WAVE", p0.PlayerIndex), $"{p0.CurrentWave} / {TotalWaves}");
+            _api.SetLeaderboardValue(_api.Translate("LB_GOLD", p0.PlayerIndex), $"{(int)_api.GetPlayer(p0.PlayerIndex).Gold} (+{(int)p0.CurrentIncomePerSecond}/s)");
+            _api.SetLeaderboardValue(_api.Translate("LB_SHOP", p0.PlayerIndex), $"{p0.ShopRotationTimer:F0}s / 40s | Perks: {p0.PerksPicked}");
+            _api.SetLeaderboardValue(_api.Translate("LB_KILLS", p0.PlayerIndex), $"{p0.TotalKills}");
+            _api.SetLeaderboardValue(_api.Translate("LB_ENEMIES", p0.PlayerIndex), $"{Math.Max(0, p0.AliveInWave)}");
         }
         else
         {
+            int slotIdx = 0;
             foreach (var p in _players.Values.OrderBy(x => x.PlayerIndex))
             {
-                string prefix = $"P{p.PlayerIndex + 1}";
-                string status = p.IsDefeated ? "(CAÍDO)" : (p.CurrentWave >= TotalWaves ? "(VICTORIA)" : $"W{p.CurrentWave}/{TotalWaves}");
-                _api.SetLeaderboardValue($"{prefix} ORO", $"{(int)_api.GetPlayerGold(p.PlayerIndex)} (+{(int)p.CurrentIncomePerSecond}/s)");
-                _api.SetLeaderboardValue($"{prefix} ESTADO", $"{status} | Kills: {p.TotalKills}");
+                slotIdx++;
+                string playerName = _api.GetPlayerName(p.PlayerIndex);
+                string prefix = !string.IsNullOrWhiteSpace(playerName) && playerName != "Default" && !playerName.StartsWith("Player") ? playerName : $"P{slotIdx}";
+                string status = p.IsDefeated
+                    ? $"({_api.Translate("LB_FALLEN", p.PlayerIndex)})"
+                    : (p.CurrentWave >= TotalWaves
+                        ? $"({_api.Translate("LB_VICTORY", p.PlayerIndex)})"
+                        : $"W{p.CurrentWave}/{TotalWaves}");
+                _api.SetLeaderboardValue($"{prefix} {_api.Translate("LB_GOLD", p.PlayerIndex)}", $"{(int)_api.GetPlayer(p.PlayerIndex).Gold} (+{(int)p.CurrentIncomePerSecond}/s)");
+                _api.SetLeaderboardValue($"{prefix} {_api.Translate("LB_STATUS", p.PlayerIndex)}", $"{status} | Kills: {p.TotalKills}");
             }
         }
     }
