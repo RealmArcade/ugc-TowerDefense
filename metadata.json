@@ -41,7 +41,7 @@
     "MapType": null,
     "TestAiPlayerCount": 7,
     "TestRandomizeSlots": true,
-    "TestRandomSeed": 0,
+    "TestRandomSeed": null,
     "MaxTestPlayers": 8
   },
   "Dependencies": [],
@@ -1099,8 +1099,8 @@
       },
       {
         "TemplateID": "unit/survivor_hero",
-        "Name": "Héroe del Survivor",
-        "Description": "Héroe Caballero central del Survivor. Defiende la posición sagrada aniquilando a las oleadas enemigas con tajos y proyectiles mágicos. Mejóralo en la tienda de habilidades o con comandos (-help).",
+        "Name": "Survivor Hero",
+        "Description": "Central Knight Hero of Survivor. Defends the sacred position annihilating enemy waves with slashes and magic projectiles. Upgrade him in the skill shop or with commands (-help).",
         "MaxHp": 1200,
         "Damage": 45,
         "Range": 38,

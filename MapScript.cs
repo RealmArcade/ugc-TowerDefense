@@ -1,4 +1,4 @@
-namespace Realm.Maps;
+﻿namespace Realm.Maps;
 
 using System;
 using System.Collections.Generic;
@@ -96,7 +96,7 @@ public class CustomMap : IWasmModule
 
     private static readonly WaveConfig[] Waves =
     {
-        new(new[] { "unit/zombie_soldier" }, TotalCount: 8, SpawnInterval: 0.45f, InterWaveDelay: 22.0f),
+        new(new[] { "unit/zombie_soldier" }, TotalCount: 8, SpawnInterval: 0.45f, InterWaveDelay: 10.0f),
         new(new[] { "unit/zombie_soldier" }, TotalCount: 12, SpawnInterval: 0.40f, InterWaveDelay: 20.0f),
         new(new[] { "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 12, SpawnInterval: 0.35f, InterWaveDelay: 19.0f),
         new(new[] { "unit/forest_goblin", "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 16, SpawnInterval: 0.30f, InterWaveDelay: 18.0f),
@@ -440,6 +440,7 @@ public class CustomMap : IWasmModule
 
         var hero = pState.Hero;
         hero.Speed = 0f;
+
         _api.SetUnitColor(pState.Hero, new Vector3(1f, 1f, 1f));
         RecalculateHeroStats(pState);
 
@@ -454,7 +455,7 @@ public class CustomMap : IWasmModule
         pState.IsDefeated = true;
         string defeatMsg = _players.Count <= 1
             ? _api.Translate("HERO_DEFEATED", pState.PlayerIndex)
-            : $"P{pState.PlayerIndex + 1}: {_api.Translate("HERO_DEFEATED", pState.PlayerIndex)}";
+            : $"P{pState.PlayerIndex}: {_api.Translate("HERO_DEFEATED", pState.PlayerIndex)}";
         _api.SendMessageToPlayer(pState.PlayerIndex, defeatMsg);
         _api.BroadcastMessage(defeatMsg);
 
@@ -502,7 +503,7 @@ public class CustomMap : IWasmModule
         var hero = pState.Hero;
         if (!hero.IsValid || hero.IsDead) return;
 
-        hero.Speed = 0f;
+
         pState.TotalPlayTime += delta;
         if (pState.LifestealTextTimer > 0f) pState.LifestealTextTimer -= delta;
 
@@ -602,7 +603,7 @@ public class CustomMap : IWasmModule
         string p1 = pState.CurrentDraft[1] != null ? $"{_api.Translate(pState.CurrentDraft[1]!.NameKey, pState.PlayerIndex)} ({GetPerkCost(pState.CurrentDraft[1]!):F0}g)" : "[Agotado]";
         string p2 = pState.CurrentDraft[2] != null ? $"{_api.Translate(pState.CurrentDraft[2]!.NameKey, pState.PlayerIndex)} ({GetPerkCost(pState.CurrentDraft[2]!):F0}g)" : "[Agotado]";
         float rerollCost = pState.RerollCount == 0 ? 0f : ShopRerollCost;
-        string msg = $"[Tienda P{pState.PlayerIndex + 1}] 1: {p0} | 2: {p1} | 3: {p2} (Reroll: {rerollCost:F0}g)";
+        string msg = $"[Tienda P{pState.PlayerIndex}] 1: {p0} | 2: {p1} | 3: {p2} (Reroll: {rerollCost:F0}g)";
         _api.SendMessageToPlayer(pState.PlayerIndex, msg);
     }
 
@@ -788,7 +789,7 @@ public class CustomMap : IWasmModule
         pState.PerkStacks[perk.Id] = current + 1;
         pState.PerksPicked++;
 
-        if (_players.Count <= 1 && pState.PlayerIndex == 0)
+        if (_players.Count <= 1)
         {
             string soldLabel = _api.Translate("PERK_SLOT_SOLD_LABEL", pState.PlayerIndex);
             string boughtId = $"perk_choose_{slotIndex + 1}";
@@ -796,16 +797,49 @@ public class CustomMap : IWasmModule
             _api.RegisterAbility(boughtId, $"{soldLabel} {perkName}", $"{soldLabel} {perkName} (x{pState.PerkStacks[perk.Id]})", perk.IconPath, isInstant: true);
         }
 
+                float prevMaxHp = pState.Hero.IsValid ? pState.Hero.MaxHealth : 0f;
+        float prevDamage = pState.Hero.IsValid ? pState.Hero.Damage : 0f;
+        float prevArmor = pState.Hero.IsValid ? pState.Hero.Armor : 0f;
+        float prevRange = pState.Hero.IsValid ? pState.Hero.Range : 0f;
+
         ApplyPerkAcquisition(pState, perk);
         RecalculateHeroStats(pState);
 
+        float dHp = pState.Hero.IsValid ? pState.Hero.MaxHealth - prevMaxHp : 0f;
+        float dDmg = pState.Hero.IsValid ? pState.Hero.Damage - prevDamage : 0f;
+        float dArm = pState.Hero.IsValid ? pState.Hero.Armor - prevArmor : 0f;
+        float dRng = pState.Hero.IsValid ? pState.Hero.Range - prevRange : 0f;
+
+        string deltaMsg = "";
+        if (dHp > 0.5f) deltaMsg = $"HP max {pState.Hero.MaxHealth:F0} (+{dHp:F0})";
+        else if (dHp < -0.5f) deltaMsg = $"HP max {pState.Hero.MaxHealth:F0} ({dHp:F0})";
+        else if (dDmg > 0.5f) deltaMsg = $"ATK {pState.Hero.Damage:F0} (+{dDmg:F0})";
+        else if (dArm > 0.5f) deltaMsg = $"ARM {pState.Hero.Armor:F0} (+{dArm:F0})";
+        else if (dArm < -0.5f) deltaMsg = $"ARM {pState.Hero.Armor:F0} ({dArm:F0})";
+        else if (dRng > 0.5f) deltaMsg = $"RNG {pState.Hero.Range:F0} (+{dRng:F0})";
+        else if (dRng < -0.5f) deltaMsg = $"RNG {pState.Hero.Range:F0} ({dRng:F0})";
+        else
+        {
+            int stacks = pState.GetPerkStackCount(perk.Id);
+            deltaMsg = perk.Id switch
+            {
+                "sharp_precision" => $"CRIT {(stacks * 20):F0}% (+20%)",
+                "lifesteal" => $"LS {(stacks * 15):F0}% (+15%)",
+                "reinforced_multishot" => $"Multi x{stacks}",
+                "royal_tribute" => $"+{(stacks * 10):F0}g/s",
+                "piercing_shot" => $"Pierce {(stacks * 70):F0}%",
+                _ => "Efecto activo"
+            };
+        }
+
         string localizedPerkName = _api.Translate(perk.NameKey, pState.PlayerIndex);
-        string purchaseMsg = string.Format(_api.Translate("PERK_PURCHASED", pState.PlayerIndex), localizedPerkName, pState.PerkStacks[perk.Id]);
-        _api.SendMessageToPlayer(pState.PlayerIndex, purchaseMsg);
+        int currentRank = pState.GetPerkStackCount(perk.Id);
+        string contractMsg = $"[P{pState.PlayerIndex}] {localizedPerkName} x{currentRank} comprado. {deltaMsg}.";
+        _api.SendMessageToPlayer(pState.PlayerIndex, contractMsg);
         _api.PlayPlayerClickSound(pState.PlayerIndex);
         if (_players.Count > 1)
         {
-            _api.BroadcastMessage($"P{pState.PlayerIndex + 1}: Compró {localizedPerkName} (x{pState.PerkStacks[perk.Id]}).");
+            _api.BroadcastMessage(contractMsg);
         }
 
         if (pState.Hero.IsValid)
@@ -900,7 +934,7 @@ public class CustomMap : IWasmModule
         _api.PlayPlayerClickSound(pState.PlayerIndex);
         if (_players.Count > 1)
         {
-            _api.BroadcastMessage($"P{pState.PlayerIndex + 1}: Reroll de tienda completado.");
+            _api.BroadcastMessage($"P{pState.PlayerIndex}: Reroll de tienda completado.");
         }
 
         TriggerNewShopRotation(pState, resetTimer: false, isAutomatic: false);
@@ -992,7 +1026,7 @@ public class CustomMap : IWasmModule
             }
             else
             {
-                _api.BroadcastMessage($"¡P{pState.PlayerIndex + 1} completó todas las oleadas! Apoyando a los aliados restantes...");
+                _api.BroadcastMessage($"¡P{pState.PlayerIndex} completó todas las oleadas! Apoyando a los aliados restantes...");
             }
         }
         else
@@ -1076,7 +1110,7 @@ public class CustomMap : IWasmModule
             }
             else
             {
-                _api.BroadcastMessage($"P{pState.PlayerIndex + 1}: {waveMsg}");
+                _api.BroadcastMessage($"P{pState.PlayerIndex}: {waveMsg}");
             }
         }
     }
@@ -1130,7 +1164,7 @@ public class CustomMap : IWasmModule
         foreach (var p in _players.Values.OrderBy(x => x.PlayerIndex))
         {
             int score = (int)(p.TotalDamageDealt * 0.1f + p.TotalGoldEarned * 0.5f + p.TotalKills * 50);
-            string pName = $"Player {p.PlayerIndex + 1}";
+            string pName = $"Player {p.PlayerIndex}";
             string dmgStr = $"{p.TotalDamageDealt:F0}";
             string incStr = $"{p.TotalGoldEarned:F0}g";
             string scoreStr = $"{score}";
@@ -1565,6 +1599,90 @@ public class CustomMap : IWasmModule
         return null;
     }
 
+    private void SendPlayerPerksSummary(PlayerState pState)
+    {
+        if (pState.PerkStacks.Count == 0)
+        {
+            _api.SendMessageToPlayer(pState.PlayerIndex, $"[Perks P{pState.PlayerIndex}] {_api.Translate("PERKS_EMPTY", pState.PlayerIndex)}");
+            return;
+        }
+
+        var sb = new System.Text.StringBuilder();
+        sb.Append($"[Perks P{pState.PlayerIndex}] ");
+        bool first = true;
+        for (int i = 0; i < PerkPool.Length; i++)
+        {
+            var perk = PerkPool[i];
+            if (pState.PerkStacks.TryGetValue(perk.Id, out int stacks) && stacks > 0)
+            {
+                if (!first) sb.Append(" | ");
+                first = false;
+
+                string perkName = _api.Translate(perk.NameKey, pState.PlayerIndex);
+                string bonusDesc = GetPerkSummaryEffect(perk.Id, stacks);
+                sb.Append($"x{stacks} {perkName} ({bonusDesc})");
+            }
+        }
+
+        if (first)
+        {
+            _api.SendMessageToPlayer(pState.PlayerIndex, $"[Perks P{pState.PlayerIndex}] {_api.Translate("PERKS_EMPTY", pState.PlayerIndex)}");
+        }
+        else
+        {
+            _api.SendMessageToPlayer(pState.PlayerIndex, sb.ToString());
+        }
+    }
+
+    private string GetPerkSummaryEffect(string perkId, int stacks) => perkId switch
+    {
+        "vigor_potion" => $"+{stacks * 350} HP",
+        "arrow_sharpening" => $"+{stacks * 12} ATK",
+        "reinforced_plates" => $"+{stacks * 4} ARM",
+        "hawk_eye" => $"+{stacks * 6} RNG",
+        "lifesteal" => $"+{stacks * 15}% LS",
+        "reinforced_multishot" => $"+{stacks} Multi",
+        "royal_tribute" => $"+{stacks * 10}g/s",
+        "piercing_shot" => $"+{stacks * 70}% Pierce",
+        "sharp_precision" => $"+{stacks * 20}% CRIT",
+        "blood_pact" => "+100% ATK, -2% HP/s",
+        "crystal_monolith" => "+250% CRIT DMG, +15 RNG, -40% HP",
+        "unbound_greed" => "+150% Gold, +20% Mob Spd/HP",
+        "unstable_vortex" => "2 Split Shots, 0 ARM",
+        "demon_deal" => "+1000g, +35% Mobs",
+        "blind_fury" => "Double Shot, -35% RNG",
+        "chain_lightning" => "Rayo (30%)",
+        "explosive_arrows" => "Explosivo (50%)",
+        "frost_aura" => "Escarcha (40%)",
+        "divine_thorns" => "+15 ARM, Espinas (50%)",
+        "sniper_stance" => "+18 RNG, Asedio (+40%)",
+        "midas_touch" => "Midas (15%)",
+        _ => "Activo"
+    };
+
+    private void SendPlayerStatsSummary(PlayerState pState)
+    {
+        var hero = pState.Hero;
+        if (!hero.IsValid)
+        {
+            _api.SendMessageToPlayer(pState.PlayerIndex, $"[Stats P{pState.PlayerIndex}] {_api.Translate("HERO_DEFEATED", pState.PlayerIndex)}");
+            return;
+        }
+
+        string hpStr = $"HP {hero.Health:F0}/{hero.MaxHealth:F0}";
+        float bonusAtk = hero.Damage - BaseHeroDamage;
+        string atkStr = bonusAtk > 0 ? $"ATK {hero.Damage:F0} (+{bonusAtk:F0})" : (bonusAtk < 0 ? $"ATK {hero.Damage:F0} ({bonusAtk:F0})" : $"ATK {hero.Damage:F0}");
+        string rngStr = $"RNG {hero.Range:F0}";
+        float armPct = hero.Armor > 0f ? (hero.Armor / (hero.Armor + 20.0f)) * 100.0f : 0f;
+        string armStr = $"ARM {hero.Armor:F0} ({armPct:F0}%)";
+        float critChance = pState.GetPerkStackCount("sharp_precision") * 20.0f;
+        string critStr = $"CRIT {critChance:F0}%";
+        float lsPct = pState.GetPerkStackCount("lifesteal") * 15.0f;
+        string lsStr = $"LS {lsPct:F0}%";
+
+        string statsMsg = $"[Stats P{pState.PlayerIndex}] {hpStr} | {atkStr} | {rngStr} | {armStr} | {critStr} | {lsStr}";
+        _api.SendMessageToPlayer(pState.PlayerIndex, statsMsg);
+    }
     private void OnPlayerChatMessage(string message, UnitId selected)
     {
         if (_gameOver) return;
@@ -1612,11 +1730,27 @@ public class CustomMap : IWasmModule
             case "tienda":
                 SendPlayerShopSummary(pState);
                 break;
-            case "-help":
+                        case "-help":
             case "help":
             case "-ayuda":
             case "ayuda":
-                _api.SendMessageToPlayer(pState.PlayerIndex, "Comandos: -1, -2, -3 (comprar), -reroll (renovar), -shop (ver ofertas)");
+                _api.SendMessageToPlayer(pState.PlayerIndex, _api.Translate("HELP_MESSAGE", pState.PlayerIndex));
+                break;
+            case "-perks":
+            case "perks":
+            case "-mejoras":
+            case "mejoras":
+            case "-build":
+            case "build":
+                SendPlayerPerksSummary(pState);
+                break;
+            case "-stats":
+            case "stats":
+            case "-estadisticas":
+            case "estadisticas":
+            case "-heroe":
+            case "heroe":
+                SendPlayerStatsSummary(pState);
                 break;
         }
     }
