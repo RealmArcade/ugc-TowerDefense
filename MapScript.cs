@@ -1,4 +1,4 @@
-﻿namespace Realm.Maps;
+namespace Realm.Maps;
 
 using System;
 using System.Collections.Generic;
@@ -96,23 +96,23 @@ public class CustomMap : IWasmModule
 
     private static readonly WaveConfig[] Waves =
     {
-        new(new[] { "unit/zombie_soldier" }, TotalCount: 8, SpawnInterval: 0.45f, InterWaveDelay: 10.0f),
-        new(new[] { "unit/zombie_soldier" }, TotalCount: 12, SpawnInterval: 0.40f, InterWaveDelay: 20.0f),
-        new(new[] { "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 12, SpawnInterval: 0.35f, InterWaveDelay: 19.0f),
-        new(new[] { "unit/forest_goblin", "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 16, SpawnInterval: 0.30f, InterWaveDelay: 18.0f),
-        new(new[] { "unit/giant_rock_golem", "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 15, SpawnInterval: 0.40f, InterWaveDelay: 18.0f,
+        new(new[] { "unit/zombie_soldier" }, TotalCount: 8, SpawnInterval: 0.45f, InterWaveDelay: 8.0f),
+        new(new[] { "unit/zombie_soldier" }, TotalCount: 12, SpawnInterval: 0.40f, InterWaveDelay: 7.0f),
+        new(new[] { "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 12, SpawnInterval: 0.35f, InterWaveDelay: 7.0f),
+        new(new[] { "unit/forest_goblin", "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 16, SpawnInterval: 0.30f, InterWaveDelay: 7.0f),
+        new(new[] { "unit/giant_rock_golem", "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 15, SpawnInterval: 0.40f, InterWaveDelay: 8.0f,
             MiniBoss: new MiniBossInfo("MINI_BOSS_1", new Vector3(1f, 0.6f, 0.1f))),
-        new(new[] { "unit/cyber_dragon", "unit/zombie_soldier" }, TotalCount: 14, SpawnInterval: 0.40f, InterWaveDelay: 16.0f),
-        new(new[] { "unit/zombie_warrior", "unit/cyber_dragon" }, TotalCount: 16, SpawnInterval: 0.35f, InterWaveDelay: 16.0f),
-        new(new[] { "unit/flame_drake", "unit/forest_goblin", "unit/zombie_warrior" }, TotalCount: 22, SpawnInterval: 0.35f, InterWaveDelay: 15.0f),
-        new(new[] { "unit/dark_iron_ogre", "unit/cyber_dragon", "unit/flame_drake" }, TotalCount: 18, SpawnInterval: 0.35f, InterWaveDelay: 14.0f),
-        new(new[] { "unit/mech_spider_monster", "unit/dark_iron_ogre", "unit/forest_goblin" }, TotalCount: 20, SpawnInterval: 0.35f, InterWaveDelay: 14.0f,
+        new(new[] { "unit/cyber_dragon", "unit/zombie_soldier" }, TotalCount: 14, SpawnInterval: 0.40f, InterWaveDelay: 7.0f),
+        new(new[] { "unit/zombie_warrior", "unit/cyber_dragon" }, TotalCount: 16, SpawnInterval: 0.35f, InterWaveDelay: 7.0f),
+        new(new[] { "unit/flame_drake", "unit/forest_goblin", "unit/zombie_warrior" }, TotalCount: 22, SpawnInterval: 0.35f, InterWaveDelay: 8.0f),
+        new(new[] { "unit/dark_iron_ogre", "unit/cyber_dragon", "unit/flame_drake" }, TotalCount: 18, SpawnInterval: 0.35f, InterWaveDelay: 8.0f),
+        new(new[] { "unit/mech_spider_monster", "unit/dark_iron_ogre", "unit/forest_goblin" }, TotalCount: 20, SpawnInterval: 0.35f, InterWaveDelay: 8.0f,
             MiniBoss: new MiniBossInfo("MINI_BOSS_2", new Vector3(1f, 0.3f, 0.1f))),
-        new(new[] { "unit/zombie_warrior", "unit/flame_drake", "unit/cyber_dragon" }, TotalCount: 26, SpawnInterval: 0.35f, InterWaveDelay: 13.0f),
-        new(new[] { "unit/dark_iron_ogre", "unit/forest_goblin", "unit/cyber_dragon" }, TotalCount: 28, SpawnInterval: 0.35f, InterWaveDelay: 13.0f),
-        new(new[] { "unit/dark_iron_ogre", "unit/flame_drake", "unit/zombie_warrior" }, TotalCount: 32, SpawnInterval: 0.35f, InterWaveDelay: 12.0f),
-        new(new[] { "unit/dark_iron_ogre", "unit/flame_drake", "unit/forest_goblin", "unit/zombie_warrior" }, TotalCount: 42, SpawnInterval: 0.25f, InterWaveDelay: 15.0f),
-        new(new[] { "unit/dragon_titan_boss" }, TotalCount: 1, SpawnInterval: 1.00f, InterWaveDelay: 20.0f, IsBoss: true)
+        new(new[] { "unit/zombie_warrior", "unit/flame_drake", "unit/cyber_dragon" }, TotalCount: 26, SpawnInterval: 0.35f, InterWaveDelay: 8.0f),
+        new(new[] { "unit/dark_iron_ogre", "unit/forest_goblin", "unit/cyber_dragon" }, TotalCount: 28, SpawnInterval: 0.35f, InterWaveDelay: 8.0f),
+        new(new[] { "unit/dark_iron_ogre", "unit/flame_drake", "unit/zombie_warrior" }, TotalCount: 32, SpawnInterval: 0.35f, InterWaveDelay: 8.0f),
+        new(new[] { "unit/dark_iron_ogre", "unit/flame_drake", "unit/forest_goblin", "unit/zombie_warrior" }, TotalCount: 42, SpawnInterval: 0.25f, InterWaveDelay: 8.0f),
+        new(new[] { "unit/dragon_titan_boss" }, TotalCount: 1, SpawnInterval: 1.00f, InterWaveDelay: 10.0f, IsBoss: true)
     };
 
     private sealed class PlayerState
@@ -1752,6 +1752,28 @@ public class CustomMap : IWasmModule
             case "heroe":
                 SendPlayerStatsSummary(pState);
                 break;
+            case "-next":
+            case "next":
+            case "-skip":
+            case "skip":
+            case "-listo":
+            case "listo":
+                TrySkipIntermission(pState);
+                break;
+        }
+    }
+
+    private void TrySkipIntermission(PlayerState pState)
+    {
+        if (!pState.Spawning && pState.InterWaveTimer > 0f)
+        {
+            pState.InterWaveTimer = 0f;
+            if (_players.Count == 1)
+            {
+                _api.StopCountdownTimer();
+            }
+            string msg = string.Format(_api.Translate("WAVE_SKIPPED", pState.PlayerIndex), pState.PlayerIndex);
+            _api.BroadcastMessage(msg);
         }
     }
 

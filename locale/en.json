@@ -86,8 +86,9 @@
     "PERK_HAWK_EYE_DESC":  "\u003cb\u003e\u003ccolor=#cccccc\u003eCommon Talent\u003c/color\u003e\u003c/b\u003e\n\u003ci\u003eSharpened avian vision extending effective firing perimeter.\u003c/i\u003e\n\n\u003ccolor=#ffffff\u003e+6 Attack Range per stack (Max 5x)\u003c/color\u003e",
     "PERK_VIGOR_POTION_NAME":  "Vigor Elixir",
     "PERK_VIGOR_POTION_DESC":  "\u003cb\u003e\u003ccolor=#cccccc\u003eCommon Talent\u003c/color\u003e\u003c/b\u003e\n\u003ci\u003eFortifying herbal tonic expanding stamina reservoir.\u003c/i\u003e\n\n\u003ccolor=#ffffff\u003e+350 Maximum Health \u0026 heals 200 HP immediately per stack (Max 5x)\u003c/color\u003e",
-    "HELP_MESSAGE":  "Commands: -1, -2, -3 (buy), -reroll (refresh), -shop (view offers), -perks (owned skills), -stats (hero stats)",
+    "HELP_MESSAGE":  "Commands: -1, -2, -3 (buy), -reroll (refresh), -shop (view offers), -perks (owned skills), -stats (hero stats), -next (skip intermission)",
     "PERKS_EMPTY":  "No perks acquired yet.",
+    "WAVE_SKIPPED":  "[P{0}] Started the next wave early!",
     "Survivor Hero":  "Survivor Hero",
     "Central Knight Hero of Survivor. Defends the sacred position annihilating enemy waves with slashes and magic projectiles. Upgrade him in the skill shop or with commands (-help).":  "Central Knight Hero of Survivor. Defends the sacred position annihilating enemy waves with slashes and magic projectiles. Upgrade him in the skill shop or with commands (-help)."
 }

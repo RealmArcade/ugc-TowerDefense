@@ -86,8 +86,9 @@
     "PERK_HAWK_EYE_DESC":  "\u003cb\u003e\u003ccolor=#cccccc\u003eTalento Común\u003c/color\u003e\u003c/b\u003e\n\u003ci\u003eVisión aviar agudizada que extiende el perímetro de tiro efectivo.\u003c/i\u003e\n\n\u003ccolor=#ffffff\u003e+6 Rango de Ataque por acumulación (Máx 5x)\u003c/color\u003e",
     "PERK_VIGOR_POTION_NAME":  "Elixir de Vigor",
     "PERK_VIGOR_POTION_DESC":  "\u003cb\u003e\u003ccolor=#cccccc\u003eTalento Común\u003c/color\u003e\u003c/b\u003e\n\u003ci\u003eTónico reconstituyente que expande la reserva de energía.\u003c/i\u003e\n\n\u003ccolor=#ffffff\u003e+350 Vida Máxima y cura 200 HP de inmediato por acumulación (Máx 5x)\u003c/color\u003e",
-    "HELP_MESSAGE":  "Comandos: -1, -2, -3 (comprar), -reroll (renovar), -shop (ver ofertas), -perks (ver mejoras), -stats (ver estadísticas)",
+    "HELP_MESSAGE":  "Comandos: -1, -2, -3 (comprar), -reroll (renovar), -shop (ver ofertas), -perks (ver mejoras), -stats (ver estadísticas), -next (iniciar siguiente ronda ya)",
     "PERKS_EMPTY":  "Sin mejoras adquiridas aún.",
+    "WAVE_SKIPPED":  "¡[P{0}] inició la siguiente ronda de inmediato!",
     "Survivor Hero":  "Héroe del Survivor",
     "Central Knight Hero of Survivor. Defends the sacred position annihilating enemy waves with slashes and magic projectiles. Upgrade him in the skill shop or with commands (-help).":  "Héroe Caballero central del Survivor. Defiende la posición sagrada aniquilando a las oleadas enemigas con tajos y proyectiles mágicos. Mejóralo en la tienda de habilidades o con comandos (-help)."
 }
