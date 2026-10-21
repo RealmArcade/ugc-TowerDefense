@@ -5,7 +5,7 @@
     {
       "TemplateId": "unit/survivor_hero",
       "PosX": -150,
-      "PosY": 0,
+      "PosY": 3,
       "PosZ": -150,
       "RotationY": 0,
       "Scale": 2.6,
@@ -14,7 +14,7 @@
     {
       "TemplateId": "unit/survivor_hero",
       "PosX": -150,
-      "PosY": 0,
+      "PosY": 3,
       "PosZ": 0,
       "RotationY": 0,
       "Scale": 2.6,
@@ -23,7 +23,7 @@
     {
       "TemplateId": "unit/survivor_hero",
       "PosX": 0,
-      "PosY": 0,
+      "PosY": 3,
       "PosZ": -150,
       "RotationY": 0,
       "Scale": 2.6,
@@ -32,7 +32,7 @@
     {
       "TemplateId": "unit/survivor_hero",
       "PosX": -150,
-      "PosY": 0,
+      "PosY": 3,
       "PosZ": 150,
       "RotationY": 0,
       "Scale": 2.6,
@@ -41,7 +41,7 @@
     {
       "TemplateId": "unit/survivor_hero",
       "PosX": 150,
-      "PosY": 0,
+      "PosY": 3,
       "PosZ": -150,
       "RotationY": 0,
       "Scale": 2.6,
@@ -50,7 +50,7 @@
     {
       "TemplateId": "unit/survivor_hero",
       "PosX": 0,
-      "PosY": 0,
+      "PosY": 3,
       "PosZ": 150,
       "RotationY": 0,
       "Scale": 2.6,
@@ -59,7 +59,7 @@
     {
       "TemplateId": "unit/survivor_hero",
       "PosX": 150,
-      "PosY": 0,
+      "PosY": 3,
       "PosZ": 0,
       "RotationY": 0,
       "Scale": 2.6,
@@ -68,7 +68,7 @@
     {
       "TemplateId": "unit/survivor_hero",
       "PosX": 150,
-      "PosY": 0,
+      "PosY": 3,
       "PosZ": 150,
       "RotationY": 0,
       "Scale": 2.6,
