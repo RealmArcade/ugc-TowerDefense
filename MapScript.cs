@@ -22,14 +22,14 @@ public class CustomMap : IWasmModule
     private const float BasePassiveGoldPerSecond = 8.0f;
     private const float InitialGold = 300.0f;
     private const float SpawnHeight = 3.0f;
-    private const float SpawnRingMinRadius = 22.0f;
-    private const float SpawnRingMaxRadius = 27.0f;
+    private const float SpawnRingMinRadius = 14.0f;
+    private const float SpawnRingMaxRadius = 17.0f;
 
     private const float ShopRotationInterval = 40.0f;
     private const float ShopRerollCost = 100.0f;
 
     private const float BaseHeroHp = 1200.0f;
-    private const float BaseHeroDamage = 45.0f;
+    private const float BaseHeroDamage = 55.0f;
     private const float BaseHeroRange = 38.0f;
     private const float BaseHeroArmor = 5.0f;
     private const float MultiShotSplashRatio = 0.70f;
@@ -96,23 +96,23 @@ public class CustomMap : IWasmModule
 
     private static readonly WaveConfig[] Waves =
     {
-        new(new[] { "unit/zombie_soldier" }, TotalCount: 8, SpawnInterval: 0.45f, InterWaveDelay: 8.0f),
-        new(new[] { "unit/zombie_soldier" }, TotalCount: 12, SpawnInterval: 0.40f, InterWaveDelay: 7.0f),
-        new(new[] { "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 12, SpawnInterval: 0.35f, InterWaveDelay: 7.0f),
-        new(new[] { "unit/forest_goblin", "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 16, SpawnInterval: 0.30f, InterWaveDelay: 7.0f),
-        new(new[] { "unit/giant_rock_golem", "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 15, SpawnInterval: 0.40f, InterWaveDelay: 8.0f,
+        new(new[] { "unit/zombie_soldier" }, TotalCount: 8, SpawnInterval: 0.35f, InterWaveDelay: 8.0f),
+        new(new[] { "unit/zombie_soldier" }, TotalCount: 12, SpawnInterval: 0.35f, InterWaveDelay: 6.0f),
+        new(new[] { "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 12, SpawnInterval: 0.30f, InterWaveDelay: 6.0f),
+        new(new[] { "unit/forest_goblin", "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 16, SpawnInterval: 0.28f, InterWaveDelay: 6.0f),
+        new(new[] { "unit/giant_rock_golem", "unit/zombie_soldier", "unit/forest_goblin" }, TotalCount: 15, SpawnInterval: 0.35f, InterWaveDelay: 7.0f,
             MiniBoss: new MiniBossInfo("MINI_BOSS_1", new Vector3(1f, 0.6f, 0.1f))),
-        new(new[] { "unit/cyber_dragon", "unit/zombie_soldier" }, TotalCount: 14, SpawnInterval: 0.40f, InterWaveDelay: 7.0f),
-        new(new[] { "unit/zombie_warrior", "unit/cyber_dragon" }, TotalCount: 16, SpawnInterval: 0.35f, InterWaveDelay: 7.0f),
-        new(new[] { "unit/flame_drake", "unit/forest_goblin", "unit/zombie_warrior" }, TotalCount: 22, SpawnInterval: 0.35f, InterWaveDelay: 8.0f),
-        new(new[] { "unit/dark_iron_ogre", "unit/cyber_dragon", "unit/flame_drake" }, TotalCount: 18, SpawnInterval: 0.35f, InterWaveDelay: 8.0f),
-        new(new[] { "unit/mech_spider_monster", "unit/dark_iron_ogre", "unit/forest_goblin" }, TotalCount: 20, SpawnInterval: 0.35f, InterWaveDelay: 8.0f,
+        new(new[] { "unit/cyber_dragon", "unit/zombie_soldier" }, TotalCount: 14, SpawnInterval: 0.35f, InterWaveDelay: 6.0f),
+        new(new[] { "unit/zombie_warrior", "unit/cyber_dragon" }, TotalCount: 16, SpawnInterval: 0.30f, InterWaveDelay: 6.0f),
+        new(new[] { "unit/flame_drake", "unit/forest_goblin", "unit/zombie_warrior" }, TotalCount: 22, SpawnInterval: 0.30f, InterWaveDelay: 6.0f),
+        new(new[] { "unit/dark_iron_ogre", "unit/cyber_dragon", "unit/flame_drake" }, TotalCount: 18, SpawnInterval: 0.30f, InterWaveDelay: 6.0f),
+        new(new[] { "unit/mech_spider_monster", "unit/dark_iron_ogre", "unit/forest_goblin" }, TotalCount: 20, SpawnInterval: 0.30f, InterWaveDelay: 7.0f,
             MiniBoss: new MiniBossInfo("MINI_BOSS_2", new Vector3(1f, 0.3f, 0.1f))),
-        new(new[] { "unit/zombie_warrior", "unit/flame_drake", "unit/cyber_dragon" }, TotalCount: 26, SpawnInterval: 0.35f, InterWaveDelay: 8.0f),
-        new(new[] { "unit/dark_iron_ogre", "unit/forest_goblin", "unit/cyber_dragon" }, TotalCount: 28, SpawnInterval: 0.35f, InterWaveDelay: 8.0f),
-        new(new[] { "unit/dark_iron_ogre", "unit/flame_drake", "unit/zombie_warrior" }, TotalCount: 32, SpawnInterval: 0.35f, InterWaveDelay: 8.0f),
-        new(new[] { "unit/dark_iron_ogre", "unit/flame_drake", "unit/forest_goblin", "unit/zombie_warrior" }, TotalCount: 42, SpawnInterval: 0.25f, InterWaveDelay: 8.0f),
-        new(new[] { "unit/dragon_titan_boss" }, TotalCount: 1, SpawnInterval: 1.00f, InterWaveDelay: 10.0f, IsBoss: true)
+        new(new[] { "unit/zombie_warrior", "unit/flame_drake", "unit/cyber_dragon" }, TotalCount: 26, SpawnInterval: 0.30f, InterWaveDelay: 6.0f),
+        new(new[] { "unit/dark_iron_ogre", "unit/forest_goblin", "unit/cyber_dragon" }, TotalCount: 28, SpawnInterval: 0.30f, InterWaveDelay: 6.0f),
+        new(new[] { "unit/dark_iron_ogre", "unit/flame_drake", "unit/zombie_warrior" }, TotalCount: 32, SpawnInterval: 0.30f, InterWaveDelay: 6.0f),
+        new(new[] { "unit/dark_iron_ogre", "unit/flame_drake", "unit/forest_goblin", "unit/zombie_warrior" }, TotalCount: 42, SpawnInterval: 0.22f, InterWaveDelay: 6.0f),
+        new(new[] { "unit/dragon_titan_boss" }, TotalCount: 1, SpawnInterval: 1.00f, InterWaveDelay: 8.0f, IsBoss: true)
     };
 
     private sealed class PlayerState
@@ -157,7 +157,6 @@ public class CustomMap : IWasmModule
         public int AliveInWave;
         public float SpawnTimer;
         public float SpawnInterval;
-        public float InterWaveTimer;
         public bool Spawning;
         public int TotalKills;
         public float TotalDamageDealt;
@@ -186,6 +185,11 @@ public class CustomMap : IWasmModule
     private readonly Dictionary<int, PlayerState> _players = new();
     private readonly Dictionary<int, int> _unitQuadrantMap = new();
     private bool _gameOver;
+    private int _globalCurrentWave;
+    private bool _globalWaveSpawning;
+    private float _globalInterWaveTimer;
+    private float _globalWaveDuration;
+    private const float MaxWaveDurationSeconds = 75.0f;
     private float _economyScanTimer;
     private const float WatchdogScanInterval = 2.0f;
     private float _watchdogScanTimer;
@@ -202,6 +206,10 @@ public class CustomMap : IWasmModule
     {
         _api = api;
         _gameOver = false;
+        _globalCurrentWave = 0;
+        _globalWaveSpawning = false;
+        _globalInterWaveTimer = 0f;
+        _globalWaveDuration = 0f;
         _economyScanTimer = 0f;
         _watchdogScanTimer = 0f;
         _players.Clear();
@@ -268,11 +276,9 @@ public class CustomMap : IWasmModule
             pState.ShopRotationTimer = ShopRotationInterval;
             pState.ShopWarningNotified = false;
             TriggerNewShopRotation(pState, resetTimer: true, isAutomatic: true);
-
-            ShowNextWaveCountdown(pState);
         }
 
-
+        ShowGlobalIntermission(1);
 
         foreach (var pState in _players.Values)
         {
@@ -307,14 +313,14 @@ public class CustomMap : IWasmModule
 
             // 1. Advance timers first (single decrement per player)
             pState.ShopRotationTimer -= delta;
-            if (!pState.Spawning)
-            {
-                pState.InterWaveTimer -= delta;
-            }
 
             // 2. Evaluate timer thresholds
             UpdateShopRotationTimer(pState);
-            UpdateWaveStateMachine(pState, delta);
+
+            if (_globalWaveSpawning && pState.RemainingToSpawn > 0)
+            {
+                UpdateSpawning(pState, delta);
+            }
 
             // 3. Subsystem execution with defensive isolation
             try
@@ -344,6 +350,8 @@ public class CustomMap : IWasmModule
                 _api.BroadcastMessage($"[GUEST ERROR Boss] {ex.GetType().Name}: {ex.Message}");
             }
         }
+
+        UpdateGlobalWaveStateMachine(delta);
 
         if (!anyAlive && _players.Count > 0)
         {
@@ -986,52 +994,146 @@ public class CustomMap : IWasmModule
         }
     }
 
-    private void UpdateWaveStateMachine(PlayerState pState, float delta)
+    private void UpdateGlobalWaveStateMachine(float delta)
     {
-        if (pState.Spawning)
+        if (_globalWaveSpawning)
         {
-            UpdateActiveWave(pState, delta);
+            _globalWaveDuration += delta;
+
+            bool allCleared = true;
+            bool anyUndefeated = false;
+
+            foreach (var p in _players.Values)
+            {
+                if (p.IsDefeated) continue;
+                anyUndefeated = true;
+
+                if (p.RemainingToSpawn > 0 || p.AliveInWave > 0)
+                {
+                    allCleared = false;
+                    break;
+                }
+            }
+
+            if (!anyUndefeated) return;
+
+            if (_globalCurrentWave == 15)
+            {
+                bool bossAlive = false;
+                foreach (var p in _players.Values)
+                {
+                    if (!p.IsDefeated && !p.BossDefeated && p.RaidBossInstance.IsValid)
+                    {
+                        bossAlive = true;
+                        break;
+                    }
+                }
+                if (bossAlive) return;
+            }
+
+            if (allCleared || _globalWaveDuration >= MaxWaveDurationSeconds)
+            {
+                EndGlobalWave();
+            }
         }
         else
         {
-            if (pState.InterWaveTimer <= 0f)
+            _globalInterWaveTimer -= delta;
+            if (_globalInterWaveTimer <= 0f)
             {
-                BeginWave(pState, pState.CurrentWave + 1);
+                BeginGlobalWave(_globalCurrentWave + 1);
             }
         }
     }
 
-    private void UpdateActiveWave(PlayerState pState, float delta)
+    private void BeginGlobalWave(int wave)
     {
-        if (pState.RemainingToSpawn > 0)
+        if (wave > TotalWaves)
         {
-            UpdateSpawning(pState, delta);
+            EndGameWithVictory();
             return;
         }
 
-        if (pState.AliveInWave > 0 || (pState.WaveBeingSpawned == 15 && !pState.BossDefeated)) return;
+        _globalCurrentWave = wave;
+        _globalWaveSpawning = true;
+        _globalWaveDuration = 0f;
+        _api.StopCountdownTimer();
 
-        pState.Spawning = false;
-        pState.CurrentWave++;
+        var config = Waves[wave - 1];
 
-        PublishSummaryTableForWave(pState.CurrentWave);
-
-        if (pState.CurrentWave >= TotalWaves)
+        if (config.IsBoss)
         {
-            pState.BossDefeated = true;
-            bool allWonOrDead = _players.Values.All(p => p.IsDefeated || (p.CurrentWave >= TotalWaves && p.BossDefeated));
-            if (allWonOrDead)
+            foreach (var pState in _players.Values)
             {
-                EndGameWithVictory();
+                if (!pState.IsDefeated) TriggerRaidBossCinematic(pState);
             }
-            else
-            {
-                _api.BroadcastMessage($"¡P{pState.PlayerIndex} completó todas las oleadas! Apoyando a los aliados restantes...");
-            }
+        }
+        else if (config.MiniBoss is { } miniBoss)
+        {
+            string banner = _api.Translate(miniBoss.BannerKey, 0);
+            _api.ShowFeedbackText(banner, miniBoss.Color);
         }
         else
         {
-            ShowNextWaveCountdown(pState);
+            string waveMsg = string.Format(_api.Translate("WAVE_INCOMING", 0), wave);
+            _api.BroadcastMessage(waveMsg);
+        }
+
+        foreach (var pState in _players.Values)
+        {
+            if (pState.IsDefeated) continue;
+
+            pState.CurrentWave = wave;
+            pState.WaveBeingSpawned = wave;
+            pState.Spawning = true;
+
+            int extraCount = 0;
+            if (pState.DemonDealExtraWavesRemaining > 0)
+            {
+                extraCount = (int)MathF.Ceiling(config.TotalCount * 0.35f);
+                pState.DemonDealExtraWavesRemaining--;
+            }
+
+            pState.RemainingToSpawn = config.TotalCount + extraCount;
+            pState.SpawnedInWave = 0;
+            pState.AliveInWave = pState.RemainingToSpawn;
+            pState.SpawnInterval = config.SpawnInterval;
+            pState.SpawnTimer = 0f;
+
+            _api.PlayPlayerWarningSound(pState.PlayerIndex);
+        }
+    }
+
+    private void EndGlobalWave()
+    {
+        _globalWaveSpawning = false;
+
+        foreach (var p in _players.Values)
+        {
+            p.Spawning = false;
+        }
+
+        PublishSummaryTableForWave(_globalCurrentWave);
+
+        if (_globalCurrentWave >= TotalWaves)
+        {
+            EndGameWithVictory();
+        }
+        else
+        {
+            ShowGlobalIntermission(_globalCurrentWave + 1);
+        }
+    }
+
+    private void ShowGlobalIntermission(int nextWave)
+    {
+        if (nextWave <= TotalWaves)
+        {
+            _globalWaveSpawning = false;
+            float delay = Waves[nextWave - 1].InterWaveDelay;
+            _globalInterWaveTimer = delay;
+            string label = string.Format(_api.Translate("WAVE_INTERMISSION", 0), nextWave);
+            _api.StartCountdownTimer(delay, label);
         }
     }
 
@@ -1050,69 +1152,6 @@ public class CustomMap : IWasmModule
         _api.StopCountdownTimer();
         _api.ShowFeedbackText(_api.Translate("VICTORIA_TOTAL", 0), new Vector3(1f, 0.9f, 0.2f));
         _api.TriggerVictory();
-    }
-
-    private void ShowNextWaveCountdown(PlayerState pState)
-    {
-        int next = pState.CurrentWave + 1;
-        if (next <= TotalWaves)
-        {
-            float delay = Waves[next - 1].InterWaveDelay;
-            pState.InterWaveTimer = delay;
-            if (_players.Count == 1)
-            {
-                string label = string.Format(_api.Translate("WAVE_INTERMISSION", pState.PlayerIndex), next);
-                _api.StartCountdownTimer(delay, label);
-            }
-        }
-    }
-
-    private void BeginWave(PlayerState pState, int wave)
-    {
-        pState.WaveBeingSpawned = wave;
-        pState.Spawning = true;
-        var config = Waves[wave - 1];
-
-        int extraCount = 0;
-        if (pState.DemonDealExtraWavesRemaining > 0)
-        {
-            extraCount = (int)MathF.Ceiling(config.TotalCount * 0.35f);
-            pState.DemonDealExtraWavesRemaining--;
-        }
-
-        pState.RemainingToSpawn = config.TotalCount + extraCount;
-        pState.SpawnedInWave = 0;
-        pState.AliveInWave = pState.RemainingToSpawn;
-        pState.SpawnInterval = config.SpawnInterval;
-        pState.SpawnTimer = 0f;
-
-        if (_players.Count == 1)
-        {
-            _api.StopCountdownTimer();
-        }
-        _api.PlayPlayerWarningSound(pState.PlayerIndex);
-
-        if (config.IsBoss)
-        {
-            TriggerRaidBossCinematic(pState);
-        }
-        else if (config.MiniBoss is { } miniBoss)
-        {
-            string banner = _api.Translate(miniBoss.BannerKey, pState.PlayerIndex);
-            _api.ShowFeedbackText(banner, miniBoss.Color);
-        }
-        else
-        {
-            string waveMsg = string.Format(_api.Translate("WAVE_INCOMING", pState.PlayerIndex), wave);
-            if (_players.Count <= 1)
-            {
-                _api.BroadcastMessage(waveMsg);
-            }
-            else
-            {
-                _api.BroadcastMessage($"P{pState.PlayerIndex}: {waveMsg}");
-            }
-        }
     }
 
     private void SpawnNextEnemyInWave(PlayerState pState)
@@ -1146,6 +1185,7 @@ public class CustomMap : IWasmModule
             unit.MaxHealth *= hpScale;
             unit.Health = unit.MaxHealth;
 
+            unit.Speed = MathF.Max(unit.Speed, 6.5f);
             if (pState.HasUnboundGreed)
             {
                 unit.Speed *= 1.20f;
@@ -1538,6 +1578,10 @@ public class CustomMap : IWasmModule
         var creditPlayer = _players[creditIndex];
 
         waveOwner.AliveInWave = Math.Max(0, waveOwner.AliveInWave - 1);
+        if (waveOwner.AliveInWave == 0 && waveOwner.RemainingToSpawn == 0)
+        {
+            waveOwner.Spawning = false;
+        }
         creditPlayer.TotalKills++;
 
         float bounty = GetUnitBounty(unit.TemplateID);
@@ -1765,13 +1809,10 @@ public class CustomMap : IWasmModule
 
     private void TrySkipIntermission(PlayerState pState)
     {
-        if (!pState.Spawning && pState.InterWaveTimer > 0f)
+        if (!_globalWaveSpawning && _globalInterWaveTimer > 0f)
         {
-            pState.InterWaveTimer = 0f;
-            if (_players.Count == 1)
-            {
-                _api.StopCountdownTimer();
-            }
+            _globalInterWaveTimer = 0f;
+            _api.StopCountdownTimer();
             string msg = string.Format(_api.Translate("WAVE_SKIPPED", pState.PlayerIndex), pState.PlayerIndex);
             _api.BroadcastMessage(msg);
         }
@@ -1824,7 +1865,7 @@ public class CustomMap : IWasmModule
             var p0 = _players.Values.FirstOrDefault();
             if (p0 == null) return;
 
-            _api.SetLeaderboardValue(_api.Translate("LB_WAVE", p0.PlayerIndex), $"{p0.CurrentWave} / {TotalWaves}");
+            _api.SetLeaderboardValue(_api.Translate("LB_WAVE", p0.PlayerIndex), $"{_globalCurrentWave} / {TotalWaves}");
             _api.SetLeaderboardValue(_api.Translate("LB_GOLD", p0.PlayerIndex), $"{(int)_api.GetPlayer(p0.PlayerIndex).Gold} (+{(int)p0.CurrentIncomePerSecond}/s)");
             _api.SetLeaderboardValue(_api.Translate("LB_SHOP", p0.PlayerIndex), $"{p0.ShopRotationTimer:F0}s / 40s | Perks: {p0.PerksPicked}");
             _api.SetLeaderboardValue(_api.Translate("LB_KILLS", p0.PlayerIndex), $"{p0.TotalKills}");
@@ -1832,17 +1873,16 @@ public class CustomMap : IWasmModule
         }
         else
         {
-            int slotIdx = 0;
+            _api.SetLeaderboardValue(_api.Translate("LB_WAVE", 0), $"{_globalCurrentWave} / {TotalWaves}");
             foreach (var p in _players.Values.OrderBy(x => x.PlayerIndex))
             {
-                slotIdx++;
                 string playerName = _api.GetPlayerName(p.PlayerIndex);
-                string prefix = !string.IsNullOrWhiteSpace(playerName) && playerName != "Default" && !playerName.StartsWith("Player") ? playerName : $"P{slotIdx}";
+                string prefix = !string.IsNullOrWhiteSpace(playerName) && playerName != "Default" && !playerName.StartsWith("Player") ? playerName : $"P{p.PlayerIndex}";
                 string status = p.IsDefeated
                     ? $"({_api.Translate("LB_FALLEN", p.PlayerIndex)})"
-                    : (p.CurrentWave >= TotalWaves
-                        ? $"({_api.Translate("LB_VICTORY", p.PlayerIndex)})"
-                        : $"W{p.CurrentWave}/{TotalWaves}");
+                    : (p.RemainingToSpawn == 0 && p.AliveInWave == 0
+                        ? "CLEAR"
+                        : $"{p.AliveInWave} left");
                 _api.SetLeaderboardValue($"{prefix} {_api.Translate("LB_GOLD", p.PlayerIndex)}", $"{(int)_api.GetPlayer(p.PlayerIndex).Gold} (+{(int)p.CurrentIncomePerSecond}/s)");
                 _api.SetLeaderboardValue($"{prefix} {_api.Translate("LB_STATUS", p.PlayerIndex)}", $"{status} | Kills: {p.TotalKills}");
             }
