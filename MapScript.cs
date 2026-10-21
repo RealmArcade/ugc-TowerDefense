@@ -515,9 +515,9 @@ public class CustomMap : IWasmModule
         pState.TotalPlayTime += delta;
         if (pState.LifestealTextTimer > 0f) pState.LifestealTextTimer -= delta;
 
-        if (pState.HasBloodPact)
+        if (pState.HasBloodPact && hero.Health > 1.0f)
         {
-            float drain = MathF.Max(1.0f, hero.Health * 0.02f * delta);
+            float drain = hero.Health * 0.02f * delta;
             hero.Health = MathF.Max(1.0f, hero.Health - drain);
         }
 
@@ -1548,20 +1548,12 @@ public class CustomMap : IWasmModule
     {
         if (_gameOver || !unit.IsValid) return;
 
-        int waveOwnerIndex = 0;
-        if (_unitQuadrantMap.TryGetValue(unit.UniqueId, out int mappedIdx))
-        {
-            waveOwnerIndex = mappedIdx;
-            _unitQuadrantMap.Remove(unit.UniqueId);
-        }
+        if (!_unitQuadrantMap.TryGetValue(unit.UniqueId, out int waveOwnerIndex)) return;
+        _unitQuadrantMap.Remove(unit.UniqueId);
 
         if (!IsEnemy(unit, waveOwnerIndex)) return;
 
-        if (!_players.TryGetValue(waveOwnerIndex, out var waveOwner))
-        {
-            waveOwner = _players.Values.FirstOrDefault();
-            if (waveOwner == null) return;
-        }
+        if (!_players.TryGetValue(waveOwnerIndex, out var waveOwner)) return;
 
         if (waveOwner.IsDefeated)
             return;
