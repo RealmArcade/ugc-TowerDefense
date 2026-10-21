@@ -8,14 +8,14 @@ public static class Coordinates
 {
     public static readonly Vector3[] QuadrantCenters = new Vector3[]
     {
-        new Vector3(-150f, 3f, -150f), // P1: Northwest (Solo)
-        new Vector3(   0f, 3f, -150f), // P2: North
-        new Vector3( 150f, 3f, -150f), // P3: Northeast
-        new Vector3( 150f, 3f,    0f), // P4: East
-        new Vector3( 150f, 3f,  150f), // P5: Southeast
-        new Vector3(   0f, 3f,  150f), // P6: South
-        new Vector3(-150f, 3f,  150f), // P7: Southwest
-        new Vector3(-150f, 3f,    0f)  // P8: West
+        new Vector3(-150f, 0f, -150f), // P1: Northwest (Solo)
+        new Vector3(   0f, 0f, -150f), // P2: North
+        new Vector3( 150f, 0f, -150f), // P3: Northeast
+        new Vector3( 150f, 0f,    0f), // P4: East
+        new Vector3( 150f, 0f,  150f), // P5: Southeast
+        new Vector3(   0f, 0f,  150f), // P6: South
+        new Vector3(-150f, 0f,  150f), // P7: Southwest
+        new Vector3(-150f, 0f,    0f)  // P8: West
     };
 
     public static Vector3 GetQuadrantCenter(int playerIndex)
