@@ -1719,18 +1719,14 @@ public class CustomMap : IWasmModule
         string statsMsg = $"[Stats P{pState.PlayerIndex}] {hpStr} | {atkStr} | {rngStr} | {armStr} | {critStr} | {lsStr}";
         _api.SendMessageToPlayer(pState.PlayerIndex, statsMsg);
     }
-    private void OnPlayerChatMessage(string message, UnitId selected)
+    private void OnPlayerChatMessage(string message, int playerSlot)
     {
         if (_gameOver) return;
 
         PlayerState? pState = null;
-        if (selected.IsValid && _players.TryGetValue(selected.Player, out var pByUnit))
+        if (_players.TryGetValue(playerSlot, out var sender))
         {
-            pState = pByUnit;
-        }
-        else
-        {
-            pState = ResolvePlayer(caster: UnitId.Invalid, selected: selected);
+            pState = sender;
         }
 
         if (pState == null && _players.Count == 1)
