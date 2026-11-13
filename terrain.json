@@ -9,7 +9,8 @@
       "PosZ": -150,
       "RotationY": 0,
       "Scale": 2.6,
-      "Player": 0
+      "Player": 0,
+      "Level": 1
     },
     {
       "TemplateId": "unit/survivor_hero",
@@ -18,7 +19,8 @@
       "PosZ": 0,
       "RotationY": 0,
       "Scale": 2.6,
-      "Player": 0
+      "Player": 0,
+      "Level": 1
     },
     {
       "TemplateId": "unit/survivor_hero",
@@ -27,7 +29,8 @@
       "PosZ": -150,
       "RotationY": 0,
       "Scale": 2.6,
-      "Player": 0
+      "Player": 0,
+      "Level": 1
     },
     {
       "TemplateId": "unit/survivor_hero",
@@ -36,7 +39,8 @@
       "PosZ": 150,
       "RotationY": 0,
       "Scale": 2.6,
-      "Player": 0
+      "Player": 0,
+      "Level": 1
     },
     {
       "TemplateId": "unit/survivor_hero",
@@ -45,7 +49,8 @@
       "PosZ": -150,
       "RotationY": 0,
       "Scale": 2.6,
-      "Player": 0
+      "Player": 0,
+      "Level": 1
     },
     {
       "TemplateId": "unit/survivor_hero",
@@ -54,7 +59,8 @@
       "PosZ": 150,
       "RotationY": 0,
       "Scale": 2.6,
-      "Player": 0
+      "Player": 0,
+      "Level": 1
     },
     {
       "TemplateId": "unit/survivor_hero",
@@ -63,7 +69,8 @@
       "PosZ": 0,
       "RotationY": 0,
       "Scale": 2.6,
-      "Player": 0
+      "Player": 0,
+      "Level": 1
     },
     {
       "TemplateId": "unit/survivor_hero",
@@ -72,7 +79,8 @@
       "PosZ": 150,
       "RotationY": 0,
       "Scale": 2.6,
-      "Player": 0
+      "Player": 0,
+      "Level": 1
     }
   ],
   "Props": [
@@ -2238,6 +2246,7 @@
     }
   ],
   "Decals": [],
+  "Items": [],
   "Vfx": [],
   "CameraBoundsLeft": -200,
   "CameraBoundsRight": 200,
@@ -2301,5 +2310,6 @@
       "MaxX": -110,
       "MaxZ": 40
     }
-  ]
+  ],
+  "SpawnAnchors": []
 }

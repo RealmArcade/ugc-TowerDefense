@@ -1,4 +1,4 @@
-namespace Realm.Maps;
+﻿namespace Realm.Maps;
 
 using System;
 using System.Collections.Generic;
@@ -217,8 +217,8 @@ public class CustomMap : IWasmModule
         _api.SetSummaryTableHeaders("PLAYER", "DAMAGE", "INCOME", "SCORE");
 
         const int MaxSurvivors = 8;
-        var participants = _api.GetActivePlayerIndices(EnemyProxyPlayerOffset)
-            .Where(i => i > 0)
+        var participants = _api.GetActivePlayerIndices()
+            .Where(i => i > 0 && i < EnemyProxyPlayerOffset)
             .ToList();
 
         if (participants.Count == 0)

@@ -16,6 +16,9 @@
     <Reference Include="Realm.MapAPI">
       <HintPath>lib/Realm.MapAPI.dll</HintPath>
     </Reference>
+    <Reference Include="Realm.Ecs">
+      <HintPath>lib/Realm.Ecs.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <TrimmerRootAssembly Include="$(AssemblyName)" />
@@ -41,5 +44,14 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.DotNet.ILCompiler.LLVM" Version="10.0.0-rc.1.26357.1" />
     <PackageReference Include="runtime.win-x64.Microsoft.DotNet.ILCompiler.LLVM" Version="10.0.0-rc.1.26357.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Realm.Ecs" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <IlcDwarfVersion>5</IlcDwarfVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Using Include="Realm.Maps" />
   </ItemGroup>
 </Project>
